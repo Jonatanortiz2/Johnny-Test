@@ -1,0 +1,271 @@
+--[[
+	 Gui to Lua Converter
+-- Revamped by:HoIyScript
+--]]
+
+
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local BACMainFrame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local onoff = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
+local TextLabel_4 = Instance.new("TextLabel")
+local ImageLabel = Instance.new("ImageLabel")
+
+--[[
+	Properties:
+--]]
+
+ScreenGui.Parent = game.CoreGui
+
+BACMainFrame.Name = "B.A.C Main Frame"
+BACMainFrame.Parent = ScreenGui
+BACMainFrame.BackgroundColor3 = Color3.new(0, 0, 0)
+BACMainFrame.BackgroundTransparency = 0.44999998807907
+BACMainFrame.BorderSizePixel = 7
+BACMainFrame.Position = UDim2.new(0.278610915, 0, 0.205159694, 0)
+BACMainFrame.Size = UDim2.new(0, 261, 0, 350)
+
+TextLabel.Parent = BACMainFrame
+TextLabel.BackgroundColor3 = Color3.new(1, 0, 0)
+TextLabel.BackgroundTransparency = 0.34999999403954
+TextLabel.Size = UDim2.new(0, 261, 0, 50)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Assasin's B.A.C V1.0.0"
+TextLabel.TextColor3 = Color3.new(0, 0, 0)
+TextLabel.TextSize = 14
+
+TextLabel_2.Parent = BACMainFrame
+TextLabel_2.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel_2.BackgroundTransparency = 1
+TextLabel_2.Position = UDim2.new(0.026819922, 0, 0.280000031, 0)
+TextLabel_2.Size = UDim2.new(0, 163, 0, 36)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "Silent Aim Is:"
+TextLabel_2.TextColor3 = Color3.new(1, 1, 1)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14
+TextLabel_2.TextWrapped = true
+
+onoff.Name = "on/off"
+onoff.Parent = BACMainFrame
+onoff.BackgroundColor3 = Color3.new(1, 1, 1)
+onoff.BackgroundTransparency = 1
+onoff.Position = UDim2.new(0.586206794, 0, 0.280000001, 0)
+onoff.Size = UDim2.new(0, 133, 0, 36)
+onoff.Font = Enum.Font.SciFi
+onoff.Text = "N/A"
+onoff.TextColor3 = Color3.new(0, 1, 0)
+onoff.TextScaled = true
+onoff.TextSize = 14
+onoff.TextWrapped = true
+
+TextLabel_3.Parent = BACMainFrame
+TextLabel_3.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel_3.BackgroundTransparency = 1
+TextLabel_3.Position = UDim2.new(-0.0536398478, 0, 0.22857143, 0)
+TextLabel_3.Size = UDim2.new(0, 275, 0, 18)
+TextLabel_3.Font = Enum.Font.SourceSans
+TextLabel_3.Text = "Press Q!"
+TextLabel_3.TextColor3 = Color3.new(1, 1, 1)
+TextLabel_3.TextScaled = true
+TextLabel_3.TextSize = 14
+TextLabel_3.TextWrapped = true
+
+TextLabel_4.Parent = BACMainFrame
+TextLabel_4.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel_4.BackgroundTransparency = 1
+TextLabel_4.Position = UDim2.new(-0.0536398478, 0, 0.948571444, 0)
+TextLabel_4.Size = UDim2.new(0, 275, 0, 18)
+TextLabel_4.Font = Enum.Font.SourceSans
+TextLabel_4.Text = "Press R! (Knife Gotta Be Unequipped)"
+TextLabel_4.TextColor3 = Color3.new(1, 1, 1)
+TextLabel_4.TextScaled = true
+TextLabel_4.TextSize = 14
+TextLabel_4.TextWrapped = true
+
+ImageLabel.Parent = BACMainFrame
+ImageLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel.Position = UDim2.new(0.0881226063, 0, 0.408571422, 0)
+ImageLabel.Size = UDim2.new(0, 215, 0, 172)
+ImageLabel.Image = "rbxassetid://5775771446"
+
+--[[
+	 Scripts:
+--]]
+
+local function ASYA_fake_script() -- TextLabel_2.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel_2)
+
+	function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+	counter = 0
+	
+	while wait(0.1) do
+		script.Parent.TextColor3 = Color3.fromHSV(zigzag(counter),1,1)
+		counter = counter + 0.01
+	end
+	
+	
+end
+coroutine.wrap(ASYA_fake_script)()
+local function CYMHS_fake_script() -- BACMainFrame.framergb 
+	local script = Instance.new('LocalScript', BACMainFrame)
+
+	function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+	counter = 0
+	
+	while wait(0.1) do
+		script.Parent.BorderColor3 = Color3.fromHSV(zigzag(counter),1,1)
+		counter = counter + 0.01
+	end
+	
+	script.Parent.Active = true
+	script.Parent.Draggable = true
+end
+coroutine.wrap(CYMHS_fake_script)()
+local function OQTV_fake_script() -- BACMainFrame.framedragable 
+	local script = Instance.new('LocalScript', BACMainFrame)
+
+	script.Parent.Active = true
+	script.Parent.Draggable = true
+	
+	
+end
+coroutine.wrap(OQTV_fake_script)()
+local function FKJB_fake_script() -- BACMainFrame.framehide 
+	local script = Instance.new('LocalScript', BACMainFrame)
+
+	function onKeyPress(inputObject, gameProcessedEvent)
+		if inputObject.KeyCode == Enum.KeyCode.RightAlt then
+			if script.Parent.Visible == false then
+				script.Parent.Visible = true
+			else
+				script.Parent.Visible = false
+			end
+		end
+	end
+	
+	game:GetService("UserInputService").InputBegan:connect(onKeyPress)
+end
+coroutine.wrap(FKJB_fake_script)()
+local function VIHYTU_fake_script() -- onoff.LocalScript 
+	local script = Instance.new('LocalScript', onoff)
+
+	local localPlayer = game:GetService("Players").LocalPlayer
+	local currentCamera = game:GetService("Workspace").CurrentCamera
+	local mouse = localPlayer:GetMouse()
+	local on = false
+	mouse.KeyDown:Connect(function(f)
+	if f == "q" then
+		if on == false then
+			script.Parent.Text = "On"
+			on = true
+		else
+			on = false
+			script.Parent.Text = "Off"
+		end
+	end
+	end)
+	
+	local function getClosestPlayerToCursor() [nonamecall]
+	local closestPlayer = nil
+	local shortestDistance = math.huge
+	
+	for i, v in pairs(game:GetService("Players"):GetPlayers()) do
+		if v.Name ~= localPlayer.Name then
+			if v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("Head") then
+				local pos = currentCamera:WorldToViewportPoint(v.Character.HumanoidRootPart.Position)
+				local magnitude = (Vector2.new(pos.X, pos.Y) - Vector2.new(mouse.X, mouse.Y)).magnitude
+				
+				if magnitude < shortestDistance then
+					closestPlayer = v
+					shortestDistance = magnitude
+				end
+			end
+		end
+	end
+	
+	return closestPlayer or localPlayer
+	end
+	
+	
+	local mt = getrawmetatable(game)
+	local oldNamecall = mt.__namecall
+	if setreadonly then setreadonly(mt, false) else make_writeable(mt, true) end
+	local namecallMethod = getnamecallmethod or get_namecall_method
+	local newClose = newcclosure or function(f) return f end
+	
+	mt.__namecall = newClose(function(...) [nonamecall]
+	local method = namecallMethod()
+	local args = {...}
+	if on then
+		if tostring(method) == "FireServer" and tostring(args[1]) == "ThrowKnife" and getClosestPlayerToCursor() and getClosestPlayerToCursor().Character:FindFirstChild("HumanoidRootPart") then
+			local humRootPart = getClosestPlayerToCursor().Character.HumanoidRootPart
+			local pos = humRootPart.Position
+			local vel = humRootPart.Velocity
+			args[2] = pos + Vector3.new((vel.X >= 3.5 and 3.5) or (vel.X <= -3.5 and -3.5) or 0, (vel.Y >= 3.5 and 3.5) or (vel.Y <= -3.5 and -3.5) or 0, (vel.Z >= 3.5 and 3.5) or (vel.Z <= -3.5 and -3.5) or 0)
+			
+			return oldNamecall(unpack(args))
+		end
+	end
+	
+	return oldNamecall(...)
+	end)
+	
+	if setreadonly then setreadonly(mt, true) else make_writeable(mt, false) end
+end
+coroutine.wrap(VIHYTU_fake_script)()
+
+
+local function FWQVTPN_fake_script() -- TextLabel_4.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel_4)
+
+	wait(4)
+	
+	function getNil(name,class) for _,v in pairs(getnilinstances())do if v.ClassName==class and v.Name==name then return v;end end end
+	local args;
+	args = {
+		[1] = Vector3.new(466.174133, 834.66925, -1741.8136),
+		[2] =  00000,
+		[3] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+	}
+	
+	local j = game.Players.LocalPlayer
+	local mouse = j:GetMouse()
+	
+	mouse.KeyDown:Connect(function(gol)
+		if gol == 'r' then        
+			for i,v in next, game.Players.LocalPlayer.Backpack:GetChildren() do
+				if v:isA("Tool") and v.Name == "Knife" then
+					game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+					wait(0.1)
+					mouse1press()
+					wait(.24)
+					game:GetService("ReplicatedStorage").Remotes.ThrowKnife:FireServer(unpack(args))
+					wait(0.50)
+					game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+				end
+			end
+		end
+	end)
+	
+	
+	print("This Was Made By Jonatan, Make Sure To Join My Discord = https://discord.gg/6awAEZn")
+end
+coroutine.wrap(FWQVTPN_fake_script)()
+local function DWYJKBF_fake_script() -- ImageLabel.LocalScript 
+	local script = Instance.new('LocalScript', ImageLabel)
+
+	function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+	counter = 0
+	
+	while wait(0.1) do
+		script.Parent.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
+		counter = counter + 0.01
+	end
+end
+coroutine.wrap(DWYJKBF_fake_script)()
