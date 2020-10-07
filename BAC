@@ -207,8 +207,8 @@ local function VIHYTU_fake_script() -- onoff.LocalScript
 			local humRootPart = getClosestPlayerToCursor().Character.HumanoidRootPart
 			local pos = humRootPart.Position
 			local vel = humRootPart.Velocity
-			args[2] = pos + Vector3.new((vel.X >= 3.5 and 3.5) or (vel.X <= -3.5 and -3.5) or 0, (vel.Y >= 3.5 and 3.5) or (vel.Y <= -3.5 and -3.5) or 0, (vel.Z >= 3.5 and 3.5) or (vel.Z <= -3.5 and -3.5) or 0)
-			
+			---args[2] = pos + Vector3.new((vel.X >= 3.5 and 3.5) or (vel.X <= -3.5 and -3.5) or 0, (vel.Y >= 3.5 and 3.5) or (vel.Y <= -3.5 and -3.5) or 0, (vel.Z >= 3.5 and 3.5) or (vel.Z <= -3.5 and -3.5) or 0)
+			args[2] = pos + Vector3.new((vel.X >= 3.5 and 3.5) or (vel.X >= 1 and 1) or (vel.X <= -3.5 and -3.5) or (vel.X <= -1 and -1) or 0, (vel.Y >= 3.5 and 3.5) or (vel.Y >= 1 and 1) or (vel.Y <= -3.5 and -3.5) or (vel.Y <= -1 and -1) or 0, (vel.Z >= 3.5 and 3.5) or (vel.Z >= 1 and 1) or (vel.Z <= -3.5 and -3.5) or (vel.Z <= -1 and -1) or 0)
 			return oldNamecall(unpack(args))
 		end
 	end
