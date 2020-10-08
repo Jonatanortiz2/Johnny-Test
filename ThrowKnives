@@ -1,0 +1,33 @@
+wait(5)
+
+function getNil(name,class) for _,v in pairs(getnilinstances())do if v.ClassName==class and v.Name==name then return v;end end end
+local args;
+args = {
+	[1] = Vector3.new(466.174133, 834.66925, -1741.8136),
+	[2] =  00000,
+	[3] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+}
+
+local j = game.Players.LocalPlayer
+local mouse = j:GetMouse()
+
+mouse.KeyDown:Connect(function(gol)
+	if gol == 'r' then        
+		for i,v in next, game.Players.LocalPlayer.Backpack:GetChildren() do
+			if v:isA("Tool") and v.Name == "Knife" then
+				game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+				wait(0.1)
+				mouse1press()
+				wait(.23)
+				game:GetService("ReplicatedStorage").Remotes.ThrowKnife:FireServer(unpack(args))
+				wait(0.50)
+				game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+			end
+		end
+	end
+end)
+
+
+print("This Was Made By Jonatan, Make Sure To Join My Discord = https://discord.gg/6awAEZn")
+print("This Was Made By Jonatan, Make Sure To Join My Discord = https://discord.gg/6awAEZn")
+print("This Was Made By Jonatan, Make Sure To Join My Discord = https://discord.gg/6awAEZn")
