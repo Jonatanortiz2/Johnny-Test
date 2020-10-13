@@ -1,5 +1,124 @@
 wait(5)
 
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local AutoShoot = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local truefalsebutton = Instance.new("TextButton")
+
+--[[
+	Properties:
+--]]
+
+ScreenGui.Parent = game.CoreGui
+
+AutoShoot.Name = "Auto Shoot"
+AutoShoot.Parent = ScreenGui
+AutoShoot.BackgroundColor3 = Color3.new(0, 0, 0)
+AutoShoot.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+AutoShoot.Position = UDim2.new(0.354380429, 0, 0.00737100746, 0)
+AutoShoot.Size = UDim2.new(0, 227, 0, 38)
+
+TextLabel.Parent = AutoShoot
+TextLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel.BackgroundTransparency = 1
+TextLabel.Position = UDim2.new(-0.00284526008, 0, -0.123156577, 0)
+TextLabel.Size = UDim2.new(0, 126, 0, 46)
+TextLabel.Font = Enum.Font.GothamSemibold
+TextLabel.Text = "Auto-Shooting:"
+TextLabel.TextColor3 = Color3.new(1, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14
+TextLabel.TextWrapped = true
+
+truefalsebutton.Name = "truefalsebutton"
+truefalsebutton.Parent = AutoShoot
+truefalsebutton.BackgroundColor3 = Color3.new(1, 1, 1)
+truefalsebutton.BackgroundTransparency = 1
+truefalsebutton.Position = UDim2.new(0.594713628, 0, 0, 0)
+truefalsebutton.Size = UDim2.new(0, 92, 0, 38)
+truefalsebutton.Font = Enum.Font.Antique
+truefalsebutton.Text = "N/A"
+truefalsebutton.TextColor3 = Color3.new(1, 1, 1)
+truefalsebutton.TextScaled = true
+truefalsebutton.TextSize = 14
+truefalsebutton.TextWrapped = true
+
+--[[
+	 Scripts:
+--]]
+
+local function DQEGEH_fake_script() -- truefalsebutton.LocalScript 
+	local script = Instance.new('LocalScript', truefalsebutton)
+
+	local localPlayer = game:GetService("Players").LocalPlayer
+	local currentCamera = game:GetService("Workspace").CurrentCamera
+	local mouse = localPlayer:GetMouse()
+	local on = false
+	
+	local function getClosestPlayerToCursor() [nonamecall]
+		local closestPlayer = nil
+		local shortestDistance = math.huge
+	
+		for i, v in pairs(game:GetService("Players"):GetPlayers()) do
+			if v.Name ~= localPlayer.Name then
+				if v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("Head") then
+					local pos = currentCamera:WorldToViewportPoint(v.Character.HumanoidRootPart.Position)
+					local magnitude = (Vector2.new(pos.X, pos.Y) - Vector2.new(mouse.X, mouse.Y)).magnitude
+	
+					if magnitude < shortestDistance then
+						closestPlayer = v
+						shortestDistance = magnitude
+					end
+				end
+			end
+		end
+	
+		return closestPlayer or localPlayer
+	end
+	
+	script.Parent.MouseButton1Down:connect(function()
+		if on == false then
+			script.Parent.Text = "On"
+			on = true
+		else
+			script.Parent.Text = "Off"
+			on = false
+		end
+	end)
+	function getNil(name,class) for _,v in pairs(getnilinstances())do if v.ClassName==class and v.Name==name then return v;end end end
+    local args;
+    args = {
+    	[1] = Vector3.new(466.174133, 834.66925, -1741.8136),
+    	[2] =  00000,
+    	[3] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+    }
+	
+	while true do
+		if on == true then
+			for i,v in next, game.Players.LocalPlayer.Backpack:GetChildren() do
+				if v:isA("Tool") and v.Name == "Knife" then
+					game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+					wait(.1)
+					mouse1press()
+					wait(.23)
+					game:GetService("ReplicatedStorage").Remotes.ThrowKnife:FireServer(unpack(args))
+					wait(.75)
+					game.Players.LocalPlayer.Character.Humanoid:UnequipTools(v)
+				end
+			end
+		end
+	wait(.20)
+	end
+end
+coroutine.wrap(DQEGEH_fake_script)()
+
+local localPlayer = game:GetService("Players").LocalPlayer
+local currentCamera = game:GetService("Workspace").CurrentCamera
+local mouse = localPlayer:GetMouse()
+local on = false
+
 function getNil(name,class) for _,v in pairs(getnilinstances())do if v.ClassName==class and v.Name==name then return v;end end end
 local args;
 args = {
@@ -8,25 +127,41 @@ args = {
 	[3] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 }
 
-local j = game.Players.LocalPlayer
-local mouse = j:GetMouse()
+local function getClosestPlayerToCursor() [nonamecall]
+	local closestPlayer = nil
+	local shortestDistance = math.huge
 
-mouse.KeyDown:Connect(function(gol)
-	if gol == 'r' then        
-		for i,v in next, game.Players.LocalPlayer.Backpack:GetChildren() do
-			if v:isA("Tool") and v.Name == "Knife" then
-				game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
-				wait(0.1)
-				mouse1press()
-				wait(.23)
-				game:GetService("ReplicatedStorage").Remotes.ThrowKnife:FireServer(unpack(args))
-				wait(0.50)
-				game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+	for i, v in pairs(game:GetService("Players"):GetPlayers()) do
+		if v.Name ~= localPlayer.Name then
+			if v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("Head") then
+				local pos = currentCamera:WorldToViewportPoint(v.Character.HumanoidRootPart.Position)
+				local magnitude = (Vector2.new(pos.X, pos.Y) - Vector2.new(mouse.X, mouse.Y)).magnitude
+
+				if magnitude < shortestDistance then
+					closestPlayer = v
+					shortestDistance = magnitude
+				end
 			end
 		end
 	end
-end)
 
+	return closestPlayer or localPlayer
+end
+
+mouse.Button1Down:connect(function()   
+    wait(.20)
+    for i,v in next, game.Players.LocalPlayer.Backpack:GetChildren() do
+        if v:isA("Tool") and v.Name == "Knife" then
+        game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+        wait(.1)
+        mouse1press()
+        wait(.23)
+        game:GetService("ReplicatedStorage").Remotes.ThrowKnife:FireServer(unpack(args))
+        wait(.75)
+        game.Players.LocalPlayer.Character.Humanoid:UnequipTools(v)
+        end
+    end
+end)
 
 print("This Was Made By Jonatan, Make Sure To Join My Discord = https://discord.gg/6awAEZn")
 print("This Was Made By Jonatan, Make Sure To Join My Discord = https://discord.gg/6awAEZn")
