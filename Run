@@ -7,7 +7,7 @@ _G.BanFor = {--Start's With: You Joined: Rank
         Name = "TheUnknownGodShots",
         Rank = "The Owner OF The Script You Used",
         KickReason = "FuckOff MY Lobby Noob",
-        MessageToBeSent = "Sorry Daddy Owner Of The Script, I Tried To Hack In Your Server :(",
+        MessageToBeSent = "Sorry Jon The Owner Of The Script, I Tried To Hack In Your Server :(",
     },
 	["CompJxson"] = {
         Name = "CompJxson",
