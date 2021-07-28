@@ -2,24 +2,48 @@ _G.SavedPeople =  {
     [2535037060] = true,
     [2355309280] = true,
 }
-_G.BanFor = {--Start's With: You Joined: Rank
-    ["TheUnknownGodShots"] = {
-        Name = "TheUnknownGodShots",
+_G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsync(
+    [game.Players:GetNameFromUserIdAsync(2535037060)] = {
+        Name = game.Players:GetNameFromUserIdAsync(2535037060),
+        Last_Known_Name = "TheUnknownGodShots",
         Rank = "The Owner OF The Script You Used",
         KickReason = "FuckOff MY Lobby Noob",
         MessageToBeSent = "Sorry Jon The Owner Of The Script, I Tried To Hack In Your Server :(",
     },
-	["CompJxson"] = {
-        Name = "CompJxson",
+	[game.Players:GetNameFromUserIdAsync(2355309280)] = {
+        Name = game.Players:GetNameFromUserIdAsync(2355309280),
+        Last_Known_Name = "CompJxson",
         Rank = "A Helper Of BAC",
         KickReason = "Trying To Exploit In My Lobby",
         MessageToBeSent = "Sorry Sadaso, I Tried To Hack In Your Game :(",
     },
-    ["The_Contumacious"] = {
-        Name = "The_Contumacious",
+    [game.Players:GetNameFromUserIdAsync(597841657)] = {
+        Name = game.Players:GetNameFromUserIdAsync(597841657),
+        Last_Known_Name = "The_Contumacious",
         Rank = "A Special Person <3",
         KickReason = "Trying To Exploit In My Lobby",
         MessageToBeSent = "Sorry Daddy Gaming_Fusion For Trying To Hack In Your Server :(",
+    },
+    [game.Players:GetNameFromUserIdAsync(167515304)] = {
+        Name = game.Players:GetNameFromUserIdAsync(167515304),
+        Last_Known_Name = "Uxazyz",
+        Rank = "Friend",
+        KickReason = "Trying To Exploit In My Lobby",
+        MessageToBeSent = "Sorry To Bother You, I'm An Exploiter",
+    },
+    [game.Players:GetNameFromUserIdAsync(348562003)] = {
+        Name = game.Players:GetNameFromUserIdAsync(348562003),
+        Last_Known_Name = "Tevintime",
+        Rank = "Friend",
+        KickReason = "Trying To Exploit In My Lobby",
+        MessageToBeSent = "Sorry To Bother You, I'm An Exploiter",
+    },
+    [game.Players:GetNameFromUserIdAsync(262439880)] = {
+        Name = game.Players:GetNameFromUserIdAsync(262439880),
+        Last_Known_Name = "Xunera",
+        Rank = "Friend",
+        KickReason = "Trying To Exploit In My Lobby",
+        MessageToBeSent = "Sorry To Bother You, I'm An Exploiter",
     },
 }
 
