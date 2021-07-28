@@ -50,7 +50,21 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         Last_Known_Name = "Xunera",
         Rank = "Friend",
         KickReason = "Trying To Exploit In My Lobby",
-        MessageToBeSent = "Sorry To Bother You, I'm An Exploiter",
+        MessageToBeSent = "I Just Tried To execute bac, My Bad Mr.Fox",
+    },
+    [game.Players:GetNameFromUserIdAsync(9465)] = {
+        Name = game.Players:GetNameFromUserIdAsync(9465),
+        Last_Known_Name = "Merfowl",
+        Rank = "Friend",
+        KickReason = "Trying To Exploit In My Lobby",
+        MessageToBeSent = "I Just Tried To execute bac, My Bad Mr.Fox",
+    },
+    [game.Players:GetNameFromUserIdAsync(2596648494)] = {
+        Name = game.Players:GetNameFromUserIdAsync(2596648494),
+        Last_Known_Name = "Xauntoo",
+        Rank = "Friend",
+        KickReason = "Trying To Exploit In My Lobby",
+        MessageToBeSent = "I Just Tried To execute bac, My Bad Mr.Fox",
     },
 }
 
