@@ -24,6 +24,13 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         KickReason = "Trying To Exploit In My Lobby",
         MessageToBeSent = "Sorry Daddy Gaming_Fusion For Trying To Hack In Your Server :(",
     },
+    [game.Players:GetNameFromUserIdAsync(64194781)] = {
+        Name = game.Players:GetNameFromUserIdAsync(64194781),
+        Last_Known_Name = "GIamborghini",
+        Rank = "Fusion's Girlfriend",
+        KickReason = "Trying To Exploit In My Lobby",
+        MessageToBeSent = "Sorry Mommy Glam For Trying To Hack In Your Server :(",
+    },
     [game.Players:GetNameFromUserIdAsync(167515304)] = {
         Name = game.Players:GetNameFromUserIdAsync(167515304),
         Last_Known_Name = "Uxazyz",
