@@ -3,6 +3,15 @@ _G.SavedPeople =  {
     [2355309280] = true,
 }
 _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsync(
+    --[[
+        [game.Players:GetNameFromUserIdAsync()] = {
+            Name = game.Players:GetNameFromUserIdAsync(),
+            Last_Known_Name = "",
+            Rank = "",
+            KickReason = "",
+            MessageToBeSent = "",
+        },
+    ]]
     [game.Players:GetNameFromUserIdAsync(2535037060)] = {
         Name = game.Players:GetNameFromUserIdAsync(2535037060),
         Last_Known_Name = "TheUnknownGodShots",
@@ -72,6 +81,20 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         Rank = "A Friend",
         KickReason = "Trying To Exploit In My Lobby",
         MessageToBeSent = "Sorry To Bother You, I'm An Exploiter",
+    },
+    [game.Players:GetNameFromUserIdAsync(5039348)] = {
+        Name = game.Players:GetNameFromUserIdAsync(5039348),
+        Last_Known_Name = "067",
+        Rank = "A Friend",
+        KickReason = "Exploiting",
+        MessageToBeSent = "Sorry! I’m an exploiter, please ban me.",
+    },
+    [game.Players:GetNameFromUserIdAsync(213439629)] = {
+        Name = game.Players:GetNameFromUserIdAsync(213439629),
+        Last_Known_Name = "Anthony_APL",
+        Rank = "A respected player",
+        KickReason = "using exploits ",
+        MessageToBeSent = "Sorry, I just tried executing bac in your server.",
     },
 }
 
