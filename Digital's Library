@@ -347,7 +347,7 @@ function library:NewWindow(porn, hub)
     Hub.Name = "Hub"
     Hub.Parent = MainWindow
     Hub.BackgroundColor3 = maincolor
-    Hub.Position = UDim2.new(1.142211571, 0, 0.0319148935, 0)
+    Hub.Position = UDim2.new(0.152211571, 0, 0.0419148935, 0)
     Hub.Size = UDim2.new(0, 42, 0, 19)
     Hub.Font = Enum.Font.ArialBold
     Hub.Text = hub
