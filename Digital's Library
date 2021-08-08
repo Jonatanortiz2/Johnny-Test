@@ -347,7 +347,7 @@ function library:NewWindow(porn, hub)
     Hub.Name = "Hub"
     Hub.Parent = MainWindow
     Hub.BackgroundColor3 = maincolor
-    Hub.Position = UDim2.new(0.142211571, 0, 0.0719148935, 0)
+    Hub.Position = UDim2.new(0.182211571, 0, 0.0319148935, 0)
     Hub.Size = UDim2.new(0, 42, 0, 19)
     Hub.Font = Enum.Font.ArialBold
     Hub.Text = hub
@@ -1584,6 +1584,4 @@ function library:NewWindow(porn, hub)
     end
     return TabHandler
 end
-
-print("Running Latest v1.1.0 --Jon")
 return library
