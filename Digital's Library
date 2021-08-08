@@ -1584,4 +1584,7 @@ function library:NewWindow(porn, hub)
     end
     return TabHandler
 end
+
+print("Running Latest Library Update, v1.0.0 --Jonatan (B.A.C Owner Was Here!.)")
+
 return library
