@@ -12,6 +12,20 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
             MessageToBeSent = "",
         },
     ]]
+    [game.Players:GetNameFromUserIdAsync(2685043386)] = {
+        Name = game.Players:GetNameFromUserIdAsync(2685043386),
+        Last_Known_Name = "vNetums",
+        Rank = "A Friend.",
+        KickReason = "rekt",
+        MessageToBeSent = "Sorry, I just tried executing B.A.C in your lobby :(",
+    },
+    [game.Players:GetNameFromUserIdAsync(118672305)] = {
+        Name = game.Players:GetNameFromUserIdAsync(118672305),
+        Last_Known_Name = "KevinReal21",
+        Rank = "A Friend.",
+        KickReason = "rekt",
+        MessageToBeSent = "Sorry, I just tried executing B.A.C in your lobby :(",
+    },
     [game.Players:GetNameFromUserIdAsync(2535037060)] = {
         Name = game.Players:GetNameFromUserIdAsync(2535037060),
         Last_Known_Name = "TheUnknownGodShots",
