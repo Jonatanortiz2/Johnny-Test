@@ -8,7 +8,7 @@ local Check_vNetums = function()
     if _G.MySetting == true then
         return  2685043386
     else
-        return 0
+        return 923979163
     end
 end
 
@@ -17,7 +17,7 @@ local Check_KevinReal21 = function()
     if _G.MySetting == true then
         return  118672305
     else
-        return 0
+        return 923979163
     end
 end
 
