@@ -13,8 +13,8 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         },
     ]]
     --2685043386
-    [game.Players:GetNameFromUserIdAsync(2879286559)] = {
-        Name = game.Players:GetNameFromUserIdAsync(2879286559),
+    [game.Players:GetNameFromUserIdAsync(2685043386)] = {
+        Name = game.Players:GetNameFromUserIdAsync(2685043386),
         Last_Known_Name = "vNetums",
         Rank = "A Friend.",
         KickReason = "rekt",
