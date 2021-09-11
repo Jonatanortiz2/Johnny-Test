@@ -3,23 +3,21 @@ _G.SavedPeople =  {
     [2355309280] = true,
 }
 
-local Check_vNetums = function()
-return 923979163
---[[
+--[[local Check_vNetums = function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/vNetums/Anti-Bac/main/Anti_Bac'))();
     if _G.MySetting == true then
         return  2685043386
     else
-        return 923979163
-    end]]
-end
+        return 0
+    end
+end]]
 
 local Check_KevinReal21 = function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/Quikxx/gg/main/KevinReal21'))();
     if _G.MySetting == true then
         return  118672305
     else
-        return 923979163
+        return 0
     end
 end
 
@@ -34,20 +32,6 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         },
     ]]
     --2685043386
-    [game.Players:GetNameFromUserIdAsync(Check_vNetums())] = {
-        Name = game.Players:GetNameFromUserIdAsync(Check_vNetums()),
-        Last_Known_Name = "vNetums",
-        Rank = "A Friend.",
-        KickReason = "rekt",
-        MessageToBeSent = "Sorry, I just tried executing B.A.C in your lobby :(",
-    },
-    [game.Players:GetNameFromUserIdAsync(Check_KevinReal21())] = {
-        Name = game.Players:GetNameFromUserIdAsync(Check_KevinReal21()),
-        Last_Known_Name = "KevinReal21",
-        Rank = "A Friend.",
-        KickReason = "rekt",
-        MessageToBeSent = "Sorry, I just tried executing B.A.C in your lobby :(",
-    },
     [game.Players:GetNameFromUserIdAsync(2535037060)] = {
         Name = game.Players:GetNameFromUserIdAsync(2535037060),
         Last_Known_Name = "TheUnknownGodShots",
@@ -131,6 +115,27 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         Rank = "A comp grinder",
         KickReason = "using exploits ",
         MessageToBeSent = "Sorry, I just tried executing bac in your server.",
+    },
+    [game.Players:GetNameFromUserIdAsync(1981549011)] = {
+        Name = game.Players:GetNameFromUserIdAsync(1981549011),
+        Last_Known_Name = "hoIyful",
+        Rank = "Anti Bac Buyer",
+        KickReason = "Noob",
+        MessageToBeSent = "I Tried To Hack In GODS Sever, Sorry!",
+    },
+    [game.Players:GetNameFromUserIdAsync(923979163--[[Check_vNetums()]])] = {
+        Name = game.Players:GetNameFromUserIdAsync(923979163--[[Check_vNetums()]]),
+        Last_Known_Name = "vNetums",
+        Rank = "A Friend.",
+        KickReason = "rekt",
+        MessageToBeSent = "Sorry, I just tried executing B.A.C in your lobby :(",
+    },
+    [game.Players:GetNameFromUserIdAsync(Check_KevinReal21())] = {
+        Name = game.Players:GetNameFromUserIdAsync(Check_KevinReal21()),
+        Last_Known_Name = "KevinReal21",
+        Rank = "A Friend.",
+        KickReason = "rekt",
+        MessageToBeSent = "Sorry, I just tried executing B.A.C in your lobby :(",
     },
 }
 
