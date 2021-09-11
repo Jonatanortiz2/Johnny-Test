@@ -4,12 +4,14 @@ _G.SavedPeople =  {
 }
 
 local Check_vNetums = function()
+return 923979163
+--[[
     loadstring(game:HttpGet('https://raw.githubusercontent.com/vNetums/Anti-Bac/main/Anti_Bac'))();
     if _G.MySetting == true then
         return  2685043386
     else
         return 923979163
-    end
+    end]]
 end
 
 local Check_KevinReal21 = function()
