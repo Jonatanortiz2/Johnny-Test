@@ -43,9 +43,9 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
     [game.Players:GetNameFromUserIdAsync(2535037060)] = {
         Name = game.Players:GetNameFromUserIdAsync(2535037060),
         Last_Known_Name = "TheUnknownGodShots",
-        Rank = "The Owner OF The Script You Used",
+        Rank = "Creator Of The Script",
         KickReason = "FuckOff MY Lobby Noob",
-        MessageToBeSent = "Sorry Jon The Owner Of The Script, I Tried To Hack In Your Server :(",
+        MessageToBeSent = "Mira A Este Hacker Tratando De Hackear En tu Lobby JAJAJAJJA",
     },
 	[game.Players:GetNameFromUserIdAsync(2355309280)] = {
         Name = game.Players:GetNameFromUserIdAsync(2355309280),
