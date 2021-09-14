@@ -12,6 +12,23 @@ local Check_Sustor = function()
     end
 end
 
+local Anti_Bac_People = {
+    "The_Contumacious",
+    "GIamborghini",
+    "Uxazyz",
+    "Tevintime",
+    "Xunera",
+    "Merfowl",
+    "Xauntoo",
+    "Exaggerated",
+    "067",
+    "Anthony_APL",
+    "hoIyful",
+    "vNetums",
+    "Netums",
+    "Peppa_Hippo",
+}
+
 _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsync(
     --[[
         [game.Players:GetNameFromUserIdAsync()] = {
@@ -26,7 +43,7 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
     [game.Players:GetNameFromUserIdAsync(2535037060)] = {
         Name = game.Players:GetNameFromUserIdAsync(2535037060),
         Last_Known_Name = "TheUnknownGodShots",
-        Rank = "Creator Of The Script",
+        Rank = "The Creator Of The Script",
         KickReason = "FuckOff MY Lobby Noob",
         MessageToBeSent = "Mira A Este Hacker Tratando De Hackear En tu Lobby JAJAJAJJA",
     },
@@ -114,9 +131,9 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         KickReason = "Noob",
         MessageToBeSent = "I Tried To Hack In GODS Sever, Sorry!",
     },
-    [game.Players:GetNameFromUserIdAsync(923979163)] = {
-        Name = game.Players:GetNameFromUserIdAsync(923979163),
-        Last_Known_Name = "vNetums",
+    [game.Players:GetNameFromUserIdAsync(2881044049)] = {
+        Name = game.Players:GetNameFromUserIdAsync(2881044049),
+        Last_Known_Name = "xarviour",
         Rank = "A Friend.",
         KickReason = "rekt",
         MessageToBeSent = "Sorry, I just tried executing B.A.C in your lobby :(",
@@ -127,6 +144,13 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         Rank = "A Friend.",
         KickReason = "rekt",
         MessageToBeSent = "Sorry, I just tried executing B.A.C in your lobby :(",
+    },
+    [game.Players:GetNameFromUserIdAsync(76179598)] = {
+        Name = game.Players:GetNameFromUserIdAsync(76179598),
+        Last_Known_Name = "Peppa_Hippo",
+        Rank = "Peppa",
+        KickReason = "Don't Try using Bac In Peppas Game :D",
+        MessageToBeSent = "I Am Sorry For Trying To Execute BAC In Your Lobby Mommy Peppa",
     },
 }
 
