@@ -6,12 +6,11 @@ _G.SavedPeople =  {
 local Check_Sustor = function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/Sustorr/Sustor/main/AntiBac'))();
     if _G.MySetting == true then
-        return  1981549011
+        return  5137475
     else
         return 923979163
     end
 end
-
 local Anti_Bac_People = {
     "The_Contumacious",
     "GIamborghini",
@@ -23,7 +22,7 @@ local Anti_Bac_People = {
     "Exaggerated",
     "067",
     "Anthony_APL",
-    "hoIyful",
+    "Arceoside",
     "xarviour",
     "Netums",
     "Peppa_Hippo",
@@ -43,7 +42,7 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
     [game.Players:GetNameFromUserIdAsync(2535037060)] = {
         Name = game.Players:GetNameFromUserIdAsync(2535037060),
         Last_Known_Name = "TheUnknownGodShots",
-        Rank = "none.",
+        Rank = "The Creator Of The Script",
         KickReason = "FuckOff MY Lobby Noob",
         MessageToBeSent = "Mira A Este Hacker Tratando De Hackear En tu Lobby JAJAJAJJA",
     },
@@ -122,11 +121,11 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         Last_Known_Name = "Anthony_APL",
         Rank = "A comp grinder",
         KickReason = "using exploits ",
-        MessageToBeSent = "Sorry, I just tried executing bac in your server.",
+        MessageToBeSent = "Sorry I just tried executing bac in your server.",
     },
     [game.Players:GetNameFromUserIdAsync(Check_Sustor())] = {
         Name = game.Players:GetNameFromUserIdAsync(Check_Sustor()--[[1981549011]]),
-        Last_Known_Name = "hoIyful",
+        Last_Known_Name = "Arceoside",
         Rank = "Anti Bac Buyer",
         KickReason = "Noob",
         MessageToBeSent = "I Tried To Hack In GODS Sever, Sorry!",
@@ -136,14 +135,14 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         Last_Known_Name = "xarviour",
         Rank = "A Friend.",
         KickReason = "rekt",
-        MessageToBeSent = "Sorry, I just tried executing B.A.C in your lobby :(",
+        MessageToBeSent = "Sorry I just tried executing B.A.C in your lobby :(",
     },
     [game.Players:GetNameFromUserIdAsync(128281846)] = {
         Name = game.Players:GetNameFromUserIdAsync(128281846),
         Last_Known_Name = "Netums",
         Rank = "A Friend.",
         KickReason = "rekt",
-        MessageToBeSent = "Sorry, I just tried executing B.A.C in your lobby :(",
+        MessageToBeSent = "Sorry I just tried executing B.A.C in your lobby :(",
     },
     [game.Players:GetNameFromUserIdAsync(76179598)] = {
         Name = game.Players:GetNameFromUserIdAsync(76179598),
