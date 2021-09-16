@@ -157,7 +157,7 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         Last_Known_Name = "Kurtecs",
         Rank = "A Friend",
         KickReason = "Imagine Exploiting",
-        MessageToBeSent = "I'm Sorry Kurtects, I just tried to execute BAC in your server!",
+        MessageToBeSent = "I'm Sorry Kurtecs, I just tried to execute BAC in your server!",
     },
 }
 
