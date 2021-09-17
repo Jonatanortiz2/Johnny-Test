@@ -27,6 +27,7 @@ local Anti_Bac_People = {
     "Netums",
     "Peppa_Hippo",
     "Kurtecs",
+    "DestiSkyx",
 }
 
 _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsync(
@@ -158,6 +159,13 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         Rank = "A Friend",
         KickReason = "Imagine Exploiting",
         MessageToBeSent = "I'm Sorry Kurtecs, I just tried to execute BAC in your server!",
+    },
+    [game.Players:GetNameFromUserIdAsync(121990524)] = {
+        Name = game.Players:GetNameFromUserIdAsync(121990524),
+        Last_Known_Name = "DestiSkyx",
+        Rank = "A Hacker Cleansers",
+        KickReason = "Imagine Exploiting",
+        MessageToBeSent = "Oh shoot, I just Executed BAC in Your Server. I also HATE gays very much and I don't care.",
     },
 }
 
