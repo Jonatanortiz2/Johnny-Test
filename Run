@@ -165,7 +165,7 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         Last_Known_Name = "DestiSkyx",
         Rank = "A Hacker Cleansers",
         KickReason = "Imagine Exploiting",
-        MessageToBeSent = "Oh shoot, I just Executed BAC in Your Server. I also HATE gays very much and I don't care.",
+        MessageToBeSent = "Oh shoot, I just executed BAC in your server. How ga;y",
     },
 }
 
