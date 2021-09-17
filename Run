@@ -122,7 +122,7 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         Last_Known_Name = "Anthony_APL",
         Rank = "A comp grinder",
         KickReason = "using exploits ",
-        MessageToBeSent = "Sorry I just tried executing bac in your server.",
+        MessageToBeSent = "I Just Tried To Hack In Anthony’s Server!",
     },
     [game.Players:GetNameFromUserIdAsync(Check_Sustor())] = {
         Name = game.Players:GetNameFromUserIdAsync(Check_Sustor()--[[1981549011]]),
