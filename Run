@@ -174,7 +174,7 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         Last_Known_Name = "t0ggles",
         Rank = "A Anti Bac Buyer.",
         KickReason = "get smacked",
-        MessageToBeSent = "I'm Sorry t0ggles, I just tried to execute BAC in your server",
+        MessageToBeSent = "Sorry t0ggles for getting smacked by you so hard that I tried to execute bac! I will enjoy this ban now..",
     },
 }
 
