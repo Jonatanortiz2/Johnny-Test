@@ -11,6 +11,7 @@ local Check_Sustor = function()
         return 923979163
     end
 end
+
 local Anti_Bac_People = {
     "The_Contumacious",
     "GIamborghini",
@@ -28,6 +29,7 @@ local Anti_Bac_People = {
     "Peppa_Hippo",
     "Kurtecs",
     "DestiSkyx",
+    "t0ggles",
 }
 
 _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsync(
@@ -166,6 +168,13 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         Rank = "A Hacker Cleansers",
         KickReason = "Imagine Exploiting",
         MessageToBeSent = "Oh shoot, I just executed BAC in your server. How ga;y",
+    },
+    [game.Players:GetNameFromUserIdAsync(2254079492)] = {
+        Name = game.Players:GetNameFromUserIdAsync(2254079492),
+        Last_Known_Name = "t0ggles",
+        Rank = "A Anti Bac Buyer.",
+        KickReason = "get smacked",
+        MessageToBeSent = "I'm Sorry t0ggles, I just tried to execute BAC in your server",
     },
 }
 
