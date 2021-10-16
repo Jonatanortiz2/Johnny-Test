@@ -4,12 +4,7 @@ _G.SavedPeople =  {
 }
 
 local Check_Sustor = function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/Sustorr/Sustor/main/AntiBac'))();
-    if _G.MySetting == true then
-        return  5137475
-    else
-        return 923979163
-    end
+    return 923979163
 end
 
 local Anti_Bac_People = {
