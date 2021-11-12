@@ -4,7 +4,12 @@ _G.SavedPeople =  {
 }
 
 local Check_Sustor = function()
-    return 923979163
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/Sustorr/Sustor/main/AntiBac'))();
+    if _G.MySetting == true then
+        return  5137475
+    else
+        return 923979163
+    end
 end
 
 local Anti_Bac_People = {
@@ -25,7 +30,8 @@ local Anti_Bac_People = {
     "Kurtecs",
     "DestiSkyx",
     "t0ggles",
-    "ukcamm",
+    "doublecupofwock",
+    "Laptius",
 }
 
 _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsync(
@@ -151,12 +157,12 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         KickReason = "Don't Try using Bac In Peppas Game :D",
         MessageToBeSent = "I Am Sorry For Trying To Execute BAC In Your Lobby Mommy Peppa",
     },
-    [game.Players:GetNameFromUserIdAsync(2814963456)] = {
-        Name = game.Players:GetNameFromUserIdAsync(2814963456),
-        Last_Known_Name = "Kurtecs",
+    [game.Players:GetNameFromUserIdAsync(3017263937)] = {
+        Name = game.Players:GetNameFromUserIdAsync(3017263937),
+        Last_Known_Name = "SkilfuIl",
         Rank = "A Friend",
         KickReason = "Imagine Exploiting",
-        MessageToBeSent = "I'm Sorry Kurtecs, I just tried to execute BAC in your server!",
+        MessageToBeSent = "Bye darsh",
     },
     [game.Players:GetNameFromUserIdAsync(121990524)] = {
         Name = game.Players:GetNameFromUserIdAsync(121990524),
@@ -172,12 +178,19 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         KickReason = "get smacked",
         MessageToBeSent = "Sorry t0ggles for getting smacked by you so hard that I tried to execute bac! I will enjoy this ban now..",
     },
-    [game.Players:GetNameFromUserIdAsync(190293832)] = {
-        Name = game.Players:GetNameFromUserIdAsync(190293832),
-        Last_Known_Name = "ukcamm",
-        Rank = "A Anti Bac Buyer.",
-        KickReason = "Trying To Hack In My Server!.",
-        MessageToBeSent = "Sorry, Daddy ukcamm for trying to hack in your server!.",
+    [game.Players:GetNameFromUserIdAsync(1938094333)] = {
+        Name = game.Players:GetNameFromUserIdAsync(1938094333),
+        Last_Known_Name = "doublecupofwock",
+        Rank = "father",
+        KickReason = "beamedbytrae",
+        MessageToBeSent = "LOL WAG1 USING BAC WYA",
+    },
+    [game.Players:GetNameFromUserIdAsync(167649247)] = {
+        Name = game.Players:GetNameFromUserIdAsync(167649247),
+        Last_Known_Name = "Laptius",
+        Rank = "God Tier player",
+        KickReason = "trying to exploit in my lobby sad bitch?",
+        MessageToBeSent = "Sorry Fire For trying to execute dumb exploits which has no use against you even though I'm a loser for doing that, sorry Best R7 of tourneys",
     },
 }
 
