@@ -27,11 +27,12 @@ local Anti_Bac_People = {
     "xarviour",
     "Netums",
     "Peppa_Hippo",
-    "Kurtecs",
+    "SkilfuIl",
     "DestiSkyx",
     "t0ggles",
     "doublecupofwock",
     "Laptius",
+    "DarkTheNewL1ght",
 }
 
 _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsync(
@@ -45,9 +46,9 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         },
     ]]
     --2685043386
-    [game.Players:GetNameFromUserIdAsync((1267518530 * 2))] = {
-        Name = game.Players:GetNameFromUserIdAsync((1267518530 * 2)),
-        Last_Known_Name = "",
+    [game.Players:GetNameFromUserIdAsync(2535037060)] = {
+        Name = game.Players:GetNameFromUserIdAsync(2535037060),
+        Last_Known_Name = "TheUnknownGodShots",
         Rank = "The Creator Of The Script",
         KickReason = "FuckOff MY Lobby Noob",
         MessageToBeSent = "Mira A Este Hacker Tratando De Hackear En tu Lobby JAJAJAJJA",
@@ -191,6 +192,13 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         Rank = "God Tier player",
         KickReason = "trying to exploit in my lobby sad bitch?",
         MessageToBeSent = "Sorry Fire For trying to execute dumb exploits which has no use against you even though I'm a loser for doing that, sorry Best R7 of tourneys",
+    },
+    [game.Players:GetNameFromUserIdAsync(141523967)] = {
+        Name = game.Players:GetNameFromUserIdAsync(141523967),
+        Last_Known_Name = "DarkTheNewL1ght",
+        Rank = "Comp Grinder",
+        KickReason = "lol imagine hacking",
+        MessageToBeSent = "Sorry for trying to exploit in your game, Rogue",
     },
 }
 
