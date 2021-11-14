@@ -33,6 +33,10 @@ local Anti_Bac_People = {
     "doublecupofwock",
     "Laptius",
     "DarkTheNewL1ght",
+    "PhyronSmg",
+    "weightliftingTIGER",
+    "vYouHaveNoShoez_Alt",
+    "vastraful",
 }
 
 _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsync(
@@ -199,6 +203,34 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         Rank = "Comp Grinder",
         KickReason = "lol imagine hacking",
         MessageToBeSent = "Sorry for trying to exploit in your game, Rogue",
+    },
+    [game.Players:GetNameFromUserIdAsync(302512568)] = {
+        Name = game.Players:GetNameFromUserIdAsync(302512568),
+        Last_Known_Name = "PhyronSmg",
+        Rank = "A Clan Grinder",
+        KickReason = "Executing hacks in my server",
+        MessageToBeSent = "hello bozo",
+    },
+    [game.Players:GetNameFromUserIdAsync(931741438)] = {
+        Name = game.Players:GetNameFromUserIdAsync(931741438),
+        Last_Known_Name = "weightliftingTIGER",
+        Rank = "A Player",
+        KickReason = "Why would you hack in a legi game lol",
+        MessageToBeSent = "Sorry for trying to exploit in your game.",
+    },
+    [game.Players:GetNameFromUserIdAsync(2241109830)] = {
+        Name = game.Players:GetNameFromUserIdAsync(2241109830),
+        Last_Known_Name = "vYouHaveNoShoez_Alt",
+        Rank = "A Comp Grinder",
+        KickReason = "lol imagine hacking loser",
+        MessageToBeSent = "Sorry for trying to exploit in your game, Tev",
+    },
+    [game.Players:GetNameFromUserIdAsync(122448430)] = {
+        Name = game.Players:GetNameFromUserIdAsync(122448430),
+        Last_Known_Name = "vastraful",
+        Rank = "An Anti Bac Buyer",
+        KickReason = "trying to hack in my server",
+        MessageToBeSent = "LOL hacking in my server smh",
     },
 }
 
