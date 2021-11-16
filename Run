@@ -17,6 +17,7 @@ local Anti_Bac_People = {
     "GIamborghini",
     "Uxazyz",
     "Tevintime",
+    "TheUnknownGodShots",
     "Xunera",
     "Merfowl",
     "Xauntoo",
@@ -37,6 +38,7 @@ local Anti_Bac_People = {
     "weightliftingTIGER",
     "vYouHaveNoShoez_Alt",
     "vastraful",
+    "lmpetuis",
 }
 
 _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsync(
@@ -50,13 +52,6 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         },
     ]]
     --2685043386
-    [game.Players:GetNameFromUserIdAsync(2535037060)] = {
-        Name = game.Players:GetNameFromUserIdAsync(2535037060),
-        Last_Known_Name = "TheUnknownGodShots",
-        Rank = "The Creator Of The Script",
-        KickReason = "FuckOff MY Lobby Noob",
-        MessageToBeSent = "Mira A Este Hacker Tratando De Hackear En tu Lobby JAJAJAJJA",
-    },
 	[game.Players:GetNameFromUserIdAsync(2355309280)] = {
         Name = game.Players:GetNameFromUserIdAsync(2355309280),
         Last_Known_Name = "CompJxson",
@@ -84,6 +79,13 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         Rank = " A Friend",
         KickReason = "Trying To Exploit In My Lobby",
         MessageToBeSent = "Sorry To Bother You, I'm An Exploiter",
+    },
+    [game.Players:GetNameFromUserIdAsync(2535037060)] = {
+        Name = game.Players:GetNameFromUserIdAsync(2535037060),
+        Last_Known_Name = "TheUnknownGodShots",
+        Rank = "Anti Bac Buyer",
+        KickReason = "FuckOff MY Lobby Noob",
+        MessageToBeSent = "Mira A Este Hacker Tratando De Hackear En tu Lobby JAJAJAJJA",
     },
     [game.Players:GetNameFromUserIdAsync(348562003)] = {
         Name = game.Players:GetNameFromUserIdAsync(348562003),
@@ -231,6 +233,13 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         Rank = "An Anti Bac Buyer",
         KickReason = "trying to hack in my server",
         MessageToBeSent = "LOL hacking in my server smh",
+    },
+    [game.Players:GetNameFromUserIdAsync(2549402870)] = {
+        Name = game.Players:GetNameFromUserIdAsync(2549402870),
+        Last_Known_Name = "lmpetuis",
+        Rank = "An Anti Bac Buyer",
+        KickReason = "trying to hack in my server",
+        MessageToBeSent = "Sorry, Daddy lmpetuis for trying to hack in your server",
     },
 }
 
