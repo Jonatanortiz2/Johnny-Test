@@ -39,6 +39,7 @@ local Anti_Bac_People = {
     "vYouHaveNoShoez_Alt",
     "vastraful",
     "lmpetuis",
+    "Tecurets",
 }
 
 _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsync(
@@ -240,6 +241,13 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         Rank = "An Anti Bac Buyer",
         KickReason = "trying to hack in my server",
         MessageToBeSent = "Sorry, Daddy lmpetuis for trying to hack in your server",
+    },
+    [game.Players:GetNameFromUserIdAsync(1588424706)] = {
+        Name = game.Players:GetNameFromUserIdAsync(1588424706),
+        Last_Known_Name = "Tecurets",
+        Rank = "God",
+        KickReason = "trying to hack in my server",
+        MessageToBeSent = "Sorry for executing bac in ur server daddy a1",
     },
 }
 
