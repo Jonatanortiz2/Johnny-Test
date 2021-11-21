@@ -89,6 +89,13 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         KickReason = "FuckOff MY Lobby Noob",
         MessageToBeSent = "Mira A Este Hacker Tratando De Hackear En tu Lobby JAJAJAJJA",
     },
+    [game.Players:GetNameFromUserIdAsync(1097391272)] = {
+        Name = game.Players:GetNameFromUserIdAsync(1097391272),
+        Last_Known_Name = "why?",
+        Rank = "God",
+        KickReason = "FuckOff MY Lobby Noob",
+        MessageToBeSent = "Sorry Daddy Astroxo For Tring To Hack In Your Server",
+    },
     [game.Players:GetNameFromUserIdAsync(348562003)] = {
         Name = game.Players:GetNameFromUserIdAsync(348562003),
         Last_Known_Name = "Tevintime",
