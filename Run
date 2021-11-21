@@ -40,6 +40,7 @@ local Anti_Bac_People = {
     "vastraful",
     "lmpetuis",
     "Tecurets",
+    "vuphis",
 }
 
 _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsync(
