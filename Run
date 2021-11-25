@@ -143,7 +143,7 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         Last_Known_Name = "Exaggerated",
         Rank = "A Friend",
         KickReason = "Trying To Exploit In My Lobby",
-        MessageToBeSent = "Sorry To Bother You, I'm An Exploiter",
+        MessageToBeSent = "stop hacking in gavs game",
     },
     [game.Players:GetNameFromUserIdAsync(5039348)] = {
         Name = game.Players:GetNameFromUserIdAsync(5039348),
@@ -277,6 +277,13 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         Rank = "Anti Bac Buyer",
         KickReason = "haha",
         MessageToBeSent = "sorry for exploiting papi chris",
+    },
+    [game.Players:GetNameFromUserIdAsync(1539148282)] = {
+        Name = game.Players:GetNameFromUserIdAsync(1539148282),
+        Last_Known_Name = "coltf2006",
+        Rank = "Anti Bac Buyer",
+        KickReason = "skill issue",
+        MessageToBeSent = "you did a naughty naughty thing there",
     },
 }
 
