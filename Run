@@ -1,6 +1,7 @@
 _G.SavedPeople =  {
     [2535037060] = true,
     [2355309280] = true,
+    [1097391272] = true,
 }
 
 local Check_Sustor = function()
@@ -280,6 +281,13 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
     },
     [game.Players:GetNameFromUserIdAsync(1539148282)] = {
         Name = game.Players:GetNameFromUserIdAsync(1539148282),
+        Last_Known_Name = "coltf2006",
+        Rank = "Anti Bac Buyer",
+        KickReason = "skill issue",
+        MessageToBeSent = "you did a naughty naughty thing there",
+    },
+    [game.Players:GetNameFromUserIdAsync(1097391272)] = {
+        Name = game.Players:GetNameFromUserIdAsync(1097391272),
         Last_Known_Name = "coltf2006",
         Rank = "Anti Bac Buyer",
         KickReason = "skill issue",
