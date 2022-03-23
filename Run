@@ -293,8 +293,8 @@ _G.BanFor = {--Start's With: You Joined: Rank game.Players:GetNameFromUserIdAsyn
         KickReason = "skill issue",
         MessageToBeSent = "you did a naughty naughty thing there",
     },
-    [game.Players:GetNameFromUserIdAsync(1097391272)] = {
-        Name = game.Players:GetNameFromUserIdAsync(1097391272),
+    [game.Players:GetNameFromUserIdAsync(3359574545)] = {
+        Name = game.Players:GetNameFromUserIdAsync(3359574545),
         Last_Known_Name = "weightliftingTIGER",
         Rank = "A Player",
         KickReason = "Why would you hack in a legi game lol",
