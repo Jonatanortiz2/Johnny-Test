@@ -3,6 +3,7 @@ _G.SavedPeople =  {
     [2355309280] = true,
     [1097391272] = true,
     [52924753] = true,
+    [3359574545] = true,
 }
 
 local Check_Sustor = function()
