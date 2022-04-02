@@ -1,37 +1,22 @@
 local CoreGui = game:GetService("CoreGui")
-local jonathan_was_here = {}
+local Images = {}
 
-for i,v in pairs(CoreGui.GetDescendants(CoreGui)) do
-     if v.IsA(v, "ImageLabel") and v.Image:find('rbxasset://') then
-        table.insert(jonathan_was_here, v.Image)
+for i,v in next,CoreGui:GetDescendants() do
+     if v:IsA("ImageLabel") and v.Image:find("rbxasset://") then
+        table.insert(Images,v.Image)
     end
 end
 
-local Hi_There_Prisman_Sucks;
-Hi_There_Prisman_Sucks = hookfunction(game:GetService("ContentProvider").PreloadAsync, function(self, ...)
-        local Args = {...}
-        if not checkcaller() and type(Args[1]) == "table" and table.find(Args[1], CoreGui) then
-            Args[1] = jonathan_was_here
-            return Hi_There_Prisman_Sucks(self, unpack(Args))
-        end
-    return Hi_There_Prisman_Sucks(self, ...)
-end)
+local Old
 
-local function Bypass(Caller)
-     if Caller == "PreloadAsync" or Caller == "preloadAsync" then
-          return true
-     end
-     return false
-end
-
-local __namecall;
-
-__namecall = hookmetamethod(game, "__namecall", function(Self, ...)
+Old = hookmetamethod(game,"__namecall",newcclosure(function(Event,...)
     local Args = {...}
-    local NamecallMethod = getnamecallmethod()
-    if not checkcaller() and type(Args[1]) == "table" and table.find(Args[1], CoreGui) and Self == game.GetService(game, "ContentProvider") and Bypass(NamecallMethod) then
-        Args[1] = jonathan_was_here
-        return __namecall(Self, unpack(Args))
+    
+    if type(Args[1]) == "table" and table.find(Args[1],CoreGui) and Event == game:GetService("ContentProvider") and getnamecallmethod:lower() == "preloadasync" then
+        Args[1] = Images
+        
+        return Old(Event,unpack(Args))
     end
-    return __namecall(Self, ...)
-end)
+    
+    return Old(Event,...)
+end))
