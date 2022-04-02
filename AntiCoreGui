@@ -12,7 +12,7 @@ local Old
 Old = hookmetamethod(game,"__namecall",newcclosure(function(Event,...)
     local Args = {...}
     
-    if type(Args[1]) == "table" and table.find(Args[1],CoreGui) and Event == game:GetService("ContentProvider") and getnamecallmethod:lower() == "preloadasync" then
+    if type(Args[1]) == "table" and table.find(Args[1],CoreGui) and Event == game:GetService("ContentProvider") and string.lower(getnamecallmethod()) == "preloadasync" then
         Args[1] = Images
         
         return Old(Event,unpack(Args))
