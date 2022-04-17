@@ -1,5 +1,4 @@
 function Bypass()
-		print("Bypassed")
 		local CoreGui = game:GetService("CoreGui")
 		local jonathan_was_here = {}
 	
