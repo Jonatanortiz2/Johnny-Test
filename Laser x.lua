@@ -4,5 +4,5 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Jonatanortiz2/Johnny-Test/master/freelaserxpart1.lua"))();
 wait(5.1)
 game:GetService("RunService").Heartbeat:Connect(function()
-	_G.UpdatePosition()
+	pcall(_G.UpdatePosition())
 end)
