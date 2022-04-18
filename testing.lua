@@ -263,6 +263,16 @@ local function MPIEAA_fake_script() -- hbeframe.Main Handler
 			Slide(Input)
 		end
 	end)
+	Value.FocusLost:Connect(function(Enter,Past)
+	    if Enter then
+		Default = tonumber(Value.Text)
+		if Default then continue end
+	        local Position = UDim2.new((math.clamp(Default,Min,Max) - Min) * (ValueFrame.Parent.AbsoluteSize.X / (Max - Min)) / ValueFrame.Parent.AbsoluteSize.X,0,1,0)
+		ValueFrame.Size = Position
+		local SlideValue = math.round(Position.X.Scale * (Max - Min) + Min)
+		Value.Text = SlideValue
+	    end
+	end)
 end
 coroutine.wrap(MPIEAA_fake_script)()
 local function HGRLFB_fake_script() -- SliderMainFrame.Dragging 
@@ -324,6 +334,16 @@ local function XVXWR_fake_script() -- spdframe.Main Handler
 			Slide(Input)
 		end
 	end)
+	Value.FocusLost:Connect(function(Enter,Past)
+	    if Enter then
+		Default = tonumber(Value.Text)
+		if Default then continue end
+	        local Position = UDim2.new((math.clamp(Default,Min,Max) - Min) * (ValueFrame.Parent.AbsoluteSize.X / (Max - Min)) / ValueFrame.Parent.AbsoluteSize.X,0,1,0)
+		ValueFrame.Size = Position
+		local SlideValue = math.round(Position.X.Scale * (Max - Min) + Min)
+		Value.Text = SlideValue
+	    end
+	end)
 end
 coroutine.wrap(XVXWR_fake_script)()
 local function DOBLGL_fake_script() -- jpwframe.Main Handler 
@@ -373,6 +393,16 @@ local function DOBLGL_fake_script() -- jpwframe.Main Handler
 		if Input.UserInputType == Enum.UserInputType.MouseMovement and Dragging then
 			Slide(Input)
 		end
+	end)
+	Value.FocusLost:Connect(function(Enter,Past)
+	    if Enter then
+		Default = tonumber(Value.Text)
+		if Default then continue end
+	        local Position = UDim2.new((math.clamp(Default,Min,Max) - Min) * (ValueFrame.Parent.AbsoluteSize.X / (Max - Min)) / ValueFrame.Parent.AbsoluteSize.X,0,1,0)
+		ValueFrame.Size = Position
+		local SlideValue = math.round(Position.X.Scale * (Max - Min) + Min)
+		Value.Text = SlideValue
+	    end
 	end)
 end
 coroutine.wrap(DOBLGL_fake_script)()
