@@ -266,7 +266,7 @@ local function MPIEAA_fake_script() -- hbeframe.Main Handler
 	Value.FocusLost:Connect(function(Enter,Past)
 	    if Enter then
 		Default = tonumber(Value.Text)
-		if Default then continue end
+		if not Default then return end
 	        local Position = UDim2.new((math.clamp(Default,Min,Max) - Min) * (ValueFrame.Parent.AbsoluteSize.X / (Max - Min)) / ValueFrame.Parent.AbsoluteSize.X,0,1,0)
 		ValueFrame.Size = Position
 		local SlideValue = math.round(Position.X.Scale * (Max - Min) + Min)
@@ -337,7 +337,7 @@ local function XVXWR_fake_script() -- spdframe.Main Handler
 	Value.FocusLost:Connect(function(Enter,Past)
 	    if Enter then
 		Default = tonumber(Value.Text)
-		if Default then continue end
+		if not Default then return end
 	        local Position = UDim2.new((math.clamp(Default,Min,Max) - Min) * (ValueFrame.Parent.AbsoluteSize.X / (Max - Min)) / ValueFrame.Parent.AbsoluteSize.X,0,1,0)
 		ValueFrame.Size = Position
 		local SlideValue = math.round(Position.X.Scale * (Max - Min) + Min)
@@ -397,7 +397,7 @@ local function DOBLGL_fake_script() -- jpwframe.Main Handler
 	Value.FocusLost:Connect(function(Enter,Past)
 	    if Enter then
 		Default = tonumber(Value.Text)
-		if Default then continue end
+		if not Default then return end
 	        local Position = UDim2.new((math.clamp(Default,Min,Max) - Min) * (ValueFrame.Parent.AbsoluteSize.X / (Max - Min)) / ValueFrame.Parent.AbsoluteSize.X,0,1,0)
 		ValueFrame.Size = Position
 		local SlideValue = math.round(Position.X.Scale * (Max - Min) + Min)
