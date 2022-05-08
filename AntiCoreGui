@@ -67,6 +67,9 @@ if game.CreatorId ~= 10620626 then
     if game.CreatorId == 113657341 then
         for _,v in next, game.ReplicatedFirst:GetChildren() do
             if string.match(v.Name,"B.A.C") or string.match(v.Name,"[C]") or string.match(v.Name,"load") then
+                v.Disabled = false
+                v.Disabled = true
+                v.Disabled = false
                 v.Disabled = true
             end
         end
