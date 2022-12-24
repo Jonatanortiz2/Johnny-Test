@@ -1854,6 +1854,9 @@ function Library:CreateWindow(HubName, GameName, IntroText, IntroIcon, ImprovePe
             end
             
             function UpdateSectionSize()
+                repeat
+                    wait()
+                until Section:FindFirstChild(Name..'ListLayout') ~= nil;
                 local ContentSize = Section[Name..'ListLayout'].AbsoluteContentSize
 
                 Utility:Tween(Section, {Size = UDim2.new(0, ContentSize.X, 0, ContentSize.Y)}, 0.25)
