@@ -2119,7 +2119,7 @@ function Library:CreateWindow(HubName, GameName, IntroText, IntroIcon, ImprovePe
                             BackgroundColor3 = Theme.PrimaryElementColor,
                             BackgroundTransparency = 1,
                             Position = UDim2.new(0, 374, 0, 3),
-                            Size = UDim2.new(0, 25, 0, 25),
+                            Size = UDim2.new(0, 12, 0, 12),
                             Image = 'rbxassetid://4921682252',
                             ImageColor3 = Theme.SecondaryTextColor,
                             ImageRectOffset = Vector2.new(0, 0),
