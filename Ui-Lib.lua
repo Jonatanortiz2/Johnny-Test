@@ -2118,12 +2118,14 @@ function Library:CreateWindow(HubName, GameName, IntroText, IntroIcon, ImprovePe
                             Name = 'ButtonImage',
                             BackgroundColor3 = Theme.PrimaryElementColor,
                             BackgroundTransparency = 1,
-                            Position = UDim2.new(0, 374, 0, 3),
+                            Position = UDim2.new(0, 380, 0, 10),
                             Size = UDim2.new(0, 12, 0, 12),
                             Image = 'rbxassetid://4921682252',
                             ImageColor3 = Theme.SecondaryTextColor,
                             ImageRectOffset = Vector2.new(0, 0),
-                            ImageRectSize = Vector2.new(0, 0)
+                            ImageRectSize = Vector2.new(0, 0),
+                            SliceScale = 1,
+                            ScaleType = "Fit"
                         })
                     })
                 })
