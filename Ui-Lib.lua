@@ -2122,8 +2122,8 @@ function Library:CreateWindow(HubName, GameName, IntroText, IntroIcon, ImprovePe
                             Size = UDim2.new(0, 25, 0, 25),
                             Image = 'rbxassetid://4921682252',
                             ImageColor3 = Theme.SecondaryTextColor,
-                            ImageRectOffset = Vector2.new(564, 364),
-                            ImageRectSize = Vector2.new(36, 36)
+                            ImageRectOffset = Vector2.new(0, 0),
+                            ImageRectSize = Vector2.new(0, 0)
                         })
                     })
                 })
