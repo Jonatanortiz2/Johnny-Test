@@ -73,14 +73,14 @@ if game.CreatorId ~= 10620626 then
             return t(...)
         end))
         wait(1)
-        getgenv().HasAuthenticatedAntiCheat = false;
+        getgenv().HasAuthenticatedAntiCheat = true;
     else
         Others_Bypass()
         wait(1)
-        getgenv().HasAuthenticatedAntiCheat = false;
+        getgenv().HasAuthenticatedAntiCheat = true;
     end
 else
     Aimblox_Bypass()
     wait(1)
-    getgenv().HasAuthenticatedAntiCheat = false;
+    getgenv().HasAuthenticatedAntiCheat = true;
 end
