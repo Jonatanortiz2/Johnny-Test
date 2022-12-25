@@ -1852,9 +1852,10 @@ function Library:CreateWindow(HubName, GameName, IntroText, IntroIcon, ImprovePe
             end
             
             function UpdateSectionSize()
+        		if Section:FindFirstChild(Name..'ListLayout') then
                 local ContentSize = Section[Name..'ListLayout'].AbsoluteContentSize
-
                 Utility:Tween(Section, {Size = UDim2.new(0, ContentSize.X, 0, ContentSize.Y)}, 0.25)
+          		end
             end
 
             for _, Item in next, Section:GetChildren() do
@@ -2310,8 +2311,8 @@ function Library:CreateWindow(HubName, GameName, IntroText, IntroIcon, ImprovePe
                 end
 
                 if DefaultValue ~= nil then
-                    SliderNumber.Text = tostring(DefaultValue and math.floor((DefaultValue / MaximumValue) * (MaximumValue - MinimumValue) + MinimumValue))
-                    Utility:Tween(SliderTrail, {Size = UDim2.new((DefaultValue) / MaximumValue, 0, 0, 10)}, 0.25)  
+                    SliderNumber.Text = math.floor(DefaultValue)
+                    Utility:Tween(SliderTrail, {Size = UDim2.new((DefaultValue - MinimumValue) / (MaximumValue - MinimumValue), 0, 0, 10)}, 0.25)  
                     task.spawn(function()
                         Callback(CurrentValue)
                     end)
@@ -2691,7 +2692,7 @@ function Library:CreateWindow(HubName, GameName, IntroText, IntroIcon, ImprovePe
                     Name = Name..'ToggleHolder',
                     Parent = Section,
                     BackgroundColor3 = Theme.PrimaryElementColor,
-                    Size = UDim2.new(0, 410, 0, 40)
+                    Size = UDim2.new(0, 410, 0, 40),
                 }, {
                     Utility:Create('UICorner', {
                         CornerRadius = UDim.new(0, 5),
@@ -2748,6 +2749,25 @@ function Library:CreateWindow(HubName, GameName, IntroText, IntroIcon, ImprovePe
                             ScaleType = Enum.ScaleType.Slice,
                             SliceCenter = Rect.new(100, 100, 100, 100),
                             SliceScale = 0.120,
+                        }, {
+                            Utility:Create('ImageLabel', {
+                                Name = Name..'ToggleCircleShadow',
+                                BackgroundColor3 = Theme.PrimaryElementColor,
+                                BackgroundTransparency = 1,
+                                Position = UDim2.new(0, 0, 0, 0),
+                                Size = UDim2.new(1, 2, 1, 2),
+                                Image = 'rbxassetid://3602733521',
+                                ScaleType = Enum.ScaleType.Stretch,
+                                SliceCenter = Rect.new(0, 0, 0, 0),
+                                SliceScale = 1,
+                        		ImageColor3 = Color3.fromRGB(20,20,20),
+                        		ImageTransparency = 0.6,
+                            },{
+                        		Utility:Create('UICorner', {
+                                    CornerRadius = UDim.new(0, 25),
+                                    Name = Name..'ToggleCorner'
+                                })
+                        	})
                         })
                     }),
                     Utility:Create('TextButton', {
@@ -2924,7 +2944,7 @@ function Library:CreateWindow(HubName, GameName, IntroText, IntroIcon, ImprovePe
                         BackgroundTransparency = 1,
                         BorderSizePixel = 0,
                         Position = UDim2.new(0, 377, 0, 8),
-                        Rotation = 270,
+                        Rotation = 90,
                         Size = UDim2.new(0, 25, 0, 25),
                         Image = 'rbxassetid://3926305904',
                         ImageColor3 = Theme.SecondaryTextColor,
@@ -3051,7 +3071,7 @@ function Library:CreateWindow(HubName, GameName, IntroText, IntroIcon, ImprovePe
                             Opened = false
                             Utility:Tween(DropdownFiller, {Size = UDim2.new(0, 410, 0, 0)}, 0.25)
                             Utility:Tween(DropList, {Size = UDim2.new(0, 410, 0, 0)}, 0.25)
-                            Utility:Tween(DropdownIcon, {Rotation = 270}, 0.25)
+                            Utility:Tween(DropdownIcon, {Rotation = 90}, 0.25)
                             if #List <= 5 then
                                 Utility:Tween(Tab, {CanvasSize = Tab.CanvasSize - UDim2.new(0, 0, 0, DropListLayout.AbsoluteContentSize.Y)}, 0.25)
                                 Utility:Tween(Section, {Size = Section.Size - UDim2.new(0, 0, 0, DropListLayout.AbsoluteContentSize.Y)}, 0.25)
@@ -3082,7 +3102,7 @@ function Library:CreateWindow(HubName, GameName, IntroText, IntroIcon, ImprovePe
                                 Utility:Tween(Tab, {CanvasSize = Tab.CanvasSize + UDim2.new(0, 0, 0, 150)}, 0.25)
                                 Utility:Tween(Section, {Size = Section.Size + UDim2.new(0, 0, 0, 150)}, 0.25)
                             end
-                            Utility:Tween(DropdownIcon, {Rotation = 90}, 0.25)
+                            Utility:Tween(DropdownIcon, {Rotation = 270}, 0.25)
                             Debounce = true
                             task.wait(DebounceAmount)
                             Debounce = false
@@ -3163,7 +3183,7 @@ function Library:CreateWindow(HubName, GameName, IntroText, IntroIcon, ImprovePe
                         end
                         Utility:Tween(DropdownFiller, {Size = UDim2.new(0, 410, 0, 0)}, 0.25)
                         Utility:Tween(DropList, {Size = UDim2.new(0, 410, 0, 0)}, 0.25)
-                        Utility:Tween(DropdownIcon, {Rotation = 270}, 0.25)
+                        Utility:Tween(DropdownIcon, {Rotation = 90}, 0.25)
                         task.wait(0.25)
                         DropList.Visible = false
                         DropdownFiller.Visible = false
@@ -3201,7 +3221,7 @@ function Library:CreateWindow(HubName, GameName, IntroText, IntroIcon, ImprovePe
                         Opened = false
                         Utility:Tween(DropdownFiller, {Size = UDim2.new(0, 410, 0, 0)}, 0.25)
                         Utility:Tween(DropList, {Size = UDim2.new(0, 410, 0, 0)}, 0.25)
-                        Utility:Tween(DropdownIcon, {Rotation = 270}, 0.25)
+                        Utility:Tween(DropdownIcon, {Rotation = 90}, 0.25)
                         if #List <= 5 then
                             Utility:Tween(Tab, {CanvasSize = Tab.CanvasSize - UDim2.new(0, 0, 0, DropListLayout.AbsoluteContentSize.Y)}, 0.25)
                             Utility:Tween(Section, {Size = Section.Size - UDim2.new(0, 0, 0, DropListLayout.AbsoluteContentSize.Y)}, 0.25)
@@ -3224,7 +3244,7 @@ function Library:CreateWindow(HubName, GameName, IntroText, IntroIcon, ImprovePe
                         Opened = false
                         Utility:Tween(DropdownFiller, {Size = UDim2.new(0, 410, 0, 0)}, 0.25)
                         Utility:Tween(DropList, {Size = UDim2.new(0, 410, 0, 0)}, 0.25)
-                        Utility:Tween(DropdownIcon, {Rotation = 270}, 0.25)
+                        Utility:Tween(DropdownIcon, {Rotation = 90}, 0.25)
                         if #List <= 5 then
                             Utility:Tween(Tab, {CanvasSize = Tab.CanvasSize - UDim2.new(0, 0, 0, DropListLayout.AbsoluteContentSize.Y + 150)}, 0.25)
                             Utility:Tween(Section, {Size = Section.Size - UDim2.new(0, 0, 0, DropListLayout.AbsoluteContentSize.Y + 150)}, 0.25)
@@ -3320,7 +3340,7 @@ function Library:CreateWindow(HubName, GameName, IntroText, IntroIcon, ImprovePe
                             end
                             Utility:Tween(DropdownFiller, {Size = UDim2.new(0, 410, 0, 0)}, 0.25)
                             Utility:Tween(DropList, {Size = UDim2.new(0, 410, 0, 0)}, 0.25)
-                            Utility:Tween(DropdownIcon, {Rotation = 270}, 0.25)
+                            Utility:Tween(DropdownIcon, {Rotation = 90}, 0.25)
                             task.wait(0.25)
                             DropList.Visible = false
                             DropdownFiller.Visible = false
