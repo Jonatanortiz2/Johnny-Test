@@ -1796,98 +1796,14 @@ function Library:CreateWindow(HubName, GameName, IntroText, IntroIcon, ImprovePe
 
         local Sections = {}
 
-        function Sections:CreateSection(Name)
-            local Name = Name or 'Section'
-            
-            Utility:Create('Frame', {
-                Name = Name..'Section',
-                Parent = Tab,
-                BackgroundColor3 = Theme.BackgroundColor,
-                BorderSizePixel = 0,
-                Size = UDim2.new(0, 410, 0, 30),
-            }, {
-                Utility:Create('TextLabel', {
-                    Name = Name..'SectionLabel',
-                    BackgroundColor3 = Theme.BackgroundColor,
-                    BackgroundTransparency = 1,
-                    BorderSizePixel = 0,
-                    Size = UDim2.new(0, 410, 0, 30),
-                    Font = Enum.Font.Gotham,
-                    Text = Name,
-                    TextColor3 = Theme.SecondaryTextColor,
-                    TextSize = 14,
-                    TextXAlignment = Enum.TextXAlignment.Left
-                }, {
-                    Utility:Create('UIPadding', {
-                        Name = Name..'SectionLabelPadding',
-                        PaddingLeft = UDim.new(0, 3)
-                    })
-                }),
-                Utility:Create('UICorner', {
-                    Name = 'SectionCorner',
-                    CornerRadius = UDim.new(0, 5)
-                }),
-                Utility:Create('UIListLayout', {
-                    Name = Name..'ListLayout',
-                    HorizontalAlignment = Enum.HorizontalAlignment.Center,
-                    SortOrder = Enum.SortOrder.LayoutOrder,
-                    Padding = UDim.new(0, 6)
-                })
-            })
-
-            local Section = Tab[Name..'Section']
-
-            if not ImprovePerformance then
-                task.spawn(function()
-                    while task.wait() do
-                        if ChangeTheme then
-                            if not BreakAllLoops then
-                                Utility:Tween(Section, {BackgroundColor3 = Theme.BackgroundColor}, 0.25)
-                                Utility:Tween(Section[Name..'SectionLabel'], {BackgroundColor3 = Theme.BackgroundColor}, 0.25)
-                                Utility:Tween(Section[Name..'SectionLabel'], {TextColor3 = Theme.SecondaryTextColor}, 0.25)
-                            else
-                                break
-                            end
-                        end
-                    end
-                end)
-            end
-            
-            function UpdateSectionSize()
-                repeat
-                    wait()
-                until Section:FindFirstChild(Name..'ListLayout') ~= nil;
-                local ContentSize = Section[Name..'ListLayout'].AbsoluteContentSize
-
-                Utility:Tween(Section, {Size = UDim2.new(0, ContentSize.X, 0, ContentSize.Y)}, 0.25)
-            end
-
-            for _, Item in next, Section:GetChildren() do
-                RunService.RenderStepped:Connect(function()
-                    if Item:IsA('Frame') then
-                        Item.Changed:Connect(function(Property)
-                            if Property == 'Size' then
-                                UpdateSectionSize()
-                            end
-                        end)
-                    end
-                end)
-            end
-
-            UpdateSectionSize()
-            Section.ChildAdded:Connect(UpdateSectionSize)
-            Section.ChildRemoved:Connect(UpdateSectionSize)
-
-            local Elements = {}
-            
-            function Elements:CreateLabel(LabelText)
+        function Elements:CreateLabel(LabelText)
                 local LabelText = LabelText or 'Label'
                 local LabelFunctions = {}
-
+            
                 Utility:Create('Frame', {
                     Name = LabelText..'LabelHolder',
                     Parent = Section,
-                    BackgroundColor3 = Theme.OtherElementColor,
+                    BackgroundColor3 = Theme.BackgroundColor,
                     Size = UDim2.new(0, 410, 0, 30)
                 }, {
                     Utility:Create('UICorner', {
@@ -1899,16 +1815,17 @@ function Library:CreateWindow(HubName, GameName, IntroText, IntroIcon, ImprovePe
                         ApplyStrokeMode = 'Contextual',
                         Color = Theme.UIStrokeColor,
                         LineJoinMode = 'Round',
+                      	Transparency = 1,
                         Thickness = 1
                     }),
                     Utility:Create('TextLabel', {
                         Name = LabelText..'Label',
-                        BackgroundColor3 = Theme.OtherElementColor,
+                        BackgroundColor3 = Theme.BackgroundColor,
                         BackgroundTransparency = 1,
                         Size = UDim2.new(0, 410, 0, 30),
                         Font = Enum.Font.Gotham,
-                        TextColor3 = Theme.PrimaryTextColor,
-                        TextSize = 16,
+                        TextColor3 = Theme.SecondaryTextColor,
+                        TextSize = 14,
                         Text = LabelText,
                         TextXAlignment = Enum.TextXAlignment.Left
                     }, {
@@ -1922,18 +1839,18 @@ function Library:CreateWindow(HubName, GameName, IntroText, IntroIcon, ImprovePe
                         })
                     })
                 })
-
+            
                 UpdateSectionSize()
-
+            
                 if not ImprovePerformance then
                     task.spawn(function()
                         while task.wait() do
                             if ChangeTheme then
                                 if not BreakAllLoops then
-                                    Utility:Tween(Section[LabelText..'LabelHolder'], {BackgroundColor3 = Theme.OtherElementColor}, 0.25)
+                                    Utility:Tween(Section[LabelText..'LabelHolder'], {BackgroundColor3 = Theme.BackgroundColor}, 0.25)
                                     Utility:Tween(Section[LabelText..'LabelHolder'][LabelText..'LabelStroke'], {Color = Theme.UIStrokeColor}, 0.25)
-                                    Utility:Tween(Section[LabelText..'LabelHolder'][LabelText..'Label'], {BackgroundColor3 = Theme.OtherElementColor}, 0.25)
-                                    Utility:Tween(Section[LabelText..'LabelHolder'][LabelText..'Label'], {TextColor3 = Theme.PrimaryTextColor}, 0.25)
+                                    Utility:Tween(Section[LabelText..'LabelHolder'][LabelText..'Label'], {BackgroundColor3 = Theme.BackgroundColor}, 0.25)
+                                    Utility:Tween(Section[LabelText..'LabelHolder'][LabelText..'Label'], {TextColor3 = Theme.SecondaryTextColor}, 0.25)
                                 else
                                     break
                                 end
@@ -1941,7 +1858,7 @@ function Library:CreateWindow(HubName, GameName, IntroText, IntroIcon, ImprovePe
                         end
                     end)
                 end
-
+            
                 function LabelFunctions:UpdateLabel(NewText)
                     Section[LabelText..'LabelHolder'][LabelText..'Label'].Text = NewText
                 end
