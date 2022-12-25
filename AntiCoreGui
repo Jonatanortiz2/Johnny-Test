@@ -1,4 +1,4 @@
-if getgenv().Services.CreatorId == 113657341 then
+if game.CreatorId == 113657341 then
     local t;
     t = hookfunction(getrenv().task.spawn, newcclosure(function(...)
         if tostring(getcallingscript()):find("") then
