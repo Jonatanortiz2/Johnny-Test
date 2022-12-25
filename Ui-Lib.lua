@@ -1704,8 +1704,6 @@ function Library:CreateWindow(HubName, GameName, IntroText, IntroIcon, ImprovePe
                 Position = UDim2.new(0, 10, 0, 5),
                 Size = UDim2.new(0, 20, 0, 20),
                 Image = Icon,
-                ImageRectOffset = RectOffset,
-                ImageRectSize = RectSize
             }),
             Utility:Create('TextLabel', {
                 Name = TabName..'ButtonText',
