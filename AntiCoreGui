@@ -6,6 +6,6 @@ if getgenv().Services.CreatorId == 113657341 then
         end
         return t(...)
     end))
-    wait(1)
-    getgenv().HasAuthenticatedAntiCheat = true;
 end
+wait(1)
+getgenv().HasAuthenticatedAntiCheat = true;
