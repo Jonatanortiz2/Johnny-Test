@@ -1,86 +1,11 @@
-local Aimblox_Bypass = function()
-    local CoreGui = game:GetService("CoreGui")
-    local Images = {}
-    
-    for i,v in next,CoreGui:GetDescendants() do
-         if v:IsA("ImageLabel") and v.Image:find("rbxasset://") then
-            table.insert(Images,v.Image)
+if getgenv().Services.CreatorId == 113657341 then
+    local t;
+    t = hookfunction(getrenv().task.spawn, newcclosure(function(...)
+        if tostring(getcallingscript()):find("") then
+            return
         end
-    end
-    
-    local Old
-    
-    Old = hookmetamethod(game,"__namecall",newcclosure(function(Event,...)
-        local Args = {...}
-        
-        if type(Args[1]) == "table" and table.find(Args[1],CoreGui) and Event == game:GetService("ContentProvider") and string.lower(getnamecallmethod()) == "preloadasync" then
-            Args[1] = Images
-            
-            return Old(Event,unpack(Args))
-        end
-        
-        return Old(Event,...)
+        return t(...)
     end))
-end
-
-local Others_Bypass = function()
-    local CoreGui = game:GetService("CoreGui")
-    local jonathan_was_here = {}
-    
-    for i,v in pairs(CoreGui.GetDescendants(CoreGui)) do
-         if v.IsA(v, "ImageLabel") and v.Image:find('rbxasset://') then
-            table.insert(jonathan_was_here, v.Image)
-        end
-    end
-    
-    local Hi_There_Prisman_Sucks;
-    Hi_There_Prisman_Sucks = hookfunction(game:GetService("ContentProvider").PreloadAsync, function(self, ...)
-            local Args = {...}
-            if not checkcaller() and type(Args[1]) == "table" and table.find(Args[1], CoreGui) then
-                Args[1] = jonathan_was_here
-                return Hi_There_Prisman_Sucks(self, unpack(Args))
-            end
-        return Hi_There_Prisman_Sucks(self, ...)
-    end)
-    
-    local function Bypass(Caller)
-         if Caller == "PreloadAsync" or Caller == "preloadAsync" then
-              return true
-         end
-         return false
-    end
-    
-    local __namecall;
-    
-    __namecall = hookmetamethod(game, "__namecall", function(Self, ...)
-        local Args = {...}
-        local NamecallMethod = getnamecallmethod()
-        if not checkcaller() and type(Args[1]) == "table" and table.find(Args[1], CoreGui) and Self == game.GetService(game, "ContentProvider") and Bypass(NamecallMethod) then
-            Args[1] = jonathan_was_here
-            return __namecall(Self, unpack(Args))
-        end
-        return __namecall(Self, ...)
-    end)
-end
-
-if game.CreatorId ~= 10620626 then
-    if game.CreatorId == 113657341 then
-        local t;
-        t = hookfunction(getrenv().task.spawn, newcclosure(function(...)
-            if tostring(getcallingscript()):find("") then
-                return
-            end
-            return t(...)
-        end))
-        wait(1)
-        getgenv().HasAuthenticatedAntiCheat = true;
-    else
-        Others_Bypass()
-        wait(1)
-        getgenv().HasAuthenticatedAntiCheat = true;
-    end
-else
-    Aimblox_Bypass()
     wait(1)
     getgenv().HasAuthenticatedAntiCheat = true;
 end
