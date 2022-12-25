@@ -1828,7 +1828,7 @@ function Library:CreateWindow(HubName, GameName, IntroText, IntroIcon, ImprovePe
                         TextSize = 14,
                         Text = LabelText,
                         TextXAlignment = Enum.TextXAlignment.Left
-                    }, {
+                    }), {
                         Utility:Create('UICorner', {
                             CornerRadius = UDim.new(0, 5),
                             Name = LabelText..'LabelCorner'
