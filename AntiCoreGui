@@ -1,11 +1,1 @@
-if game.CreatorId == 113657341 then
-    local t;
-    t = hookfunction(getrenv().task.spawn, newcclosure(function(...)
-        if tostring(getcallingscript()):find("") then
-            return
-        end
-        return t(...)
-    end))
-end
-wait(1)
 getgenv().HasAuthenticatedAntiCheat = true;
