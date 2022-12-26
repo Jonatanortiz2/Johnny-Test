@@ -1,5 +1,6 @@
 # Jonathan's Ui Documentation
 
+
 ## Getting My Library
 ```lua
 local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/Jonatanortiz2/Johnny-Test/master/Ui-Lib.lua'))();
@@ -18,12 +19,13 @@ local Window = Library:CreateWindow('Hub Name', false)
 
 ## Creating Tabs
 ```lua
-local Tab = Window:CreateTab('Tab', true, 'rbxassetid://3926305904', Vector2.new(484, 44), Vector2.new(36, 36))
+local Tab = Window:CreateTab('Tab', true, 'rbxassetid://4483362458', Vector2.new(0, 0), Vector2.new(0, 0))
 ```
 
 ```text
 1.) <String> Name of the tab.
 2.) <Bool> Tab visibility.
+    2).a When the GUI loads, just the enabled tab will be visible if all other tabs are disabled.
 3.) <String> Tab Image URL.
 4.) <Vector2> Tab Image RectOffset.
 5.) <Vector2> Tab Image RectSize.
@@ -89,7 +91,7 @@ end)
 
 ## Creating Sliders
 ```lua
-local Slider = Section:CreateSlider('Slider', 1, 100, 50, Color3.fromRGB(0, 125, 255), function(Value)
+local Slider = Section:CreateSlider('Slider', 1, 100, 50, Color3.fromRGB(0, 146, 214), function(Value)
     print(Value)
 end)
 ```
@@ -104,7 +106,7 @@ end)
 
 ## Creating Textboxes
 ```lua
-local Textbox = Section:CreateTextbox('Textbox', 'Input', function(Value)
+local Textbox = Section:CreateTextbox('Textbox', 'TextGoesHere', function(Value)
     print(Value)
 end)
 ```
@@ -116,19 +118,20 @@ end)
 
 ## Creating Keybinds
 ```lua
-local Keybind = Section:CreateKeybind('Keybind', 'F', function()
+local Keybind = Section:CreateKeybind('Keybind', 'A', function()
     print('Key Pressed')
 end)
 ```
 ```text
 1.) <String> Name of the keybind.
-2.) <String> Default KeyCode, find all KeyCodes here: https://developer.roblox.com/en-us/api-reference/enum/KeyCode
+2.) <String> Default KeyCode.
+    2).a Find all KeyCodes here: https://developer.roblox.com/en-us/api-reference/enum/KeyCode
 3.) <Function> Function / Callback of the keybind.
 ```
 
 ## Creating Toggles
 ```lua
-local Toggle = Section:CreateToggle('Toggle', true, Color3.fromRGB(0, 125, 255), 0.25, function(Value)
+local Toggle = Section:CreateToggle('Toggle', true, Color3.fromRGB(0, 146, 214), 0.25, function(Value)
     print(Value)
 end)
 ```
@@ -142,21 +145,21 @@ end)
 
 ## Creating Dropdowns
 ```lua
-local Dropdown = Section:CreateDropdown('Dropdown', {'1', '2', '3', '4', '5'}, '1', 0.25, function(Value)
+local Dropdown = Section:CreateDropdown('Dropdown', {'Bread', 'Kitten', 'ROBLOX', 'JohnDoe', '5'}, 'Kitten', 0.25, function(Value)
     print(Value)
 end)
 ```
 ```text
 1.) <String> Name of the dropdown.
 2.) <Table> Dropdown options.
-3.) <Any> Default Option of the dropdown, put it as nil for none. if it is not nil, it should be the same type as the item in the table, for example, the dropdown table is: {'1'}, so the Default should be '1', both strings.
+3.) <Any> Default Option of the dropdown, put it as nil for none. if it is not nil, it should be the same type as the item in the table, for example, the dropdown table is: {'Kitten'}, so the Default should be 'Kitten', both strings.
 4.) <Number> Debounce of the dropdown opening and closing.
 5.) <Function> Function / Callback of the dropdown.
 ```
 
 ## Updating Dropdowns
 ```lua
-Dropdown:UpdateDropdown({'1', '2', '2'})
+Dropdown:UpdateDropdown({'Filter', 'Spoon', 'Fork'})
 ```
 ```text
 1.) <Table> New list of dropdown options.
@@ -164,7 +167,7 @@ Dropdown:UpdateDropdown({'1', '2', '2'})
 
 ## Creating Colorpickers
 ```lua
-local Colorpicker = Section:CreateColorpicker('Colorpicker', Color3.fromRGB(0, 125, 255), 0.25, function(Value)
+local Colorpicker = Section:CreateColorpicker('Colorpicker', Color3.fromRGB(0, 146, 214), 0.25, function(Value)
     print(Value)
 end)
 ```
@@ -177,22 +180,22 @@ end)
 
 ## Creating Images
 ```lua
-local Image = Section:CreateImage('Name', 'rbxassetid://10618928818', UDim2.new(0, 200, 0, 200))
+local Image = Section:CreateImage('Name', 'rbxassetid://11912754017', UDim2.new(0, 250, 0, 250))
 ```
 ```text
 Show an image.
 1.) <String> Name of the Image.
-2.) <String> Asset ID, Upload image at https://www.roblox.com/develop?View=13, Go in roblox studio, toolbox and go to my images and copy the asset id of the image you uploaded.
+2.) <String> Asset ID.
 3.) <UDim2> The size that the image should be.
 ```
 
 ## Updating Images
 ```lua
-Image:UpdateImage('rbxassetid://10580575081', UDim2.new(0, 200, 0, 200))
+Image:UpdateImage('rbxassetid://11912754017', UDim2.new(0, 200, 0, 200))
 ```
 ```text
-1.) <String> New Asset ID, Upload image at https://www.roblox.com/develop?View=13, Go in roblox studio, toolbox and go to my images and copy the asset id of the image you uploaded.
-2.) <UDim2> The size that the image should be.
+1.) <String> New Asset ID.
+2.) <UDim2> The size that the image should be changed to.
 ```
 
 ## Creating Notifications
