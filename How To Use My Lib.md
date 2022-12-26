@@ -79,7 +79,7 @@ Paragraph:UpdateParagraph('New Title', 'New Text')
 
 ## Creating Buttons
 ```lua
-local Button = Section:CreateButton('Button', function()
+Section:CreateButton('Button', function()
     print('Button Pressed')
 end)
 ```
@@ -91,7 +91,7 @@ end)
 
 ## Creating Sliders
 ```lua
-local Slider = Section:CreateSlider('Slider', 1, 100, 50, Color3.fromRGB(0, 146, 214), function(Value)
+Section:CreateSlider('Slider', 1, 100, 50, Color3.fromRGB(0, 146, 214), function(Value)
     print(Value)
 end)
 ```
@@ -106,7 +106,7 @@ end)
 
 ## Creating Textboxes
 ```lua
-local Textbox = Section:CreateTextbox('Textbox', 'TextGoesHere', function(Value)
+Section:CreateTextbox('Textbox', 'TextGoesHere', function(Value)
     print(Value)
 end)
 ```
@@ -118,7 +118,7 @@ end)
 
 ## Creating Keybinds
 ```lua
-local Keybind = Section:CreateKeybind('Keybind', 'A', function()
+Section:CreateKeybind('Keybind', 'A', function()
     print('Key Pressed')
 end)
 ```
@@ -131,7 +131,7 @@ end)
 
 ## Creating Toggles
 ```lua
-local Toggle = Section:CreateToggle('Toggle', true, Color3.fromRGB(0, 146, 214), 0.25, function(Value)
+Section:CreateToggle('Toggle', true, Color3.fromRGB(0, 146, 214), 0.25, function(Value)
     print(Value)
 end)
 ```
@@ -145,14 +145,14 @@ end)
 
 ## Creating Dropdowns
 ```lua
-local Dropdown = Section:CreateDropdown('Dropdown', {'Bread', 'Kitten', 'ROBLOX', 'JohnDoe', '5'}, 'Kitten', 0.25, function(Value)
+Section:CreateDropdown('Dropdown', {'Bread', 'Kitten', 'ROBLOX', 'JohnDoe', '5'}, 'Kitten', 0.25, function(Value)
     print(Value)
 end)
 ```
 ```text
 1.) <String> Name of the dropdown.
 2.) <Table> Dropdown options.
-3.) <Any> Default Option of the dropdown, put it as nil for none. if it is not nil, it should be the same type as the item in the table, for example, the dropdown table is: {'Kitten'}, so the Default should be 'Kitten', both strings.
+3.) <Any> Put nil for none in the dropdown's default option. If it is not zero, it must be of the same type as the table's item; for instance, the drop-down menu is {'Kitten'}, so the Default should be 'Kitten', both strings.
 4.) <Number> Debounce of the dropdown opening and closing.
 5.) <Function> Function / Callback of the dropdown.
 ```
@@ -199,7 +199,7 @@ Image:UpdateImage('rbxassetid://11912754017', UDim2.new(0, 200, 0, 200))
 ```
 
 ## Creating Notifications
-Creates a Notification on the side of the screen, with different types.
+creates a variety of Notifications on the side of the screen.
 ```lua
 Library:CreateNotification('Notification Title', 'Notification Text', 5)
 ```
@@ -210,14 +210,14 @@ Library:CreateNotification('Notification Title', 'Notification Text', 5)
 ```
 
 ## Creating Prompts
-Creates a Notification on the inside of the UI, with different types.
+creates a Notification with several types inside the UI.
 
 # Just Text
 ```lua
-Library:CreatePrompt('Text', 'Prompt Title', 'Prompt Text', 'Alright')
+Library:CreatePrompt('Text', 'Prompt Title', 'Prompt Text', 'Okay')
 ```
 ```text
-1.) <String> The type of prompt, 'Text', for just text and no callbacks.
+1.) <String> The type of prompt, 'Text'. Nothing Special
 2.) <String> The title of the prompt.
 3.) <String> The text of the prompt.
 4.) <String> The name of the prompt button, button has no callback.
@@ -226,14 +226,14 @@ Library:CreatePrompt('Text', 'Prompt Title', 'Prompt Text', 'Alright')
 # One Button
 ```lua
 Library:CreatePrompt('OneButton', 'Prompt Title', 'Prompt Text', {
-    'Alright',
+    'Okay',
     function()
         print('Prompt Button Pressed')
     end
 })
 ```
 ```text
-1.) <String> The type of prompt, 'OneButton', for text and one button with a callback.
+1.) <String> The type of prompt => 'OneButton'. Button's text and callback.
 2.) <String> The title of the prompt.
 3.) <String> The text of the prompt.
 4.) <Table> {
@@ -244,7 +244,7 @@ Library:CreatePrompt('OneButton', 'Prompt Title', 'Prompt Text', {
 
 # Two Buttons
 ```lua
-local TwoButtonPromptButton = UIFunctions:CreateButton('Create Two Button Prompt', function()
+UIFunctions:CreateButton('Create Two Button Prompt', function()
     Library:CreatePrompt('TwoButton', 'Prompt Title', 'Prompt Text', {
         'Button 1',
         function()
@@ -274,20 +274,15 @@ end)
 Library:SetTransparency(0.5, true)
 ```
 ```text
-Updates the background transparency of all the Elements in the UI.
 1.) <Number> The new background transparency of the UI.
-2.) <Bool> If true, the background transparency of notifications will be changed, if false, the won't.
+2.) <Bool> If true, alerts' background transparency will change; if false, it won't.
 ```
-
-## Config System
-For a full example, look in Example.lua
-
 ## Creating / Saving Configs
 ```lua
 Library:SaveConfig('Config')
 ```
 ```text
-1.) <String> The name of the config, if there is no config with the name, it will create one, if one with the name already exists, it will overwrite it.
+1.) <String> The name of the configuration; if it doesn't exist, it will create one; otherwise, it will overwrite it.
 ```
 
 ## Getting All Configs
@@ -318,7 +313,7 @@ Library:LoadConfig('Config')
 Library:ChangeTheme('Default')
 ```
 ```text
-1.) <String or Table> The name of the theme to change to or a custom theme.
+1.) <String or Table> a custom theme or the name of the theme you want to switch to.
 ```
 
 ## Getting All Themes
@@ -327,7 +322,7 @@ Library:GetThemes()
 ```
 
 ## Changing Theme Colors
-If you want to make a custom theme from inside the UI, add this code in your UI in a section.
+Add this code to your UI in a section if you want to create a custom theme from within the user interface.
 ```lua
 for Index, CurrentColor in next, Library:ReturnTheme() do
     ColorSection:CreateColorpicker(Index, CurrentColor, 0.25, function(Color)
@@ -335,3 +330,8 @@ for Index, CurrentColor in next, Library:ReturnTheme() do
     end, {true})
 end
 ```
+
+# Example Script
+
+```lua
+No```
