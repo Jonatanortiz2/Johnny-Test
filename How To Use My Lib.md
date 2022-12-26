@@ -167,7 +167,7 @@ Dropdown:UpdateDropdown({'Filter', 'Spoon', 'Fork'})
 
 ## Creating Colorpickers
 ```lua
-local Colorpicker = Section:CreateColorpicker('Colorpicker', Color3.fromRGB(0, 146, 214), 0.25, function(Value)
+Colorpicker = Section:CreateColorpicker('Colorpicker', Color3.fromRGB(0, 146, 214), 0.25, function(Value)
     print(Value)
 end)
 ```
@@ -334,4 +334,56 @@ end
 # Example Script
 
 ```lua
-No```
+local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/Jonatanortiz2/Johnny-Test/master/Ui-Lib.lua'))();
+
+local Window = Library:CreateWindow('Hub Name', false)
+
+local Tab = Window:CreateTab('Tab', true, 'rbxassetid://4483362458', Vector2.new(0, 0), Vector2.new(0, 0))
+
+local Section = Tab:CreateSection('Section')
+local Label = Section:CreateLabel('Label')
+local Paragraph = Section:CreateParagraph('Paragraph', 'Content')
+
+Section:CreateButton('Button', function()
+    print('Button Pressed')
+end)
+Section:CreateSlider('Slider', 1, 100, 50, Color3.fromRGB(0, 146, 214), function(Value)
+    print(Value)
+end)
+Section:CreateTextbox('Textbox', 'TextGoesHere', function(Value)
+    print(Value)
+end)
+Section:CreateKeybind('Keybind', 'A', function()
+    print('Key Pressed')
+end)
+Section:CreateToggle('Toggle', true, Color3.fromRGB(0, 146, 214), 0.25, function(Value)
+    print(Value)
+end)
+Section:CreateDropdown('Dropdown', {'Bread', 'Kitten', 'ROBLOX', 'JohnDoe', '5'}, 'Kitten', 0.25, function(Value)
+    print(Value)
+end)
+Colorpicker = Section:CreateColorpicker('Colorpicker', Color3.fromRGB(0, 146, 214), 0.25, function(Value)
+    print(Value)
+end)
+
+local Image = Section:CreateImage('Name', 'rbxassetid://11912754017', UDim2.new(0, 250, 0, 250))
+
+Library:CreatePrompt('OneButton', 'Prompt Title', 'Prompt Text', {
+    'Okay',
+    function()
+        print('Prompt Button Pressed')
+    end
+})
+UIFunctions:CreateButton('Create Two Button Prompt', function()
+    Library:CreatePrompt('TwoButton', 'Prompt Title', 'Prompt Text', {
+        'Button 1',
+        function()
+            print('Button 1')
+        end,
+        'Button 2',
+        function()
+            print('Button 2')
+        end
+    })
+end)
+```
