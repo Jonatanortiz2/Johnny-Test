@@ -1,22 +1,18 @@
 # Jon's Ui Documentation
 
-## Getting Loadstring
+## Getting My Library
 ```lua
-local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/Jonatanortiz2/Johnny-Test/master/Ui-Lib.lua'))()
+local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/Jonatanortiz2/Johnny-Test/master/Ui-Lib.lua'))();
 ```
 
 ## Creating Window
+I Don't Recommend Changing This.
 ```lua
-local Window = Library:CreateWindow('Hub Name', 'Game Name', 'Visual UI Library', 'rbxassetid://10618928818', false, 'VisualUIConfigs', 'Default')
+local Window = Library:CreateWindow('Hub Name', false)
 ```
 ```text
 1.) <String> Name of the UI.
-2.) <String> Name of the Game.
-3.) <String> Text that shows in the intro screen.
-4.) <String> URL of the icon that shows in the intro screen.
-5.) <Bool> if true, themes will be disabled, if false, themes will be enabled (this setting is to increase performance)
-6.) <String> the path that the config folder should be in your exploits workspace folder.
-7.) <String or Table> The name of a pre-made theme or a table with your custom theme (Find more in Themes.md).
+2.) <Bool> if true, themes will be disabled, if false, themes will be enabled (this setting is to increase performance)
 ```
 
 ## Creating Tabs
