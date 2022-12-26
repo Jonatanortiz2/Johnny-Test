@@ -1092,13 +1092,12 @@ function Library:CreateWindow(HubName, GameName)
     local ImprovePerformance = GameName
     local IntroText = 'Created By 😴Jonathan💤#9341'
     local IntroIcon = 'rbxassetid://11912754017'
-    GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+    wait()
+    local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
     local ConfigFolder = 'Jonathan\'s Ui Config'
     local Theme = 'Default'
-    local ImprovePerformance = ImprovePerformance or false
     local HasCustom = false
     local HubName = HubName or 'UI Name'
-    local GameName = GameName or 'Game Name'
     local Theme = Theme
     if not Theme then
         Theme = Themes.Default
