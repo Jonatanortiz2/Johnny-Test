@@ -2647,8 +2647,16 @@ function Library:CreateWindow(HubName, GameName)
                         Utility:Tween(KeybindHolder, {BackgroundColor3 = Theme.PrimaryElementColor}, 0.25)
                     end
                 end)
-
-                local Con = UserInputService.InputBegan:Connect(function(Input, GameProcessedEvent)
+                
+                local Con = UserInputService.InputBegan:Connect(function(Input)
+                    if Input.KeyCode.Name == Current then
+                        task.spawn(function()
+                            Callback()
+                        end)
+                    end
+                end)
+                
+                --[[local Con = UserInputService.InputBegan:Connect(function(Input, GameProcessedEvent)
                     if not GameProcessedEvent then 
                         if Input.KeyCode.Name == Current then
                             task.spawn(function()
@@ -2656,7 +2664,7 @@ function Library:CreateWindow(HubName, GameName)
                             end)
                         end
                     end
-                end)
+                end)]]
 
                 function KeybindFunctions:Break()
                     Con:Disconnect()
