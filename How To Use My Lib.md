@@ -339,10 +339,26 @@ local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/Jonat
 local Window = Library:CreateWindow('Hub Name', false)
 
 local Tab = Window:CreateTab('Tab', true, 'rbxassetid://4483362458', Vector2.new(0, 0), Vector2.new(0, 0))
+local Updates = Window:CreateTab('Updates', true, 'rbxassetid://4483362458', Vector2.new(0, 0), Vector2.new(0, 0))
 
 local Section = Tab:CreateSection('Section')
+local UpdatesSection = Updates:CreateSection('Updates')
+
 local Label = Section:CreateLabel('Label')
 local Paragraph = Section:CreateParagraph('Paragraph', 'Content')
+
+local Drop = UpdatesSection:CreateDropdown('Dropdown', {'PlayerUndefined1', 'PlayerUndefined2', 'PlayerUndefined3', 'PlayerUndefined4', 'PlayerUndefined5'}, 'PlayerUndefined1', 0.25, function(Value)
+    print(Value)
+end)
+UpdatesSection:CreateButton('Update Players', function()
+    spawn(function()
+        local InsertTable={};
+        for i,v in next, game.Players:GetPlayers() do
+            table.insert(InsertTable,v.Name)
+        end
+        Drop:UpdateDropdown(InsertTable)
+    end)
+end)
 
 Section:CreateButton('Button', function()
     print('Button Pressed')
