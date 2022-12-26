@@ -91,7 +91,7 @@ end)
 
 ## Creating Sliders
 ```lua
-Section:CreateSlider('Slider', 1, 100, 50, Color3.fromRGB(0, 146, 214), function(Value)
+Section:CreateSlider('Slider', 1, 100, 50, false, Color3.fromRGB(0, 146, 214), function(Value)
     print(Value)
 end)
 ```
@@ -100,8 +100,9 @@ end)
 2.) <Number> Minimum value of the slider.
 3.) <Number> Maximum value of the slider.
 4.) <Number> Default value of the slider.
-5.) <Color3> Color of the slider.
-6.) <Function> Function / Callback of the slider.
+5.) <Bool> Precise Numbers
+6.) <Color3> Color of the slider.
+7.) <Function> Function / Callback of the slider.
 ```
 
 ## Creating Textboxes
@@ -363,7 +364,7 @@ end)
 Section:CreateButton('Button', function()
     print('Button Pressed')
 end)
-Section:CreateSlider('Slider', 1, 100, 50, Color3.fromRGB(0, 146, 214), function(Value)
+Section:CreateSlider('Slider', 1, 100, 50, false, Color3.fromRGB(0, 146, 214), function(Value)
     print(Value)
 end)
 Section:CreateTextbox('Textbox', 'TextGoesHere', function(Value)
