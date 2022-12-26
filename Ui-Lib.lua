@@ -2180,13 +2180,14 @@ function Library:CreateWindow(HubName, GameName)
                 end)
             end
 
-            function Elements:CreateSlider(Name, MinimumValue, MaximumValue, DefaultValue, SliderColor, Callback)
+            function Elements:CreateSlider(Name, MinimumValue, MaximumValue, DefaultValue, Boolean, SliderColor, Callback)
                 local Name = Name or 'Slider'
                 local MinimumValue = MinimumValue or 1
                 local MaximumValue = MaximumValue or 100
                 local SliderColor = SliderColor or Color3.fromRGB(0, 125, 255)
                 local Callback = Callback or function() end
                 local CurrentValue = DefaultValue
+                local IsPrecise = Boolean or false;
                 local SliderFunctions = {}
                 local Hovering = false
 
@@ -2316,7 +2317,7 @@ function Library:CreateWindow(HubName, GameName)
                 end
 
                 if DefaultValue ~= nil then
-                    SliderNumber.Text = math.floor(DefaultValue)
+                    SliderNumber.Text = DefaultValue
                     Utility:Tween(SliderTrail, {Size = UDim2.new((DefaultValue - MinimumValue) / (MaximumValue - MinimumValue), 0, 0, 10)}, 0.25)  
                     task.spawn(function()
                         Callback(CurrentValue)
@@ -2331,7 +2332,11 @@ function Library:CreateWindow(HubName, GameName)
                     Utility:Tween(SliderTrail, {Size = UDim2.new(0, math.clamp(Mouse.X - SliderTrail.AbsolutePosition.X, 0, 395), 0, 10)}, 0.25)
                     MoveConnection = Mouse.Move:Connect(function()
                         SliderNumber.Text = CurrentValue
-                        CurrentValue = math.floor((((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * SliderTrail.AbsoluteSize.X) + tonumber(MinimumValue))
+                        if IsPrecise == true then
+                            CurrentValue = ((((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * SliderTrail.AbsoluteSize.X) + tonumber(MinimumValue))
+                        else
+                            CurrentValue = math.floor((((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * SliderTrail.AbsoluteSize.X) + tonumber(MinimumValue))        
+                        end
                         task.spawn(function()
                             Callback(CurrentValue)
                         end)
@@ -2341,7 +2346,11 @@ function Library:CreateWindow(HubName, GameName)
                     end)
                     ReleaseConnection = UserInputService.InputEnded:Connect(function(Input)
                         if Input.UserInputType == Enum.UserInputType.MouseButton1 then
-                            CurrentValue = math.floor((((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * SliderTrail.AbsoluteSize.X) + tonumber(MinimumValue))
+                            if IsPrecise == true then
+                                CurrentValue = ((((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * SliderTrail.AbsoluteSize.X) + tonumber(MinimumValue))
+                            else
+                                CurrentValue = math.floor((((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * SliderTrail.AbsoluteSize.X) + tonumber(MinimumValue))        
+                            end
                             task.spawn(function()
                                 Callback(CurrentValue)
                             end)
