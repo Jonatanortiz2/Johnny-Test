@@ -1,4 +1,11 @@
-# Jon's Ui Documentation
+#        _             _       _    _ _   _____                                        _        _   _             
+      | |           ( )     | |  | (_) |  __ \                                      | |      | | (_)            
+      | | ___  _ __ |/ ___  | |  | |_  | |  | | ___   ___ _   _ _ __ ___   ___ _ __ | |_ __ _| |_ _  ___  _ __  
+  _   | |/ _ \| '_ \  / __| | |  | | | | |  | |/ _ \ / __| | | | '_ ` _ \ / _ \ '_ \| __/ _` | __| |/ _ \| '_ \ 
+ | |__| | (_) | | | | \__ \ | |__| | | | |__| | (_) | (__| |_| | | | | | |  __/ | | | || (_| | |_| | (_) | | | |
+  \____/ \___/|_| |_| |___/  \____/|_| |_____/ \___/ \___|\__,_|_| |_| |_|\___|_| |_|\__\__,_|\__|_|\___/|_| |_|
+                                                                                                                
+                                                                                                                
 
 ## Getting My Library
 ```lua
@@ -10,7 +17,7 @@ local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/Jonat
 ```lua
 local Window = Library:CreateWindow('Hub Name', false)
 ```
-#</> Data
+
 ```text
 1.) <String> Name of the UI.
 2.) <Bool> if true, themes will be disabled, if false, themes will be enabled (this setting is to increase performance)
@@ -20,7 +27,7 @@ local Window = Library:CreateWindow('Hub Name', false)
 ```lua
 local Tab = Window:CreateTab('Tab', true, 'rbxassetid://3926305904', Vector2.new(484, 44), Vector2.new(36, 36))
 ```
-#</> Data
+
 ```text
 1.) <String> Name of the tab.
 2.) <Bool> Tab visibility.
@@ -32,7 +39,7 @@ local Tab = Window:CreateTab('Tab', true, 'rbxassetid://3926305904', Vector2.new
 ```lua
 local Section = Tab:CreateSection('Section')
 ```
-#</> Data
+
 ```text
 1.) <String> Name of the section.
 ```
@@ -41,7 +48,7 @@ local Section = Tab:CreateSection('Section')
 ```lua
 local Label = Section:CreateLabel('Label')
 ```
-#</> Data
+
 ```text
 1.) <String> Label text.
 ```
@@ -50,7 +57,7 @@ local Label = Section:CreateLabel('Label')
 ```lua
 Label:UpdateLabel('New Text')
 ```
-#</> Data
+
 ```text
 1.) <String> New label text.
 ```
@@ -59,7 +66,7 @@ Label:UpdateLabel('New Text')
 ```lua
 local Paragraph = Section:CreateParagraph('Paragraph', 'Content')
 ```
-#</> Data
+
 ```text
 1.) <String> Title of the paragraph.
 2.) <String> Content of the paragraph.
@@ -69,7 +76,7 @@ local Paragraph = Section:CreateParagraph('Paragraph', 'Content')
 ```lua
 Paragraph:UpdateParagraph('New Title', 'New Text')
 ```
-#</> Data
+
 ```text
 1.) <String> New title of the paragraph.
 2.) <String> New content of the paragraph.
@@ -81,6 +88,7 @@ local Button = Section:CreateButton('Button', function()
     print('Button Pressed')
 end)
 ```
+
 ```text
 1.) <String> Name of the button.
 2.) <Function> Function / Callback of the button.
