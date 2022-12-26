@@ -10,7 +10,8 @@ I Don't Recommend Changing This.
 ```lua
 local Window = Library:CreateWindow('Hub Name', false)
 ```
-```cs
+
+```text
 1.) <String> Name of the UI.
 2.) <Bool> if true, themes will be disabled, if false, themes will be enabled (this setting is to increase performance)
 ```
