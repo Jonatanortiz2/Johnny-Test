@@ -2333,7 +2333,7 @@ function Library:CreateWindow(HubName, GameName)
                     MoveConnection = Mouse.Move:Connect(function()
                         SliderNumber.Text = CurrentValue
                         if IsPrecise == true then
-                            CurrentValue = ((((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * SliderTrail.AbsoluteSize.X) + tonumber(MinimumValue))
+                            CurrentValue = tonumber(tostring(string.sub(((((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * SliderTrail.AbsoluteSize.X) + tonumber(MinimumValue)), 1, 4)))
                         else
                             CurrentValue = math.floor((((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * SliderTrail.AbsoluteSize.X) + tonumber(MinimumValue))        
                         end
@@ -2347,7 +2347,7 @@ function Library:CreateWindow(HubName, GameName)
                     ReleaseConnection = UserInputService.InputEnded:Connect(function(Input)
                         if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                             if IsPrecise == true then
-                                CurrentValue = ((((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * SliderTrail.AbsoluteSize.X) + tonumber(MinimumValue))
+                                CurrentValue = tonumber(tostring(string.sub(((((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * SliderTrail.AbsoluteSize.X) + tonumber(MinimumValue)), 1, 4)))
                             else
                                 CurrentValue = math.floor((((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * SliderTrail.AbsoluteSize.X) + tonumber(MinimumValue))        
                             end
