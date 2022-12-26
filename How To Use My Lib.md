@@ -394,7 +394,7 @@ Library:CreatePrompt('OneButton', 'Prompt Title', 'Prompt Text', {
         print('Prompt Button Pressed')
     end
 })
-UIFunctions:CreateButton('Create Two Button Prompt', function()
+Section:CreateButton('Create Two Button Prompt', function()
     Library:CreatePrompt('TwoButton', 'Prompt Title', 'Prompt Text', {
         'Button 1',
         function()
