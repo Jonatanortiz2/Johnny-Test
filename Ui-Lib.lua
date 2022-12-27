@@ -356,7 +356,7 @@ do
             Theme[Index] = Utility:JoinColor(Value)
         end
 
-        --[[--[[task.]]]]spawn(function()
+        --[[task.]]spawn(function()
             local Title = Title or 'Title'
             local Text = Text or 'Text'
             local Duration = Duration or 5
