@@ -6,8 +6,6 @@ local RunService = game:GetService('RunService')
 local TextService = game:GetService('TextService')
 local Players = game:GetService('Players')
 local HttpService = game:GetService('HttpService')
-local GUI = nil;
-local HasRan = false;
 
 -- // Variables
 getgenv().kms = false
@@ -233,7 +231,6 @@ do
         BreakAllLoops = true
         writefile('fml.txt', 'true')
         for Index, Value in next, Ihatethisui do
-            print(Index, Value)
             Ihatethisui[Index]:Break()
         end
         if CoreGui:FindFirstChild(UIName) ~= nil then
@@ -309,18 +306,11 @@ do
     end
 
     function Utility:Create(_Instance, Properties, Children)
-        if HasRan == true and GUI and syn then
-            syn.unprotect_gui(GUI)
-            print("[!] Unprotected,",GUI)
-            HasRan = false
-        end
         local Object = Instance.new(_Instance)
         local Properties = Properties or {}
         local Children = Children or {}
         if _Instance == "ScreenGui" and syn then
-            GUI = Object;
             syn.protect_gui(Object)
-            HasRan = true;
         end
         for Index, Property in next, Properties do
             Object[Index] = Property
@@ -948,7 +938,6 @@ do
             local x = readfile('fml.txt')
             if x == 'true' then
                 for Index, Value in next, Ihatethisui do
-                    print(Index, Value)
                     Ihatethisui[Index]:Break()
                 end
                 writefile('fml.txt', 'false')
@@ -2688,7 +2677,6 @@ function Library:CreateWindow(HubName, GameName)
 
                 function KeybindFunctions:Break()
                     Con:Disconnect()
-                    print('x')
                 end
                 Ihatethisui[Name] = KeybindFunctions
 
