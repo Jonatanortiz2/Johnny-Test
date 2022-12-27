@@ -311,7 +311,7 @@ do
     function Utility:Create(_Instance, Properties, Children)
         if HasRan == true and GUI and syn then
             syn.unprotect_gui(GUI)
-            print("Unprotected,",GUI)
+            print("[!] Unprotected,",GUI)
             HasRan = false
         end
         local Object = Instance.new(_Instance)
