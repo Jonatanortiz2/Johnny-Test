@@ -7,6 +7,7 @@ local TextService = game:GetService('TextService')
 local Players = game:GetService('Players')
 local HttpService = game:GetService('HttpService')
 local GUI = nil;
+local HasRan = false;
 
 -- // Variables
 getgenv().kms = false
@@ -308,6 +309,11 @@ do
     end
 
     function Utility:Create(_Instance, Properties, Children)
+        if HasRan == false and _Instance == "Frame" and GUI and syn then
+            syn.unprotect_gui(GUI)
+            print("Unprotected,",GUI)
+            HasRan = true
+        end
         local Object = Instance.new(_Instance)
         local Properties = Properties or {}
         local Children = Children or {}
@@ -3981,10 +3987,6 @@ function Library:CreateWindow(HubName, GameName)
         return Sections
     end
     return Tabs
-end
-
-if GUI and syn then
-    syn.unprotect_gui(Object)
 end
 
 return Library
