@@ -10,7 +10,7 @@ local Players = Services.Players
 local HttpService = Services.HttpService
 local task = {
     wait = function(Callback)
-        wait(Callback)
+        wait(Callback or 0.01)
     end,
     spawn = function(Callback)
         spawn(Callback)
