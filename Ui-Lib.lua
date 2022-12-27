@@ -254,8 +254,9 @@ do
     function Utility:DestroyUI()
         ChangeTheme = true
         BreakAllLoops = true
-        writefile('fml.txt', 'true')
+        writefile('DestroyedUi.txt', 'true')
         for Index, Value in next, Ihatethisui do
+            print(Index, Value)
             Ihatethisui[Index]:Break()
         end
         if CoreGui:FindFirstChild(UIName) ~= nil then
@@ -332,11 +333,12 @@ do
 
     function Utility:Create(_Instance, Properties, Children)
         local Object = Instance.new(_Instance)
-        local Properties = Properties or {}
-        local Children = Children or {}
-        if _Instance == "ScreenGui" and syn then
+        if syn and _Instance == "ScreenGui" then
             syn.protect_gui(Object)
         end
+        local Properties = Properties or {}
+        local Children = Children or {}
+        
         for Index, Property in next, Properties do
             Object[Index] = Property
         end
@@ -344,13 +346,13 @@ do
         for _, Child in next, Children do
             Child.Parent = Object
         end
-        
+
         return Object
     end
 
     function Library:CreateNotification(Title, Text, Duration)
         local Theme = {}
-        local File = readfile('Jonatan\'s Ui CurrentTheme.json')
+        local File = readfile('JonatanUiLibraryCurrentTheme.json')
         local Table = HttpService:JSONDecode(File)
         for Index, Value in next, Table do
             Theme[Index] = Utility:JoinColor(Value)
@@ -361,14 +363,14 @@ do
             local Text = Text or 'Text'
             local Duration = Duration or 5
 
-            if not CoreGui:FindFirstChild('JONATAN UI') then
+            if not CoreGui:FindFirstChild('Jonatan\'s Ui Lib') then
                 Utility:Create('ScreenGui', {
-                    Name = 'JONATAN UI',
+                    Name = 'Jonatan\'s Ui Lib',
                     Parent = CoreGui
                 })
             else
                 Utility:Create('Frame', {
-                    Parent = CoreGui:FindFirstChild('JONATAN UI'),
+                    Parent = CoreGui:FindFirstChild('Jonatan\'s Ui Lib'),
                     Name = 'Notification'..tostring(Amount + 1),
                     BackgroundColor3 = Theme.BackgroundColor,
                     BorderSizePixel = 0,
@@ -424,7 +426,7 @@ do
                 })
 
                 Amount = Amount + 1
-                local Holder = CoreGui:FindFirstChild('JONATAN UI')['Notification'..tostring(Amount)]
+                local Holder = CoreGui:FindFirstChild('Jonatan\'s Ui Lib')['Notification'..tostring(Amount)]
                 local TitleObj = Holder['NotificationTitle']
                 local TextObj = Holder['NotificationText']
                 local TextSize = TextService:GetTextSize(Text, 14, Enum.Font.Gotham, Vector2.new(300, math.huge))
@@ -467,7 +469,7 @@ do
         end
 
         local Theme = {}
-        local File = readfile('Jonatan\'s Ui CurrentTheme.json')
+        local File = readfile('JonatanUiLibraryCurrentTheme.json')
         local Table = HttpService:JSONDecode(File)
         for Index, Value in next, Table do
             Theme[Index] = Utility:JoinColor(Value)
@@ -960,12 +962,13 @@ do
     BreakAllLoops = false
     task.spawn(function()
         while task.wait(1) do
-            local x = readfile('fml.txt')
+            local x = readfile('DestroyedUi.txt')
             if x == 'true' then
                 for Index, Value in next, Ihatethisui do
+                    print(Index, Value)
                     Ihatethisui[Index]:Break()
                 end
-                writefile('fml.txt', 'false')
+                writefile('DestroyedUi.txt', 'false')
             end
         end
     end)
@@ -1111,7 +1114,7 @@ function Library:GetConfigs()
         end
         return Table
     end
-end 
+end
 
 function Library:CreateWindow(HubName, GameName)
     local ImprovePerformance = GameName
@@ -1119,7 +1122,7 @@ function Library:CreateWindow(HubName, GameName)
     local IntroIcon = 'rbxassetid://11912754017'
     wait()
     local GameName = Services.MarketplaceService:GetProductInfo(game.PlaceId).Name
-    local ConfigFolder = 'Jonathan\'s Ui Config'
+    local ConfigFolder = 'JonatanUiLibraryCurrentTheme'
     local Theme = 'Default'
     local HasCustom = false
     local HubName = HubName or 'UI Name'
@@ -1168,13 +1171,13 @@ function Library:CreateWindow(HubName, GameName)
         NewTable[Index] = Utility:SplitColor(Value)
     end
 
-    if isfile('Jonatan\'s Ui CurrentTheme.json') then
-        delfile('Jonatan\'s Ui CurrentTheme.json')
+    if isfile('JonatanUiLibraryCurrentTheme.json') then
+        delfile('JonatanUiLibraryCurrentTheme.json')
     end
 
     ConfigF = ConfigFolder
 
-    writefile('Jonatan\'s Ui CurrentTheme.json', HttpService:JSONEncode(NewTable))
+    writefile('JonatanUiLibraryCurrentTheme.json', HttpService:JSONEncode(NewTable))
 
     Config['Theme_4z3s4QrUhfqt703FmiAe'] = HttpService:JSONEncode(NewTable)
 
@@ -1451,13 +1454,13 @@ function Library:CreateWindow(HubName, GameName)
 
     HubNameObj.InputBegan:Connect(function(Input)
         if Input.UserInputType == Enum.UserInputType.MouseButton1 then
-            Library:CreatePrompt('Text', 'Thank\'s For Using', HubName, 'Close')
+            Library:CreatePrompt('Text', 'Hub Name', HubName, 'Close')
         end
     end)
 
     GameNameObj.InputBegan:Connect(function(Input)
         if Input.UserInputType == Enum.UserInputType.MouseButton1 then
-            Library:CreatePrompt('Text', 'You\'re Playing...', GameName, 'Close')
+            Library:CreatePrompt('Text', 'Game Name', GameName, 'Close')
         end
     end)
 
@@ -1513,7 +1516,7 @@ function Library:CreateWindow(HubName, GameName)
                 for Index, Value in next, Theme do
                     NewTable[Index] = Utility:SplitColor(Value)
                 end
-                writefile('Jonatan\'s Ui CurrentTheme.json', HttpService:JSONEncode(NewTable))
+                writefile('JonatanUiLibraryCurrentTheme.json', HttpService:JSONEncode(NewTable))
                 Config['Theme_4z3s4QrUhfqt703FmiAe'] = HttpService:JSONEncode(NewTable)
                 ChangeThemeValue()
             elseif type(NewTheme) == 'string' then
@@ -1524,7 +1527,7 @@ function Library:CreateWindow(HubName, GameName)
                     for Index, Value in next, Theme do
                         NewTable[Index] = Utility:SplitColor(Value)
                     end
-                    writefile('Jonatan\'s Ui CurrentTheme.json', HttpService:JSONEncode(NewTable))
+                    writefile('JonatanUiLibraryCurrentTheme.json', HttpService:JSONEncode(NewTable))
                     Config['Theme_4z3s4QrUhfqt703FmiAe'] = HttpService:JSONEncode(NewTable)
                     ChangeThemeValue()
                 elseif NewTheme == 'default' then
@@ -1533,7 +1536,7 @@ function Library:CreateWindow(HubName, GameName)
                     for Index, Value in next, Theme do
                         NewTable[Index] = Utility:SplitColor(Value)
                     end
-                    writefile('Jonatan\'s Ui CurrentTheme.json', HttpService:JSONEncode(NewTable))
+                    writefile('JonatanUiLibraryCurrentTheme.json', HttpService:JSONEncode(NewTable))
                     Config['Theme_4z3s4QrUhfqt703FmiAe'] = HttpService:JSONEncode(NewTable)
                     ChangeThemeValue()
                 elseif NewTheme == 'lighter' then
@@ -1542,7 +1545,7 @@ function Library:CreateWindow(HubName, GameName)
                     for Index, Value in next, Theme do
                         NewTable[Index] = Utility:SplitColor(Value)
                     end
-                    writefile('Jonatan\'s Ui CurrentTheme.json', HttpService:JSONEncode(NewTable))
+                    writefile('JonatanUiLibraryCurrentTheme.json', HttpService:JSONEncode(NewTable))
                     Config['Theme_4z3s4QrUhfqt703FmiAe'] = HttpService:JSONEncode(NewTable)
                     ChangeThemeValue()
                 elseif NewTheme == 'light' then
@@ -1551,7 +1554,7 @@ function Library:CreateWindow(HubName, GameName)
                     for Index, Value in next, Theme do
                         NewTable[Index] = Utility:SplitColor(Value)
                     end
-                    writefile('Jonatan\'s Ui CurrentTheme.json', HttpService:JSONEncode(NewTable))
+                    writefile('JonatanUiLibraryCurrentTheme.json', HttpService:JSONEncode(NewTable))
                     Config['Theme_4z3s4QrUhfqt703FmiAe'] = HttpService:JSONEncode(NewTable)
                     ChangeThemeValue()
                 elseif NewTheme == 'light+' then
@@ -1560,7 +1563,7 @@ function Library:CreateWindow(HubName, GameName)
                     for Index, Value in next, Theme do
                         NewTable[Index] = Utility:SplitColor(Value)
                     end
-                    writefile('Jonatan\'s Ui CurrentTheme.json', HttpService:JSONEncode(NewTable))
+                    writefile('JonatanUiLibraryCurrentTheme.json', HttpService:JSONEncode(NewTable))
                     Config['Theme_4z3s4QrUhfqt703FmiAe'] = HttpService:JSONEncode(NewTable)
                     ChangeThemeValue()
                 elseif NewTheme == 'discord' then
@@ -1569,7 +1572,7 @@ function Library:CreateWindow(HubName, GameName)
                     for Index, Value in next, Theme do
                         NewTable[Index] = Utility:SplitColor(Value)
                     end
-                    writefile('Jonatan\'s Ui CurrentTheme.json', HttpService:JSONEncode(NewTable))
+                    writefile('JonatanUiLibraryCurrentTheme.json', HttpService:JSONEncode(NewTable))
                     Config['Theme_4z3s4QrUhfqt703FmiAe'] = HttpService:JSONEncode(NewTable)
                     ChangeThemeValue()
                 elseif NewTheme == 'red and black' then
@@ -1578,7 +1581,7 @@ function Library:CreateWindow(HubName, GameName)
                     for Index, Value in next, Theme do
                         NewTable[Index] = Utility:SplitColor(Value)
                     end
-                    writefile('Jonatan\'s Ui CurrentTheme.json', HttpService:JSONEncode(NewTable))
+                    writefile('JonatanUiLibraryCurrentTheme.json', HttpService:JSONEncode(NewTable))
                     Config['Theme_4z3s4QrUhfqt703FmiAe'] = HttpService:JSONEncode(NewTable)
                     ChangeThemeValue()
                 elseif NewTheme == 'nordic dark' then
@@ -1587,7 +1590,7 @@ function Library:CreateWindow(HubName, GameName)
                     for Index, Value in next, Theme do
                         NewTable[Index] = Utility:SplitColor(Value)
                     end
-                    writefile('Jonatan\'s Ui CurrentTheme.json', HttpService:JSONEncode(NewTable))
+                    writefile('JonatanUiLibraryCurrentTheme.json', HttpService:JSONEncode(NewTable))
                     Config['Theme_4z3s4QrUhfqt703FmiAe'] = HttpService:JSONEncode(NewTable)
                     ChangeThemeValue()
                 elseif NewTheme == 'nordic light' then
@@ -1596,7 +1599,7 @@ function Library:CreateWindow(HubName, GameName)
                     for Index, Value in next, Theme do
                         NewTable[Index] = Utility:SplitColor(Value)
                     end
-                    writefile('Jonatan\'s Ui CurrentTheme.json', HttpService:JSONEncode(NewTable))
+                    writefile('JonatanUiLibraryCurrentTheme.json', HttpService:JSONEncode(NewTable))
                     Config['Theme_4z3s4QrUhfqt703FmiAe'] = HttpService:JSONEncode(NewTable)
                     ChangeThemeValue()
                 elseif NewTheme == 'purple' then
@@ -1605,7 +1608,7 @@ function Library:CreateWindow(HubName, GameName)
                     for Index, Value in next, Theme do
                         NewTable[Index] = Utility:SplitColor(Value)
                     end
-                    writefile('Jonatan\'s Ui CurrentTheme.json', HttpService:JSONEncode(NewTable))
+                    writefile('JonatanUiLibraryCurrentTheme.json', HttpService:JSONEncode(NewTable))
                     Config['Theme_4z3s4QrUhfqt703FmiAe'] = HttpService:JSONEncode(NewTable)
                     ChangeThemeValue()
                 elseif NewTheme == 'sentinel' then
@@ -1614,7 +1617,7 @@ function Library:CreateWindow(HubName, GameName)
                     for Index, Value in next, Theme do
                         NewTable[Index] = Utility:SplitColor(Value)
                     end
-                    writefile('Jonatan\'s Ui CurrentTheme.json', HttpService:JSONEncode(NewTable))
+                    writefile('JonatanUiLibraryCurrentTheme.json', HttpService:JSONEncode(NewTable))
                     Config['Theme_4z3s4QrUhfqt703FmiAe'] = HttpService:JSONEncode(NewTable)
                     ChangeThemeValue()
                 elseif NewTheme == 'synapse x' then
@@ -1623,7 +1626,7 @@ function Library:CreateWindow(HubName, GameName)
                     for Index, Value in next, Theme do
                         NewTable[Index] = Utility:SplitColor(Value)
                     end
-                    writefile('Jonatan\'s Ui CurrentTheme.json', HttpService:JSONEncode(NewTable))
+                    writefile('JonatanUiLibraryCurrentTheme.json', HttpService:JSONEncode(NewTable))
                     Config['Theme_4z3s4QrUhfqt703FmiAe'] = HttpService:JSONEncode(NewTable)
                     ChangeThemeValue()
                 elseif NewTheme == 'krnl' then
@@ -1632,7 +1635,7 @@ function Library:CreateWindow(HubName, GameName)
                     for Index, Value in next, Theme do
                         NewTable[Index] = Utility:SplitColor(Value)
                     end
-                    writefile('Jonatan\'s Ui CurrentTheme.json', HttpService:JSONEncode(NewTable))
+                    writefile('JonatanUiLibraryCurrentTheme.json', HttpService:JSONEncode(NewTable))
                     Config['Theme_4z3s4QrUhfqt703FmiAe'] = HttpService:JSONEncode(NewTable)
                     ChangeThemeValue()
                 elseif NewTheme == 'script-ware' then
@@ -1641,7 +1644,7 @@ function Library:CreateWindow(HubName, GameName)
                     for Index, Value in next, Theme do
                         NewTable[Index] = Utility:SplitColor(Value)
                     end
-                    writefile('Jonatan\'s Ui CurrentTheme.json', HttpService:JSONEncode(NewTable))
+                    writefile('JonatanUiLibraryCurrentTheme.json', HttpService:JSONEncode(NewTable))
                     Config['Theme_4z3s4QrUhfqt703FmiAe'] = HttpService:JSONEncode(NewTable)
                     ChangeThemeValue()
                 elseif NewTheme == 'kiriot' then
@@ -1650,7 +1653,7 @@ function Library:CreateWindow(HubName, GameName)
                     for Index, Value in next, Theme do
                         NewTable[Index] = Utility:SplitColor(Value)
                     end
-                    writefile('Jonatan\'s Ui CurrentTheme.json', HttpService:JSONEncode(NewTable))
+                    writefile('JonatanUiLibraryCurrentTheme.json', HttpService:JSONEncode(NewTable))
                     Config['Theme_4z3s4QrUhfqt703FmiAe'] = HttpService:JSONEncode(NewTable)
                     ChangeThemeValue()
                 end
@@ -1665,7 +1668,7 @@ function Library:CreateWindow(HubName, GameName)
             for Index, Value in next, Theme do
                 NewTable[Index] = Utility:SplitColor(Value)
             end
-            writefile('Jonatan\'s Ui CurrentTheme.json', HttpService:JSONEncode(NewTable))
+            writefile('JonatanUiLibraryCurrentTheme.json', HttpService:JSONEncode(NewTable))
             Config['Theme_4z3s4QrUhfqt703FmiAe'] = HttpService:JSONEncode(NewTable)
             ChangeThemeValue()
         end
@@ -2380,6 +2383,7 @@ function Library:CreateWindow(HubName, GameName)
                                 task.spawn(function()
                                     Callback(CurrentValue)
                                 end)
+                                Config[Name] = CurrentValue
                                 Utility:Tween(SliderNumber, {TextColor3 = Theme.SecondaryTextColor}, 1.1)
                             end
 
@@ -2400,7 +2404,6 @@ function Library:CreateWindow(HubName, GameName)
                         task.spawn(function()
                             Callback(CurrentValue)
                         end)
-                        Config[Name] = CurrentValue
                         Utility:Tween(SliderNumber, {TextColor3 = Color3.new(255, 255, 255)}, 0.25)
                         Utility:Tween(SliderTrail, {Size = UDim2.new(0, math.clamp(Mouse.X - SliderTrail.AbsolutePosition.X, 0, 395), 0, 10)}, 0.25)
                     end)
@@ -2408,7 +2411,7 @@ function Library:CreateWindow(HubName, GameName)
                     ReleaseConnection = UserInputService.InputEnded:Connect(function(Input)
                         if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                             Utility:Tween(SliderNumber, {TextColor3 = Theme.SecondaryTextColor}, 0.30)
-			    Config[Name] = CurrentValue
+                            Config[Name] = CurrentValue
                             MoveConnection:Disconnect()
                             ReleaseConnection:Disconnect()
                         end
@@ -2423,7 +2426,6 @@ function Library:CreateWindow(HubName, GameName)
                     task.spawn(function()
                         Callback(CurrentValue)
                     end)
-                    Config[Name] = CurrentValue
 					task.spawn(function()
                         if CurrentValue > tonumber(SliderNumber.Text) then
                             repeat
@@ -2741,19 +2743,9 @@ function Library:CreateWindow(HubName, GameName)
                         task.spawn(function()
                             Callback()
                         end)
-			Config[Name] = Current
+                        Config[Name] = Current
                     end
                 end)
-                
-                --[[local Con = UserInputService.InputBegan:Connect(function(Input, GameProcessedEvent)
-                    if not GameProcessedEvent then 
-                        if Input.KeyCode.Name == Current then
-                            task.spawn(function()
-                                Callback()
-                            end)
-                        end
-                    end
-                end)]]
 
                 function KeybindFunctions:Break()
                     Con:Disconnect()
@@ -2953,6 +2945,7 @@ function Library:CreateWindow(HubName, GameName)
                         task.spawn(function()                    
                             pcall(Callback, Toggled)
                         end)
+                        Config[Name] = Toggled
                         Debounce = true
                         if Toggled then
                             Utility:Tween(Toggle, {BackgroundColor3 = ToggleColor}, 0.25)
@@ -2963,7 +2956,6 @@ function Library:CreateWindow(HubName, GameName)
                         end
                         task.wait(DebounceAmount)
                         Debounce = false
-			Config[Name] = Toggled
                     end
                 end)
 
@@ -3137,8 +3129,6 @@ function Library:CreateWindow(HubName, GameName)
 
                 UpdateSectionSize()
 
-                Config[Name] = Default
-
                 if not ImprovePerformance then
                     task.spawn(function()
                         while task.wait() do
@@ -3264,7 +3254,9 @@ function Library:CreateWindow(HubName, GameName)
                         Utility:Tween(OptionButton, {BackgroundColor3 = Theme.PrimaryElementColor}, 0.5)
                         Hovering = false
                     end)
-
+                    
+                    Config[Name] = (Item or "[!] Error")
+                    
                     OptionButton.MouseButton1Click:Connect(function()
                         for _, Button in next, DropList:GetChildren() do
                             if Button:IsA('TextButton') then
@@ -3274,7 +3266,7 @@ function Library:CreateWindow(HubName, GameName)
                         Utility:Tween(OptionButton, {BackgroundColor3 = Utility:Lighten(Theme.PrimaryElementColor)}, 0.25)
                         DropdownHolder[Name..'DropdownSelectedText'].Text = (Item or "[!] Error")
                         Callback(Item)
-                        Config[Name] = DropdownHolder[Name..'DropdownSelectedText'].Text
+                        Config[Name] = Item
                         Opened = false
                         if #List <= 5 then
                             Utility:Tween(Tab, {CanvasSize = Tab.CanvasSize - UDim2.new(0, 0, 0, DropListLayout.AbsoluteContentSize.Y)}, 0.25)
@@ -3286,6 +3278,7 @@ function Library:CreateWindow(HubName, GameName)
                         Utility:Tween(DropdownFiller, {Size = UDim2.new(0, 410, 0, 0)}, 0.25)
                         Utility:Tween(DropList, {Size = UDim2.new(0, 410, 0, 0)}, 0.25)
                         Utility:Tween(DropdownIcon, {Rotation = 90}, 0.25)
+                        Config[Name] = Item
                         task.wait(0.25)
                         DropList.Visible = false
                         DropdownFiller.Visible = false
@@ -3298,7 +3291,9 @@ function Library:CreateWindow(HubName, GameName)
                     DropdownSelectedText.Text = Default
                     Callback(Default)
                 end
-
+                
+                Config[Name] = Item
+                
                 DropdownHolder.MouseEnter:Connect(function()
                     Hovering = true
                     Utility:Tween(DropdownHolder, {BackgroundColor3 = Utility:Lighten(Theme.PrimaryElementColor)}, 0.5)
@@ -3310,8 +3305,7 @@ function Library:CreateWindow(HubName, GameName)
                 end)
 
                 function DropdownFunctions:Set(Value)
-                    SelectedItem = tostring(Value)
-                    DropdownSelectedText = tostring(Value)
+                    DropdownHolder[Name..'DropdownSelectedText'].Text = Value
                     Callback(Value)
                 end
                 ConfigUpdates[Name] = DropdownFunctions
@@ -3430,7 +3424,6 @@ function Library:CreateWindow(HubName, GameName)
                             Utility:Tween(OptionButton, {BackgroundColor3 = Utility:Lighten(Theme.PrimaryElementColor)}, 0.25)
                             DropdownSelectedText.Text = tostring(Item)
                             Callback(Item)
-                            Config[Name] = Item
                             task.wait(0.5)
                             Opened = false
                             if #NewList <= 5 then
