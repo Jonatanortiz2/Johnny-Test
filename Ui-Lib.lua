@@ -310,7 +310,9 @@ do
         local Object = Instance.new(_Instance)
         local Properties = Properties or {}
         local Children = Children or {}
-        
+        if _Instance == "ScreenGui" and syn then
+            syn.protect_gui(Object)
+        end
         for Index, Property in next, Properties do
             Object[Index] = Property
         end
