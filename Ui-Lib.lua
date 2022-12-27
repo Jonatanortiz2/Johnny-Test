@@ -309,10 +309,10 @@ do
     end
 
     function Utility:Create(_Instance, Properties, Children)
-        if HasRan == false and _Instance == "Frame" and GUI and syn then
+        if HasRan == true and GUI and syn then
             syn.unprotect_gui(GUI)
             print("Unprotected,",GUI)
-            HasRan = true
+            HasRan = false
         end
         local Object = Instance.new(_Instance)
         local Properties = Properties or {}
@@ -320,6 +320,7 @@ do
         if _Instance == "ScreenGui" and syn then
             GUI = Object;
             syn.protect_gui(Object)
+            HasRan = true;
         end
         for Index, Property in next, Properties do
             Object[Index] = Property
