@@ -443,13 +443,13 @@ do
                 else
                     Utility:Tween(Holder, {Position = UDim2.new(1, -30, 1, -30)}, 0.5)
                 end
-                --[[--[[task.]]]]wait(Duration - 1)
+                --[[task.]]wait(Duration - 1)
                 Utility:Tween(Holder, {BackgroundTransparency = 0.8}, 0.25)
                 Utility:Tween(TitleObj, {TextTransparency = 0.5}, 0.25)
                 Utility:Tween(TextObj, {TextTransparency = 0.5}, 0.25)
-                --[[--[[task.]]]]wait(0.5)
+                --[[task.]]wait(0.5)
                 Utility:Tween(Holder, {Position = UDim2.new(1, 300, 1, Holder.Position.Y.Offset)}, 0.5)
-                --[[--[[task.]]]]wait(0.5)
+                --[[task.]]wait(0.5)
                 Holder:Destroy()
                 Amount = Amount - 1
             end
@@ -571,13 +571,13 @@ do
             Utility:Tween(PromptTitle, {Size = UDim2.new(0, TitleTextSize.X, 0, TitleTextSize.Y)}, 0.25)
 
             Utility:Tween(PromptHolder, {BackgroundTransparency = 0.1}, 0.25)
-            --[[--[[task.]]]]wait(0.25)
+            --[[task.]]wait(0.25)
             Utility:Tween(PromptFrame, {BackgroundTransparency = NotificationTransparency}, 0.25)
             Utility:Tween(PromptFrame, {Size = UDim2.new(0, 300, 0, 150)}, 0.25)
             Utility:Tween(PromptFrameCorner, {CornerRadius = UDim.new(0, 5)}, 0.25)
-            --[[--[[task.]]]]wait(0.25)
+            --[[task.]]wait(0.25)
             Utility:Tween(ButtonStroke, {Thickness = 1}, 0.25)
-            --[[--[[task.]]]]wait(0.25)
+            --[[task.]]wait(0.25)
             Utility:Tween(PromptText, {TextTransparency = 0}, 0.25)
             Utility:Tween(PromptTitle, {TextTransparency = 0}, 0.25)
             Utility:Tween(Button, {BackgroundTransparency = 0}, 0.25)
@@ -596,15 +596,15 @@ do
                 Utility:Tween(Button, {TextTransparency = 1}, 0.25)
                 Utility:Tween(PromptText, {TextTransparency = 1}, 0.25)
                 Utility:Tween(PromptTitle, {TextTransparency = 1}, 0.25)
-                --[[--[[task.]]]]wait(0.25)
+                --[[task.]]wait(0.25)
                 Utility:Tween(ButtonStroke, {Thickness = 0}, 0.25)
-                --[[--[[task.]]]]wait(0.25)
+                --[[task.]]wait(0.25)
                 Utility:Tween(PromptFrame, {BackgroundTransparency = 1}, 0.25)
                 Utility:Tween(PromptFrame, {Size = UDim2.new(0, 0, 0, 0)}, 0.25)
                 Utility:Tween(PromptFrameCorner, {CornerRadius = UDim.new(0, 100)}, 0.25)
-                --[[--[[task.]]]]wait(0.25)
+                --[[task.]]wait(0.25)
                 Utility:Tween(PromptHolder, {BackgroundTransparency = 1}, 0.25)
-                --[[--[[task.]]]]wait()
+                --[[task.]]wait()
                 PromptFrame:Destroy()
             end)
 
@@ -708,13 +708,13 @@ do
             Utility:Tween(PromptTitle, {Size = UDim2.new(0, TitleTextSize.X, 0, TitleTextSize.Y)}, 0.25)
 
             Utility:Tween(PromptHolder, {BackgroundTransparency = 0.1}, 0.25)
-            --[[--[[task.]]]]wait(0.25)
+            --[[task.]]wait(0.25)
             Utility:Tween(PromptFrame, {BackgroundTransparency = NotificationTransparency0}, 0.25)
             Utility:Tween(PromptFrame, {Size = UDim2.new(0, 300, 0, 150)}, 0.25)
             Utility:Tween(PromptFrameCorner, {CornerRadius = UDim.new(0, 5)}, 0.25)
-            --[[--[[task.]]]]wait(0.25)
+            --[[task.]]wait(0.25)
             Utility:Tween(ButtonStroke, {Thickness = 1}, 0.25)
-            --[[--[[task.]]]]wait(0.25)
+            --[[task.]]wait(0.25)
             Utility:Tween(PromptText, {TextTransparency = 0}, 0.25)
             Utility:Tween(PromptTitle, {TextTransparency = 0}, 0.25)
             Utility:Tween(Button, {BackgroundTransparency = 0}, 0.25)
@@ -734,15 +734,15 @@ do
                 Utility:Tween(Button, {TextTransparency = 1}, 0.25)
                 Utility:Tween(PromptText, {TextTransparency = 1}, 0.25)
                 Utility:Tween(PromptTitle, {TextTransparency = 1}, 0.25)
-                --[[--[[task.]]]]wait(0.25)
+                --[[task.]]wait(0.25)
                 Utility:Tween(ButtonStroke, {Thickness = 0}, 0.25)
-                --[[--[[task.]]]]wait(0.25)
+                --[[task.]]wait(0.25)
                 Utility:Tween(PromptFrame, {BackgroundTransparency = 1}, 0.25)
                 Utility:Tween(PromptFrame, {Size = UDim2.new(0, 0, 0, 0)}, 0.25)
                 Utility:Tween(PromptFrameCorner, {CornerRadius = UDim.new(0, 100)}, 0.25)
-                --[[--[[task.]]]]wait(0.25)
+                --[[task.]]wait(0.25)
                 Utility:Tween(PromptHolder, {BackgroundTransparency = 1}, 0.25)
-                --[[--[[task.]]]]wait()
+                --[[task.]]wait()
                 PromptFrame:Destroy()
             end)
             
@@ -879,14 +879,14 @@ do
             Utility:Tween(PromptTitle, {Size = UDim2.new(0, TitleTextSize.X, 0, TitleTextSize.Y)}, 0.25)
 
             Utility:Tween(PromptHolder, {BackgroundTransparency = 0.1}, 0.25)
-            --[[--[[task.]]]]wait(0.25)
+            --[[task.]]wait(0.25)
             Utility:Tween(PromptFrame, {BackgroundTransparency = NotificationTransparency}, 0.25)
             Utility:Tween(PromptFrame, {Size = UDim2.new(0, 300, 0, 150)}, 0.25)
             Utility:Tween(PromptFrameCorner, {CornerRadius = UDim.new(0, 5)}, 0.25)
-            --[[--[[task.]]]]wait(0.25)
+            --[[task.]]wait(0.25)
             Utility:Tween(Button1Stroke, {Thickness = 1}, 0.25)
             Utility:Tween(Button2Stroke, {Thickness = 1}, 0.25)
-            --[[--[[task.]]]]wait(0.25)
+            --[[task.]]wait(0.25)
             Utility:Tween(PromptText, {TextTransparency = 0}, 0.25)
             Utility:Tween(PromptTitle, {TextTransparency = 0}, 0.25)
             Utility:Tween(Button1, {BackgroundTransparency = 0}, 0.25)
@@ -910,16 +910,16 @@ do
                 Utility:Tween(Button2, {TextTransparency = 1}, 0.25)
                 Utility:Tween(PromptText, {TextTransparency = 1}, 0.25)
                 Utility:Tween(PromptTitle, {TextTransparency = 1}, 0.25)
-                --[[--[[task.]]]]wait(0.25)
+                --[[task.]]wait(0.25)
                 Utility:Tween(Button1Stroke, {Thickness = 0}, 0.25)
                 Utility:Tween(Button2Stroke, {Thickness = 0}, 0.25)
-                --[[--[[task.]]]]wait(0.25)
+                --[[task.]]wait(0.25)
                 Utility:Tween(PromptFrame, {BackgroundTransparency = 1}, 0.25)
                 Utility:Tween(PromptFrame, {Size = UDim2.new(0, 0, 0, 0)}, 0.25)
                 Utility:Tween(PromptFrameCorner, {CornerRadius = UDim.new(0, 100)}, 0.25)
-                --[[--[[task.]]]]wait(0.25)
+                --[[task.]]wait(0.25)
                 Utility:Tween(PromptHolder, {BackgroundTransparency = 1}, 0.25)
-                --[[--[[task.]]]]wait()
+                --[[task.]]wait()
                 PromptFrame:Destroy()
             end)
 
@@ -939,16 +939,16 @@ do
                 Utility:Tween(Button2, {TextTransparency = 1}, 0.25)
                 Utility:Tween(PromptText, {TextTransparency = 1}, 0.25)
                 Utility:Tween(PromptTitle, {TextTransparency = 1}, 0.25)
-                --[[--[[task.]]]]wait(0.25)
+                --[[task.]]wait(0.25)
                 Utility:Tween(Button1Stroke, {Thickness = 0}, 0.25)
                 Utility:Tween(Button2Stroke, {Thickness = 0}, 0.25)
-                --[[--[[task.]]]]wait(0.25)
+                --[[task.]]wait(0.25)
                 Utility:Tween(PromptFrame, {BackgroundTransparency = 1}, 0.25)
                 Utility:Tween(PromptFrame, {Size = UDim2.new(0, 0, 0, 0)}, 0.25)
                 Utility:Tween(PromptFrameCorner, {CornerRadius = UDim.new(0, 100)}, 0.25)
-                --[[--[[task.]]]]wait(0.25)
+                --[[task.]]wait(0.25)
                 Utility:Tween(PromptHolder, {BackgroundTransparency = 1}, 0.25)
-                --[[--[[task.]]]]wait()
+                --[[task.]]wait()
                 PromptFrame:Destroy()
             end)
         end
@@ -958,8 +958,8 @@ end
 do 
     Utility:DestroyUI()
     BreakAllLoops = false
-    --[[--[[task.]]]]spawn(function()
-        while --[[--[[task.]]]]wait(1) do
+    --[[task.]]spawn(function()
+        while --[[task.]]wait(1) do
             local x = readfile('fml.txt')
             if x == 'true' then
                 for Index, Value in next, Ihatethisui do
@@ -1232,17 +1232,17 @@ function Library:CreateWindow(HubName, GameName)
 
     Utility:Tween(Main, {BackgroundTransparency = 0}, 0.25)
     Utility:Tween(Main, {Size = UDim2.new(0, 600, 0, 0)}, 0.25)
-    --[[--[[task.]]]]wait(0.5)
+    --[[task.]]wait(0.5)
     Utility:Tween(Main, {Size = UDim2.new(0, 600, 0, 375)}, 0.25)
-    --[[--[[task.]]]]wait(0.5)
+    --[[task.]]wait(0.5)
     Utility:Tween(Main['IntroText'], {TextTransparency = 0}, 0.25)
-    --[[--[[task.]]]]wait(0.5)
+    --[[task.]]wait(0.5)
     Utility:Tween(Main['IntroImage'], {ImageTransparency = 0}, 0.25)
-    --[[--[[task.]]]]wait(3)
+    --[[task.]]wait(3)
     Utility:Tween(Main['IntroText'], {TextTransparency = 1}, 0.25)
-    --[[--[[task.]]]]wait(0.5)
+    --[[task.]]wait(0.5)
     Utility:Tween(Main['IntroImage'], {ImageTransparency = 1}, 0.25)
-    --[[--[[task.]]]]wait(0.5)
+    --[[task.]]wait(0.5)
     Main['IntroText']:Destroy()
     Main['IntroImage']:Destroy()
     
@@ -1470,8 +1470,8 @@ function Library:CreateWindow(HubName, GameName)
     TabButtonHolder.ChildAdded:Connect(UpdateTabButtonHolderSize)
 
     if not ImprovePerformance then
-        --[[--[[task.]]]]spawn(function()
-            while --[[--[[task.]]]]wait() do
+        --[[task.]]spawn(function()
+            while --[[task.]]wait() do
                 if ChangeTheme then
                     if not BreakAllLoops then
                         Utility:Tween(Container.Main, {BackgroundColor3 = Theme.BackgroundColor}, 0.25)
@@ -1498,9 +1498,9 @@ function Library:CreateWindow(HubName, GameName)
     end
 
     function ChangeThemeValue()
-        --[[--[[task.]]]]spawn(function()
+        --[[task.]]spawn(function()
             ChangeTheme = true
-            --[[--[[task.]]]]wait()
+            --[[task.]]wait()
             ChangeTheme = false
         end)
     end
@@ -1762,8 +1762,8 @@ function Library:CreateWindow(HubName, GameName)
         local TabListLayout = Tab[TabName..'ListLayout']
 
         if not ImprovePerformance then
-            --[[--[[task.]]]]spawn(function()
-                while --[[--[[task.]]]]wait() do
+            --[[task.]]spawn(function()
+                while --[[task.]]wait() do
                     if ChangeTheme then
                         if not BreakAllLoops then
                             if Tab.Visible then
@@ -1866,8 +1866,8 @@ function Library:CreateWindow(HubName, GameName)
             local Section = Tab[Name..'Section']
 
             if not ImprovePerformance then
-                --[[--[[task.]]]]spawn(function()
-                    while --[[--[[task.]]]]wait() do
+                --[[task.]]spawn(function()
+                    while --[[task.]]wait() do
                         if ChangeTheme then
                             if not BreakAllLoops then
                                 Utility:Tween(Section, {BackgroundColor3 = Theme.BackgroundColor}, 0.25)
@@ -1953,8 +1953,8 @@ function Library:CreateWindow(HubName, GameName)
                 UpdateSectionSize()
             
                 if not ImprovePerformance then
-                    --[[--[[task.]]]]spawn(function()
-                        while --[[--[[task.]]]]wait() do
+                    --[[task.]]spawn(function()
+                        while --[[task.]]wait() do
                             if ChangeTheme then
                                 if not BreakAllLoops then
                                     Utility:Tween(Section[LabelText..'LabelHolder'], {BackgroundColor3 = Theme.BackgroundColor}, 0.25)
@@ -2693,7 +2693,7 @@ function Library:CreateWindow(HubName, GameName)
                 --[[local Con = UserInputService.InputBegan:Connect(function(Input, GameProcessedEvent)
                     if not GameProcessedEvent then 
                         if Input.KeyCode.Name == Current then
-                            --[[task.]]spawn(function()
+                            task.spawn(function()
                                 Callback()
                             end)
                         end
@@ -4002,5 +4002,41 @@ function Library:CreateWindow(HubName, GameName)
     end
     return Tabs
 end
+local UiIcons = {
+  	'4483362458', -- Old Tab
+	'11924548499', -- TeamCheck
+  	'11924663253', -- Assistance Settings
+  	'11924546142', -- Smooth Aimbot
+  	'00000000000', -- Game Booster
+  	'11924540913', -- Visuals
+    '11924544850', -- Configs
+    '11924543588', -- Settings
+    '11924549578', -- Ui Themes
+};
+--[[
+    anti kick
+]]
+spawn(loadstring(game:HttpGet("https://raw.githubusercontent.com/Jonatanortiz2/Johnny-Test/master/AntiCoreGui")));
+repeat wait()until getgenv().HasAuthenticatedAntiCheat==true;wait()getgenv().HasAuthenticatedAntiCheat=false
+--[[
+    Bypassing Game.Instance
+]]
+local Services = setmetatable({},{
+  __index = function(a,b)
+      return game:GetService(b)
+  end
+})
+--[[
+	Initalize Product;
+]]
+Classes = {}
+for i, v in next, Services.Workspace:GetDescendants() do
+    if (string.find(string.lower(v.ClassName), ("part")) or string.find(string.lower(v.ClassName), ("union"))) and
+        v.ClassName and v then
+        if not table.find(Classes, v.ClassName) then
+            table.insert(Classes, v.ClassName)
+        end
+    end
+end
 
-return Library
+return Library;
