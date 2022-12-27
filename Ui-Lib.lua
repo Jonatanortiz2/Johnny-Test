@@ -2290,7 +2290,7 @@ function Library:CreateWindow(HubName, GameName)
                         BackgroundColor3 = Theme.PrimaryElementColor,
                         BackgroundTransparency = 1,
                         Position = UDim2.new(0, 360, 0, 0),
-                        Size = UDim2.new(0, 50, 0, 20),
+                        Size = UDim2.new(0, 50, 0, 33),
                         Font = Enum.Font.Gotham,
                         Text = '0',
                         TextColor3 = Theme.SecondaryTextColor,
