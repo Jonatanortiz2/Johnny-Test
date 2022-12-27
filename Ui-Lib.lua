@@ -8,9 +8,25 @@ local RunService = Services.RunService
 local TextService = Services.TextService
 local Players = Services.Players
 local HttpService = Services.HttpService
+local FastWaitValue = Instance.new("BoolValue")
+local UpdateValue = function()
+    FastWaitValue.Value = not FastWaitValue.Value
+end
+local CacheUpdateValue = function()
+    Services.RunService.RenderStepped:Connect(UpdateValue)
+    Services.RunService.Stepped:Connect(UpdateValue)
+    Services.RunService.Heartbeat:Connect(UpdateValue)
+end
+local FastWait = function()
+    FastWaitValue.Changed:Wait()
+end
 local task = {
     wait = function(Callback)
-        wait(Callback or 0.01)
+        if Callback then
+            wait(Callback or 0.01)
+        else
+            FastWait()
+        end
     end,
     spawn = function(Callback)
         spawn(Callback)
