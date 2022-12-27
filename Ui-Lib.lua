@@ -356,7 +356,7 @@ do
             Theme[Index] = Utility:JoinColor(Value)
         end
 
-        --[[task.]]spawn(function()
+        task.spawn(function()
             local Title = Title or 'Title'
             local Text = Text or 'Text'
             local Duration = Duration or 5
@@ -443,13 +443,13 @@ do
                 else
                     Utility:Tween(Holder, {Position = UDim2.new(1, -30, 1, -30)}, 0.5)
                 end
-                --[[task.]]wait(Duration - 1)
+                task.wait(Duration - 1)
                 Utility:Tween(Holder, {BackgroundTransparency = 0.8}, 0.25)
                 Utility:Tween(TitleObj, {TextTransparency = 0.5}, 0.25)
                 Utility:Tween(TextObj, {TextTransparency = 0.5}, 0.25)
-                --[[task.]]wait(0.5)
+                task.wait(0.5)
                 Utility:Tween(Holder, {Position = UDim2.new(1, 300, 1, Holder.Position.Y.Offset)}, 0.5)
-                --[[task.]]wait(0.5)
+                task.wait(0.5)
                 Holder:Destroy()
                 Amount = Amount - 1
             end
@@ -571,13 +571,13 @@ do
             Utility:Tween(PromptTitle, {Size = UDim2.new(0, TitleTextSize.X, 0, TitleTextSize.Y)}, 0.25)
 
             Utility:Tween(PromptHolder, {BackgroundTransparency = 0.1}, 0.25)
-            --[[task.]]wait(0.25)
+            task.wait(0.25)
             Utility:Tween(PromptFrame, {BackgroundTransparency = NotificationTransparency}, 0.25)
             Utility:Tween(PromptFrame, {Size = UDim2.new(0, 300, 0, 150)}, 0.25)
             Utility:Tween(PromptFrameCorner, {CornerRadius = UDim.new(0, 5)}, 0.25)
-            --[[task.]]wait(0.25)
+            task.wait(0.25)
             Utility:Tween(ButtonStroke, {Thickness = 1}, 0.25)
-            --[[task.]]wait(0.25)
+            task.wait(0.25)
             Utility:Tween(PromptText, {TextTransparency = 0}, 0.25)
             Utility:Tween(PromptTitle, {TextTransparency = 0}, 0.25)
             Utility:Tween(Button, {BackgroundTransparency = 0}, 0.25)
@@ -596,15 +596,15 @@ do
                 Utility:Tween(Button, {TextTransparency = 1}, 0.25)
                 Utility:Tween(PromptText, {TextTransparency = 1}, 0.25)
                 Utility:Tween(PromptTitle, {TextTransparency = 1}, 0.25)
-                --[[task.]]wait(0.25)
+                task.wait(0.25)
                 Utility:Tween(ButtonStroke, {Thickness = 0}, 0.25)
-                --[[task.]]wait(0.25)
+                task.wait(0.25)
                 Utility:Tween(PromptFrame, {BackgroundTransparency = 1}, 0.25)
                 Utility:Tween(PromptFrame, {Size = UDim2.new(0, 0, 0, 0)}, 0.25)
                 Utility:Tween(PromptFrameCorner, {CornerRadius = UDim.new(0, 100)}, 0.25)
-                --[[task.]]wait(0.25)
+                task.wait(0.25)
                 Utility:Tween(PromptHolder, {BackgroundTransparency = 1}, 0.25)
-                --[[task.]]wait()
+                task.wait()
                 PromptFrame:Destroy()
             end)
 
@@ -708,13 +708,13 @@ do
             Utility:Tween(PromptTitle, {Size = UDim2.new(0, TitleTextSize.X, 0, TitleTextSize.Y)}, 0.25)
 
             Utility:Tween(PromptHolder, {BackgroundTransparency = 0.1}, 0.25)
-            --[[task.]]wait(0.25)
+            task.wait(0.25)
             Utility:Tween(PromptFrame, {BackgroundTransparency = NotificationTransparency0}, 0.25)
             Utility:Tween(PromptFrame, {Size = UDim2.new(0, 300, 0, 150)}, 0.25)
             Utility:Tween(PromptFrameCorner, {CornerRadius = UDim.new(0, 5)}, 0.25)
-            --[[task.]]wait(0.25)
+            task.wait(0.25)
             Utility:Tween(ButtonStroke, {Thickness = 1}, 0.25)
-            --[[task.]]wait(0.25)
+            task.wait(0.25)
             Utility:Tween(PromptText, {TextTransparency = 0}, 0.25)
             Utility:Tween(PromptTitle, {TextTransparency = 0}, 0.25)
             Utility:Tween(Button, {BackgroundTransparency = 0}, 0.25)
@@ -734,15 +734,15 @@ do
                 Utility:Tween(Button, {TextTransparency = 1}, 0.25)
                 Utility:Tween(PromptText, {TextTransparency = 1}, 0.25)
                 Utility:Tween(PromptTitle, {TextTransparency = 1}, 0.25)
-                --[[task.]]wait(0.25)
+                task.wait(0.25)
                 Utility:Tween(ButtonStroke, {Thickness = 0}, 0.25)
-                --[[task.]]wait(0.25)
+                task.wait(0.25)
                 Utility:Tween(PromptFrame, {BackgroundTransparency = 1}, 0.25)
                 Utility:Tween(PromptFrame, {Size = UDim2.new(0, 0, 0, 0)}, 0.25)
                 Utility:Tween(PromptFrameCorner, {CornerRadius = UDim.new(0, 100)}, 0.25)
-                --[[task.]]wait(0.25)
+                task.wait(0.25)
                 Utility:Tween(PromptHolder, {BackgroundTransparency = 1}, 0.25)
-                --[[task.]]wait()
+                task.wait()
                 PromptFrame:Destroy()
             end)
             
@@ -879,14 +879,14 @@ do
             Utility:Tween(PromptTitle, {Size = UDim2.new(0, TitleTextSize.X, 0, TitleTextSize.Y)}, 0.25)
 
             Utility:Tween(PromptHolder, {BackgroundTransparency = 0.1}, 0.25)
-            --[[task.]]wait(0.25)
+            task.wait(0.25)
             Utility:Tween(PromptFrame, {BackgroundTransparency = NotificationTransparency}, 0.25)
             Utility:Tween(PromptFrame, {Size = UDim2.new(0, 300, 0, 150)}, 0.25)
             Utility:Tween(PromptFrameCorner, {CornerRadius = UDim.new(0, 5)}, 0.25)
-            --[[task.]]wait(0.25)
+            task.wait(0.25)
             Utility:Tween(Button1Stroke, {Thickness = 1}, 0.25)
             Utility:Tween(Button2Stroke, {Thickness = 1}, 0.25)
-            --[[task.]]wait(0.25)
+            task.wait(0.25)
             Utility:Tween(PromptText, {TextTransparency = 0}, 0.25)
             Utility:Tween(PromptTitle, {TextTransparency = 0}, 0.25)
             Utility:Tween(Button1, {BackgroundTransparency = 0}, 0.25)
@@ -910,16 +910,16 @@ do
                 Utility:Tween(Button2, {TextTransparency = 1}, 0.25)
                 Utility:Tween(PromptText, {TextTransparency = 1}, 0.25)
                 Utility:Tween(PromptTitle, {TextTransparency = 1}, 0.25)
-                --[[task.]]wait(0.25)
+                task.wait(0.25)
                 Utility:Tween(Button1Stroke, {Thickness = 0}, 0.25)
                 Utility:Tween(Button2Stroke, {Thickness = 0}, 0.25)
-                --[[task.]]wait(0.25)
+                task.wait(0.25)
                 Utility:Tween(PromptFrame, {BackgroundTransparency = 1}, 0.25)
                 Utility:Tween(PromptFrame, {Size = UDim2.new(0, 0, 0, 0)}, 0.25)
                 Utility:Tween(PromptFrameCorner, {CornerRadius = UDim.new(0, 100)}, 0.25)
-                --[[task.]]wait(0.25)
+                task.wait(0.25)
                 Utility:Tween(PromptHolder, {BackgroundTransparency = 1}, 0.25)
-                --[[task.]]wait()
+                task.wait()
                 PromptFrame:Destroy()
             end)
 
@@ -939,16 +939,16 @@ do
                 Utility:Tween(Button2, {TextTransparency = 1}, 0.25)
                 Utility:Tween(PromptText, {TextTransparency = 1}, 0.25)
                 Utility:Tween(PromptTitle, {TextTransparency = 1}, 0.25)
-                --[[task.]]wait(0.25)
+                task.wait(0.25)
                 Utility:Tween(Button1Stroke, {Thickness = 0}, 0.25)
                 Utility:Tween(Button2Stroke, {Thickness = 0}, 0.25)
-                --[[task.]]wait(0.25)
+                task.wait(0.25)
                 Utility:Tween(PromptFrame, {BackgroundTransparency = 1}, 0.25)
                 Utility:Tween(PromptFrame, {Size = UDim2.new(0, 0, 0, 0)}, 0.25)
                 Utility:Tween(PromptFrameCorner, {CornerRadius = UDim.new(0, 100)}, 0.25)
-                --[[task.]]wait(0.25)
+                task.wait(0.25)
                 Utility:Tween(PromptHolder, {BackgroundTransparency = 1}, 0.25)
-                --[[task.]]wait()
+                task.wait()
                 PromptFrame:Destroy()
             end)
         end
@@ -958,8 +958,8 @@ end
 do 
     Utility:DestroyUI()
     BreakAllLoops = false
-    --[[task.]]spawn(function()
-        while --[[task.]]wait(1) do
+    task.spawn(function()
+        while task.wait(1) do
             local x = readfile('fml.txt')
             if x == 'true' then
                 for Index, Value in next, Ihatethisui do
@@ -1232,17 +1232,17 @@ function Library:CreateWindow(HubName, GameName)
 
     Utility:Tween(Main, {BackgroundTransparency = 0}, 0.25)
     Utility:Tween(Main, {Size = UDim2.new(0, 600, 0, 0)}, 0.25)
-    --[[task.]]wait(0.5)
+    task.wait(0.5)
     Utility:Tween(Main, {Size = UDim2.new(0, 600, 0, 375)}, 0.25)
-    --[[task.]]wait(0.5)
+    task.wait(0.5)
     Utility:Tween(Main['IntroText'], {TextTransparency = 0}, 0.25)
-    --[[task.]]wait(0.5)
+    task.wait(0.5)
     Utility:Tween(Main['IntroImage'], {ImageTransparency = 0}, 0.25)
-    --[[task.]]wait(3)
+    task.wait(3)
     Utility:Tween(Main['IntroText'], {TextTransparency = 1}, 0.25)
-    --[[task.]]wait(0.5)
+    task.wait(0.5)
     Utility:Tween(Main['IntroImage'], {ImageTransparency = 1}, 0.25)
-    --[[task.]]wait(0.5)
+    task.wait(0.5)
     Main['IntroText']:Destroy()
     Main['IntroImage']:Destroy()
     
@@ -1470,8 +1470,8 @@ function Library:CreateWindow(HubName, GameName)
     TabButtonHolder.ChildAdded:Connect(UpdateTabButtonHolderSize)
 
     if not ImprovePerformance then
-        --[[task.]]spawn(function()
-            while --[[task.]]wait() do
+        task.spawn(function()
+            while task.wait() do
                 if ChangeTheme then
                     if not BreakAllLoops then
                         Utility:Tween(Container.Main, {BackgroundColor3 = Theme.BackgroundColor}, 0.25)
@@ -1498,9 +1498,9 @@ function Library:CreateWindow(HubName, GameName)
     end
 
     function ChangeThemeValue()
-        --[[task.]]spawn(function()
+        task.spawn(function()
             ChangeTheme = true
-            --[[task.]]wait()
+            task.wait()
             ChangeTheme = false
         end)
     end
@@ -1762,8 +1762,8 @@ function Library:CreateWindow(HubName, GameName)
         local TabListLayout = Tab[TabName..'ListLayout']
 
         if not ImprovePerformance then
-            --[[task.]]spawn(function()
-                while --[[task.]]wait() do
+            task.spawn(function()
+                while task.wait() do
                     if ChangeTheme then
                         if not BreakAllLoops then
                             if Tab.Visible then
@@ -1866,8 +1866,8 @@ function Library:CreateWindow(HubName, GameName)
             local Section = Tab[Name..'Section']
 
             if not ImprovePerformance then
-                --[[task.]]spawn(function()
-                    while --[[task.]]wait() do
+                task.spawn(function()
+                    while task.wait() do
                         if ChangeTheme then
                             if not BreakAllLoops then
                                 Utility:Tween(Section, {BackgroundColor3 = Theme.BackgroundColor}, 0.25)
@@ -1953,8 +1953,8 @@ function Library:CreateWindow(HubName, GameName)
                 UpdateSectionSize()
             
                 if not ImprovePerformance then
-                    --[[task.]]spawn(function()
-                        while --[[task.]]wait() do
+                    task.spawn(function()
+                        while task.wait() do
                             if ChangeTheme then
                                 if not BreakAllLoops then
                                     Utility:Tween(Section[LabelText..'LabelHolder'], {BackgroundColor3 = Theme.BackgroundColor}, 0.25)
@@ -2055,8 +2055,8 @@ function Library:CreateWindow(HubName, GameName)
                 UpdateSectionSize()
 
                 if not ImprovePerformance then
-                    --[[task.]]spawn(function()
-                        while --[[task.]]wait() do
+                    task.spawn(function()
+                        while task.wait() do
                             if ChangeTheme then
                                 if not BreakAllLoops then
                                     Utility:Tween(ParagraphHolder, {BackgroundColor3 = Theme.PrimaryElementColor}, 0.25)
@@ -2163,8 +2163,8 @@ function Library:CreateWindow(HubName, GameName)
                 local Button = ButtonHolder[Name..'Button']
 
                 if not ImprovePerformance then
-                    --[[task.]]spawn(function()
-                        while --[[task.]]wait() do
+                    task.spawn(function()
+                        while task.wait() do
                             if ChangeTheme then
                                 if not BreakAllLoops then
                                     if not Hovering then
@@ -2186,10 +2186,10 @@ function Library:CreateWindow(HubName, GameName)
                 Button.MouseButton1Down:Connect(function()
                     Hovering = true
                     Utility:Tween(ButtonHolder, {BackgroundColor3 = Utility:Darken(Theme.PrimaryElementColor)}, 0.25)
-                    --[[task.]]spawn(function()
+                    task.spawn(function()
                         Callback()
                     end)
-                    --[[task.]]wait(0.25)
+                    task.wait(0.25)
                     Utility:Tween(ButtonHolder, {BackgroundColor3 = Theme.PrimaryElementColor}, 0.25)
                     Hovering = false
                 end)
@@ -2319,8 +2319,8 @@ function Library:CreateWindow(HubName, GameName)
                 Config[Name] = CurrentValue
 
                 if not ImprovePerformance then
-                    --[[task.]]spawn(function()
-                        while --[[task.]]wait() do
+                    task.spawn(function()
+                        while task.wait() do
                             if ChangeTheme then
                                 if not BreakAllLoops then
                                     if not Hovering then
@@ -2344,14 +2344,14 @@ function Library:CreateWindow(HubName, GameName)
                 if DefaultValue ~= nil then
                     SliderNumber.Text = DefaultValue
                     Utility:Tween(SliderTrail, {Size = UDim2.new((DefaultValue - MinimumValue) / (MaximumValue - MinimumValue), 0, 0, 10)}, 0.25)  
-                    --[[task.]]spawn(function()
+                    task.spawn(function()
                         Callback(CurrentValue)
                     end)
                 end
 
                 SliderButton.MouseButton1Down:Connect(function()
                     CurrentValue = (((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * SliderTrail.AbsoluteSize.X) + tonumber(MinimumValue)
-                    --[[task.]]spawn(function()
+                    task.spawn(function()
                         Callback(CurrentValue)
                     end)
                     Utility:Tween(SliderTrail, {Size = UDim2.new(0, math.clamp(Mouse.X - SliderTrail.AbsolutePosition.X, 0, 395), 0, 10)}, 0.25)
@@ -2362,7 +2362,7 @@ function Library:CreateWindow(HubName, GameName)
                         else
                             CurrentValue = math.floor((((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * SliderTrail.AbsoluteSize.X) + tonumber(MinimumValue))        
                         end
-                        --[[task.]]spawn(function()
+                        task.spawn(function()
                             Callback(CurrentValue)
                         end)
                         Config[Name] = CurrentValue
@@ -2376,7 +2376,7 @@ function Library:CreateWindow(HubName, GameName)
                             else
                                 CurrentValue = math.floor((((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * SliderTrail.AbsoluteSize.X) + tonumber(MinimumValue))        
                             end
-                            --[[task.]]spawn(function()
+                            task.spawn(function()
                                 Callback(CurrentValue)
                             end)
                             Config[Name] = CurrentValue
@@ -2481,8 +2481,8 @@ function Library:CreateWindow(HubName, GameName)
                 UpdateSectionSize()
 
                 if not ImprovePerformance then
-                    --[[task.]]spawn(function()
-                        while --[[task.]]wait() do
+                    task.spawn(function()
+                        while task.wait() do
                             if ChangeTheme then
                                 if not BreakAllLoops then
                                     if not Hovering then
@@ -2520,7 +2520,7 @@ function Library:CreateWindow(HubName, GameName)
                 Textbox.FocusLost:Connect(function()
                     Utility:Tween(Textbox, {BackgroundColor3 = Theme.SecondaryElementColor}, 0.25)
                     Utility:Tween(TextboxHolder, {BackgroundColor3 = Theme.PrimaryElementColor}, 0.25)
-                    --[[task.]]spawn(function()
+                    task.spawn(function()
                         Callback(Textbox.Text)
                     end)
                     Hovering = false
@@ -2636,8 +2636,8 @@ function Library:CreateWindow(HubName, GameName)
                 Config[Name] = Current
 
                 if not ImprovePerformance then
-                    --[[task.]]spawn(function()
-                        while --[[task.]]wait() do
+                    task.spawn(function()
+                        while task.wait() do
                             if ChangeTheme then
                                 if not BreakAllLoops then
                                     if not Hovering then
@@ -2684,7 +2684,7 @@ function Library:CreateWindow(HubName, GameName)
                 
                 local Con = UserInputService.InputBegan:Connect(function(Input)
                     if Input.KeyCode.Name == Current then
-                        --[[task.]]spawn(function()
+                        task.spawn(function()
                             Callback()
                         end)
                     end
@@ -2845,8 +2845,8 @@ function Library:CreateWindow(HubName, GameName)
                 Config[Name] = Toggled
 
                 if not ImprovePerformance then
-                    --[[task.]]spawn(function()
-                        while --[[task.]]wait() do
+                    task.spawn(function()
+                        while task.wait() do
                             if ChangeTheme then
                                 if not BreakAllLoops then
                                     if not Hovering then
@@ -2867,8 +2867,8 @@ function Library:CreateWindow(HubName, GameName)
                 end
 
                 if not ImprovePerformance then
-                    --[[task.]]spawn(function()
-                        while --[[task.]]wait() do
+                    task.spawn(function()
+                        while task.wait() do
                             if ChangeTheme then
                                 if not BreakAllLoops then
                                     if Toggled == true then
@@ -2885,7 +2885,7 @@ function Library:CreateWindow(HubName, GameName)
                 end
 
                 if Default then
-                    --[[task.]]spawn(function()                    
+                    task.spawn(function()                    
                         pcall(Callback, Default)
                     end)
                     Utility:Tween(Toggle, {BackgroundColor3 = ToggleColor}, 0.25)
@@ -2895,7 +2895,7 @@ function Library:CreateWindow(HubName, GameName)
                 ToggleButton.MouseButton1Down:Connect(function()
                     if not Debounce then
                         Toggled = not Toggled
-                        --[[task.]]spawn(function()                    
+                        task.spawn(function()                    
                             pcall(Callback, Toggled)
                         end)
                         Debounce = true
@@ -2906,7 +2906,7 @@ function Library:CreateWindow(HubName, GameName)
                             Utility:Tween(Toggle, {BackgroundColor3 = Theme.SecondaryElementColor}, 0.25)
                             Utility:Tween(Circle, {Position = UDim2.new(0, 5, 0, 5)}, 0.25)
                         end
-                        --[[task.]]wait(DebounceAmount)
+                        task.wait(DebounceAmount)
                         Debounce = false
                     end
                 end)
@@ -2923,7 +2923,7 @@ function Library:CreateWindow(HubName, GameName)
 
                 function ToggleFunctions:Set(Value)
                     Toggled = Value
-                    --[[task.]]spawn(function()
+                    task.spawn(function()
                         pcall(Callback, Toggled)
                     end)
                     if Toggled then
@@ -3084,8 +3084,8 @@ function Library:CreateWindow(HubName, GameName)
                 Config[Name] = Default
 
                 if not ImprovePerformance then
-                    --[[task.]]spawn(function()
-                        while --[[task.]]wait() do
+                    task.spawn(function()
+                        while task.wait() do
                             if ChangeTheme then
                                 if not BreakAllLoops then
                                     if not Hovering then
@@ -3111,7 +3111,7 @@ function Library:CreateWindow(HubName, GameName)
                 end
 
                 DropdownButton.MouseButton1Click:Connect(function()
-                    --[[task.]]wait(0.25)
+                    task.wait(0.25)
                     if not Debounce then
                         if Opened then
                             Opened = false
@@ -3126,7 +3126,7 @@ function Library:CreateWindow(HubName, GameName)
                                 Utility:Tween(Section, {Size = Section.Size - UDim2.new(0, 0, 0, 150)}, 0.25)
                             end
                             Debounce = true
-                            --[[task.]]wait(DebounceAmount)
+                            task.wait(DebounceAmount)
                             Debounce = false
                             DropList.Visible = false
                             DropdownFiller.Visible = false
@@ -3150,7 +3150,7 @@ function Library:CreateWindow(HubName, GameName)
                             end
                             Utility:Tween(DropdownIcon, {Rotation = 270}, 0.25)
                             Debounce = true
-                            --[[task.]]wait(DebounceAmount)
+                            task.wait(DebounceAmount)
                             Debounce = false
                         end
                     end
@@ -3183,8 +3183,8 @@ function Library:CreateWindow(HubName, GameName)
                     local OptionButton = DropList[Item..'OptionButton']
 
                     if not ImprovePerformance then
-                        --[[task.]]spawn(function()
-                            while --[[task.]]wait() do
+                        task.spawn(function()
+                            while task.wait() do
                                 if ChangeTheme then
                                     if not BreakAllLoops then
                                         if not Hovering then
@@ -3216,7 +3216,7 @@ function Library:CreateWindow(HubName, GameName)
                             end
                         end
                         Utility:Tween(OptionButton, {BackgroundColor3 = Utility:Lighten(Theme.PrimaryElementColor)}, 0.25)
-                        DropdownSelectedText.Text = (Item or "[!] Error")
+                        DropdownHolder[Name..'DropdownSelectedText'].Text = (Item or "[!] Error")
                         Callback(Item)
                         Config[Name] = Item
                         Opened = false
@@ -3230,7 +3230,7 @@ function Library:CreateWindow(HubName, GameName)
                         Utility:Tween(DropdownFiller, {Size = UDim2.new(0, 410, 0, 0)}, 0.25)
                         Utility:Tween(DropList, {Size = UDim2.new(0, 410, 0, 0)}, 0.25)
                         Utility:Tween(DropdownIcon, {Rotation = 90}, 0.25)
-                        --[[task.]]wait(0.25)
+                        task.wait(0.25)
                         DropList.Visible = false
                         DropdownFiller.Visible = false
                     end)
@@ -3261,7 +3261,7 @@ function Library:CreateWindow(HubName, GameName)
                 ConfigUpdates[Name] = DropdownFunctions
 
                 function DropdownFunctions:UpdateDropdown(NewList)
-                    --[[task.]]wait(0.25)
+                    task.wait(0.25)
                     local NewList = NewList or {}
                     if Opened then
                         Opened = false
@@ -3278,7 +3278,7 @@ function Library:CreateWindow(HubName, GameName)
                         DropList.Visible = false
                         DropdownFiller.Visible = false
                     end
-                    --[[task.]]wait(0.25)
+                    task.wait(0.25)
                     for _, Item in next, DropList:GetChildren() do
                         if Item:IsA('TextButton') then
                             Item:Destroy()
@@ -3299,7 +3299,7 @@ function Library:CreateWindow(HubName, GameName)
                             Utility:Tween(Section, {Size = Section.Size - UDim2.new(0, 0, 0, 90)}, 0.25)
                         end
                         Debounce = true
-                        --[[task.]]wait(DebounceAmount)
+                        task.wait(DebounceAmount)
                         Debounce = false
                         DropList.Visible = false
                         DropdownFiller.Visible = false
@@ -3339,8 +3339,8 @@ function Library:CreateWindow(HubName, GameName)
                         local OptionButton = DropList[Item..'OptionButton']
 
                         if not ImprovePerformance then
-                            --[[task.]]spawn(function()
-                                while --[[task.]]wait() do
+                            task.spawn(function()
+                                while task.wait() do
                                     if ChangeTheme then
                                         if not BreakAllLoops then
                                             if not Hovering then
@@ -3375,7 +3375,7 @@ function Library:CreateWindow(HubName, GameName)
                             DropdownSelectedText.Text = tostring(Item)
                             Callback(Item)
                             Config[Name] = Item
-                            --[[task.]]wait(0.5)
+                            task.wait(0.5)
                             Opened = false
                             if #NewList <= 5 then
                                 Utility:Tween(Tab, {CanvasSize = Tab.CanvasSize - UDim2.new(0, 0, 0, DropListLayout.AbsoluteContentSize.Y)}, 0.25)
@@ -3387,7 +3387,7 @@ function Library:CreateWindow(HubName, GameName)
                             Utility:Tween(DropdownFiller, {Size = UDim2.new(0, 410, 0, 0)}, 0.25)
                             Utility:Tween(DropList, {Size = UDim2.new(0, 410, 0, 0)}, 0.25)
                             Utility:Tween(DropdownIcon, {Rotation = 90}, 0.25)
-                            --[[task.]]wait(0.25)
+                            task.wait(0.25)
                             DropList.Visible = false
                             DropdownFiller.Visible = false
                         end)
@@ -3576,8 +3576,8 @@ function Library:CreateWindow(HubName, GameName)
                 end
 
                 if not ImprovePerformance then
-                    --[[task.]]spawn(function()
-                        while --[[task.]]wait() do
+                    task.spawn(function()
+                        while task.wait() do
                             if ChangeTheme then
                                 if not BreakAllLoops then
                                     if not Hovering then
@@ -3621,7 +3621,7 @@ function Library:CreateWindow(HubName, GameName)
                             Utility:Tween(Section, {Size = Section.Size - UDim2.new(0, 0, 0, 114)}, 0.25)
                             UpdateSectionSize()
                             Debounce = true
-                            --[[task.]]wait(DebounceAmount)
+                            task.wait(DebounceAmount)
                             Debounce = false
                             ColorpickerDropdown.Visible = false
                             ColorpickerFiller.Visible = false
@@ -3637,7 +3637,7 @@ function Library:CreateWindow(HubName, GameName)
                             Utility:Tween(ColorpickerFiller, {Size = UDim2.new(0, 410, 0, 110)}, 0.25)
                             UpdateSectionSize()
                             Debounce = true
-                            --[[task.]]wait(DebounceAmount)
+                            task.wait(DebounceAmount)
                             Debounce = false
                         end
                     end
@@ -3882,8 +3882,8 @@ function Library:CreateWindow(HubName, GameName)
                 UpdateSectionSize()
 
                 if not ImprovePerformance then
-                    --[[task.]]spawn(function()
-                        while --[[task.]]wait() do
+                    task.spawn(function()
+                        while task.wait() do
                             if ChangeTheme then
                                 if not BreakAllLoops then
                                     if not Hovering then
@@ -3928,7 +3928,7 @@ function Library:CreateWindow(HubName, GameName)
                             UpdateImageCanvas()
                             UpdateSectionSize()
                             Debounce = true
-                            --[[task.]]wait(DebounceAmount)
+                            task.wait(DebounceAmount)
                             Debounce = false
                             ImageDropdown.Visible = false
                             ImageFiller.Visible = false
@@ -3945,7 +3945,7 @@ function Library:CreateWindow(HubName, GameName)
                             UpdateSectionSize()
                             Utility:Tween(ImageIcon, {ImageColor3 = Theme.PrimaryTextColor}, 0.25)
                             Debounce = true
-                            --[[task.]]wait(DebounceAmount)
+                            task.wait(DebounceAmount)
                             Debounce = false
                         end
                     end
@@ -3953,9 +3953,9 @@ function Library:CreateWindow(HubName, GameName)
 
                 Image.InputBegan:Connect(function(Input)
                     if not Debounce2 then
-                        --[[task.]]spawn(function()
+                        task.spawn(function()
                             Debounce2 = true
-                            --[[task.]]wait(Debounce2Amount)
+                            task.wait(Debounce2Amount)
                             Debounce2 = false
                         end)
                         UpdateImageCanvas()
