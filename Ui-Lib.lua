@@ -8,7 +8,11 @@ local RunService = Services.RunService
 local TextService = Services.TextService
 local Players = Services.Players
 local HttpService = Services.HttpService
-
+local task = {
+    spawn = function(Callback)
+        spawn(Callback)
+    end
+};
 -- // Variables
 getgenv().kms = false
 local Ihatethisui = {}
