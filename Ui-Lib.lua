@@ -6,6 +6,7 @@ local RunService = game:GetService('RunService')
 local TextService = game:GetService('TextService')
 local Players = game:GetService('Players')
 local HttpService = game:GetService('HttpService')
+local GUI = nil;
 
 -- // Variables
 getgenv().kms = false
@@ -311,6 +312,7 @@ do
         local Properties = Properties or {}
         local Children = Children or {}
         if _Instance == "ScreenGui" and syn then
+            GUI = Object;
             syn.protect_gui(Object)
         end
         for Index, Property in next, Properties do
@@ -3980,4 +3982,9 @@ function Library:CreateWindow(HubName, GameName)
     end
     return Tabs
 end
+
+if GUI and syn then
+    syn.unprotect_gui(Object)
+end
+
 return Library
