@@ -3216,7 +3216,7 @@ function Library:CreateWindow(HubName, GameName)
                             end
                         end
                         Utility:Tween(OptionButton, {BackgroundColor3 = Utility:Lighten(Theme.PrimaryElementColor)}, 0.25)
-                        DropdownSelectedText.Text = Item
+                        DropdownSelectedText.Text = (Item or "[!] Error")
                         Callback(Item)
                         Config[Name] = Item
                         Opened = false
