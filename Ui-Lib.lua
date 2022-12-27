@@ -9,6 +9,9 @@ local TextService = Services.TextService
 local Players = Services.Players
 local HttpService = Services.HttpService
 local task = {
+    wait = function(Callback)
+        wait(Callback)
+    end,
     spawn = function(Callback)
         spawn(Callback)
     end
