@@ -2285,17 +2285,18 @@ function Library:CreateWindow(HubName, GameName)
                             })
                         })
                     }),
-                    Utility:Create('TextLabel', {
+                    Utility:Create('TextBox', {
                         Name = Name..'SliderNumberText',
                         BackgroundColor3 = Theme.PrimaryElementColor,
                         BackgroundTransparency = 1,
-                        Position = UDim2.new(0, 299, 0, 0),
-                        Size = UDim2.new(0, 110, 0, 30),
+                        Position = UDim2.new(0, 360, 0, 0),
+                        Size = UDim2.new(0, 50, 0, 20),
                         Font = Enum.Font.Gotham,
                         Text = '0',
                         TextColor3 = Theme.SecondaryTextColor,
                         TextSize = 14,
-                        TextXAlignment = Enum.TextXAlignment.Right
+                        TextXAlignment = Enum.TextXAlignment.Right,
+                        ClearTextOnFocus = true,
                     }, {
                         Utility:Create('UICorner', {
                             CornerRadius = UDim.new(0, 5),
@@ -2340,7 +2341,7 @@ function Library:CreateWindow(HubName, GameName)
                         end
                     end)
                 end
-
+                
                 if DefaultValue ~= nil then
                     SliderNumber.Text = DefaultValue
                     Utility:Tween(SliderTrail, {Size = UDim2.new((DefaultValue - MinimumValue) / (MaximumValue - MinimumValue), 0, 0, 10)}, 0.25)  
@@ -2348,20 +2349,54 @@ function Library:CreateWindow(HubName, GameName)
                         Callback(CurrentValue)
                     end)
                 end
+                
+                SliderHolder[Name..'SliderNumberText'].MouseEnter:Connect(function()
+                    local Old_Value;
+                    local New_Value;
+                    SliderHolder[Name..'SliderNumberText'].Focused:Connect(function()
+                        Old_Value = tonumber(CurrentValue)
+                        SliderHolder[Name..'SliderNumberText'].FocusLost:Connect(function()
+                            New_Value = tonumber(SliderHolder[Name..'SliderNumberText'].Text)
+                            if not New_Value then
+                                SliderHolder[Name..'SliderNumberText'].Text = "Numbers Only!"
+                                wait(.80)
+                                SliderHolder[Name..'SliderNumberText'].Text = Old_Value;
+                                CurrentValue = Old_Value;
+                            end
+                            if New_Value and New_Value > MaximumValue then 
+                                SliderHolder[Name..'SliderNumberText'].Text = "[!] Max"..MaximumValue
+                                wait(.80)
+                                SliderHolder[Name..'SliderNumberText'].Text = Old_Value;
+                            end
+                            if New_Value and New_Value < MinimumValue then
+                                SliderHolder[Name..'SliderNumberText'].Text = "[!] Min"..MinimumValue
+                                wait(.80)
+                                SliderHolder[Name..'SliderNumberText'].Text = Old_Value;
+                            end
+                            if New_Value and New_Value <= MaximumValue and New_Value >= MinimumValue then
+                                CurrentValue = New_Value
+                                SliderNumber.Text = CurrentValue
+                                Utility:Tween(SliderTrail, {Size = UDim2.new((CurrentValue - MinimumValue) / (MaximumValue - MinimumValue), 0, 0, 10)}, 0.25)  
+                                task.spawn(function()
+                                    Callback(CurrentValue)
+                                end)
+                                Utility:Tween(SliderNumber, {TextColor3 = Theme.SecondaryTextColor}, 0.25)
+                            end
 
-                SliderButton.MouseButton1Down:Connect(function()
-                    CurrentValue = (((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * SliderTrail.AbsoluteSize.X) + tonumber(MinimumValue)
-                    task.spawn(function()
-                        Callback(CurrentValue)
+                        end)
                     end)
-                    Utility:Tween(SliderTrail, {Size = UDim2.new(0, math.clamp(Mouse.X - SliderTrail.AbsolutePosition.X, 0, 395), 0, 10)}, 0.25)
+                end)
+                
+                SliderButton.MouseButton1Down:Connect(function()
+                    local CaughtValue = Mouse.X
+                    
                     MoveConnection = Mouse.Move:Connect(function()
-                        SliderNumber.Text = CurrentValue
                         if IsPrecise == true then
                             CurrentValue = tonumber(tostring(string.sub(((((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * SliderTrail.AbsoluteSize.X) + tonumber(MinimumValue)), 1, 4)))
                         else
                             CurrentValue = math.floor((((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * SliderTrail.AbsoluteSize.X) + tonumber(MinimumValue))        
                         end
+                        SliderNumber.Text = CurrentValue
                         task.spawn(function()
                             Callback(CurrentValue)
                         end)
@@ -2369,22 +2404,30 @@ function Library:CreateWindow(HubName, GameName)
                         Utility:Tween(SliderNumber, {TextColor3 = Color3.new(255, 255, 255)}, 0.25)
                         Utility:Tween(SliderTrail, {Size = UDim2.new(0, math.clamp(Mouse.X - SliderTrail.AbsolutePosition.X, 0, 395), 0, 10)}, 0.25)
                     end)
+                    
                     ReleaseConnection = UserInputService.InputEnded:Connect(function(Input)
                         if Input.UserInputType == Enum.UserInputType.MouseButton1 then
-                            if IsPrecise == true then
-                                CurrentValue = tonumber(tostring(string.sub(((((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * SliderTrail.AbsoluteSize.X) + tonumber(MinimumValue)), 1, 4)))
-                            else
-                                CurrentValue = math.floor((((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * SliderTrail.AbsoluteSize.X) + tonumber(MinimumValue))        
-                            end
-                            task.spawn(function()
-                                Callback(CurrentValue)
-                            end)
-                            Config[Name] = CurrentValue
-                            Utility:Tween(SliderTrail, {Size = UDim2.new(0, math.clamp(Mouse.X - SliderTrail.AbsolutePosition.X, 0, 395), 0, 10)}, 0.25)
+                            Utility:Tween(SliderNumber, {TextColor3 = Theme.SecondaryTextColor}, 1.1)
                             MoveConnection:Disconnect()
                             ReleaseConnection:Disconnect()
                         end
                     end)
+                    
+                    Utility:Tween(SliderNumber, {TextColor3 = Color3.new(255, 255, 255)}, 0.25)
+                    Utility:Tween(SliderTrail, {Size = UDim2.new(0, math.clamp(CaughtValue - SliderTrail.AbsolutePosition.X, 0, 395), 0, 10)}, 0.25)
+                    SliderNumber.Text = "..."
+                    if IsPrecise == true then
+                        CurrentValue = tonumber(tostring(string.sub(((((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * (SliderButton.AbsoluteSize.X * 0 + math.clamp(CaughtValue - SliderTrail.AbsolutePosition.X, 0, 395))) + tonumber(MinimumValue)), 1, 4)))
+                    else
+                        CurrentValue = math.floor((((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * (SliderButton.AbsoluteSize.X * 0 + math.clamp(CaughtValue - SliderTrail.AbsolutePosition.X, 0, 395))) + tonumber(MinimumValue))        
+                    end
+                    SliderNumber.Text = "..."
+                    task.spawn(function()
+                        Callback(CurrentValue)
+                    end)
+                    Config[Name] = CurrentValue
+                    wait(0.20)
+                    SliderNumber.Text = CurrentValue
                 end)
 
                 SliderHolder.MouseEnter:Connect(function()
@@ -4001,42 +4044,6 @@ function Library:CreateWindow(HubName, GameName)
         return Sections
     end
     return Tabs
-end
-local UiIcons = {
-  	'4483362458', -- Old Tab
-	'11924548499', -- TeamCheck
-  	'11924663253', -- Assistance Settings
-  	'11924546142', -- Smooth Aimbot
-  	'00000000000', -- Game Booster
-  	'11924540913', -- Visuals
-    '11924544850', -- Configs
-    '11924543588', -- Settings
-    '11924549578', -- Ui Themes
-};
---[[
-    anti kick
-]]
-spawn(loadstring(game:HttpGet("https://raw.githubusercontent.com/Jonatanortiz2/Johnny-Test/master/AntiCoreGui")));
-repeat wait()until getgenv().HasAuthenticatedAntiCheat==true;wait()getgenv().HasAuthenticatedAntiCheat=false
---[[
-    Bypassing Game.Instance
-]]
-local Services = setmetatable({},{
-  __index = function(a,b)
-      return game:GetService(b)
-  end
-})
---[[
-	Initalize Product;
-]]
-Classes = {}
-for i, v in next, Services.Workspace:GetDescendants() do
-    if (string.find(string.lower(v.ClassName), ("part")) or string.find(string.lower(v.ClassName), ("union"))) and
-        v.ClassName and v then
-        if not table.find(Classes, v.ClassName) then
-            table.insert(Classes, v.ClassName)
-        end
-    end
 end
 
 return Library;
