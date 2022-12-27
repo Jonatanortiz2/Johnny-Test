@@ -2380,7 +2380,7 @@ function Library:CreateWindow(HubName, GameName)
                                 task.spawn(function()
                                     Callback(CurrentValue)
                                 end)
-                                Utility:Tween(SliderNumber, {TextColor3 = Theme.SecondaryTextColor}, 0.25)
+                                Utility:Tween(SliderNumber, {TextColor3 = Theme.SecondaryTextColor}, 1.1)
                             end
 
                         end)
