@@ -2407,27 +2407,37 @@ function Library:CreateWindow(HubName, GameName)
                     
                     ReleaseConnection = UserInputService.InputEnded:Connect(function(Input)
                         if Input.UserInputType == Enum.UserInputType.MouseButton1 then
-                            Utility:Tween(SliderNumber, {TextColor3 = Theme.SecondaryTextColor}, 1.1)
+                            Utility:Tween(SliderNumber, {TextColor3 = Theme.SecondaryTextColor}, 0.30)
                             MoveConnection:Disconnect()
                             ReleaseConnection:Disconnect()
                         end
                     end)
-                    
                     Utility:Tween(SliderNumber, {TextColor3 = Color3.new(255, 255, 255)}, 0.25)
                     Utility:Tween(SliderTrail, {Size = UDim2.new(0, math.clamp(CaughtValue - SliderTrail.AbsolutePosition.X, 0, 395), 0, 10)}, 0.25)
-                    SliderNumber.Text = "..."
                     if IsPrecise == true then
                         CurrentValue = tonumber(tostring(string.sub(((((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * (SliderButton.AbsoluteSize.X * 0 + math.clamp(CaughtValue - SliderTrail.AbsolutePosition.X, 0, 395))) + tonumber(MinimumValue)), 1, 4)))
                     else
                         CurrentValue = math.floor((((tonumber(MaximumValue) - tonumber(MinimumValue)) / 395) * (SliderButton.AbsoluteSize.X * 0 + math.clamp(CaughtValue - SliderTrail.AbsolutePosition.X, 0, 395))) + tonumber(MinimumValue))        
                     end
-                    SliderNumber.Text = "..."
                     task.spawn(function()
                         Callback(CurrentValue)
                     end)
                     Config[Name] = CurrentValue
-                    wait(0.20)
-                    SliderNumber.Text = CurrentValue
+					task.spawn(function()
+                        if CurrentValue > tonumber(SliderNumber.Text) then
+                            repeat
+      							wait()
+      							if IsPrecise==true then SliderNumber.Text=tonumber(tostring(string.sub((tonumber(MaximumValue)-tonumber(MinimumValue))/395*SliderTrail.AbsoluteSize.X+tonumber(MinimumValue),1,4)))else SliderNumber.Text=math.floor((tonumber(MaximumValue)-tonumber(MinimumValue))/395*SliderTrail.AbsoluteSize.X+tonumber(MinimumValue))end
+      							if tonumber(SliderNumber.Text)==CurrentValue then break end
+                            until SliderNumber.Text == CurrentValue
+                        else
+                            repeat
+      							wait()
+      							if IsPrecise==true then SliderNumber.Text=tonumber(tostring(string.sub((tonumber(MaximumValue)-tonumber(MinimumValue))/395*SliderTrail.AbsoluteSize.X+tonumber(MinimumValue),1,4)))else SliderNumber.Text=math.floor((tonumber(MaximumValue)-tonumber(MinimumValue))/395*SliderTrail.AbsoluteSize.X+tonumber(MinimumValue))end
+      							if tonumber(SliderNumber.Text)==CurrentValue then break end
+                            until SliderNumber.Text == CurrentValue
+                        end
+					end)
                 end)
 
                 SliderHolder.MouseEnter:Connect(function()
