@@ -256,7 +256,6 @@ do
         BreakAllLoops = true
         writefile('DestroyedUi.txt', 'true')
         for Index, Value in next, Ihatethisui do
-            print(Index, Value)
             Ihatethisui[Index]:Break()
         end
         if CoreGui:FindFirstChild(UIName) ~= nil then
@@ -965,7 +964,6 @@ do
             local x = readfile('DestroyedUi.txt')
             if x == 'true' then
                 for Index, Value in next, Ihatethisui do
-                    print(Index, Value)
                     Ihatethisui[Index]:Break()
                 end
                 writefile('DestroyedUi.txt', 'false')
@@ -2938,7 +2936,8 @@ function Library:CreateWindow(HubName, GameName)
                     Utility:Tween(Toggle, {BackgroundColor3 = ToggleColor}, 0.25)
                     Utility:Tween(Circle, {Position = UDim2.new(0, 30, 0, 5)}, 0.25)
                 end
-
+                
+                
                 ToggleButton.MouseButton1Down:Connect(function()
                     if not Debounce then
                         Toggled = not Toggled
@@ -3452,11 +3451,16 @@ function Library:CreateWindow(HubName, GameName)
                 local Callback = Callback or function() end
                 local DebounceAmount = DebounceAmount or 0.25
                 local DefaultColor = DefaultColor or Color3.fromRGB(0, 125, 255)
-                local Debounce = false
+                local Debounce = false;
+                local RainbowmodeToggleDebounce = false;
                 local Opened = false
                 local H, S, V = Color3.toHSV(DefaultColor)
                 local ColorpickerFunctions = {}
                 local Hovering = false
+                local Default = Default or false
+                local RainbowmodeToggled = Default
+                local RainbowmodeToggleColor = Color3.fromRGB(0, 255, 100)
+                local RainbowmodeToggleFunctions = {}
 
                 Utility:Create('Frame', {
                     Name = Name..'ColorpickerHolder',
@@ -3530,7 +3534,7 @@ function Library:CreateWindow(HubName, GameName)
                         Utility:Create('ImageButton', {
                             Name = Name..'RGBPicker',
                             BackgroundColor3 = Theme.PrimaryElementColor,
-                            Position = UDim2.new(0, 38, 0, 7),
+                            Position = UDim2.new(0, 8, 0, 7),
                             Size = UDim2.new(0, 300, 0, 100),
                             Image = 'rbxassetid://6523286724'
                         }, {
@@ -3560,7 +3564,7 @@ function Library:CreateWindow(HubName, GameName)
                         Utility:Create('ImageButton', {
                             Name = Name..'DarknessPicker',
                             BackgroundColor3 = Theme.PrimaryElementColor,
-                            Position = UDim2.new(0, 346, 0, 7),
+                            Position = UDim2.new(0, 316, 0, 7),
                             Size = UDim2.new(0, 25, 0, 100),
                             Image = 'rbxassetid://6523291212'
                         }, {
@@ -3587,6 +3591,94 @@ function Library:CreateWindow(HubName, GameName)
                                 LineJoinMode = 'Round',
                                 Thickness = 1
                             }),
+                        }),
+                        --[[
+                            Rainbow
+                        ]]
+                        Utility:Create('Frame', {
+                            Name = Name..'ColorpickerToggle',
+                            BackgroundColor3 = Theme.SecondaryElementColor,
+                            Position = UDim2.new(0, 348, 0, 85),
+                            Size = UDim2.new(0, 55, 0, 25),
+                            BackgroundTransparency = 0,
+                        }, {
+                            Utility:Create('ImageButton', {
+                                Name = Name..'ColorpickerToggleRGBPicker',
+                                BackgroundColor3 = Theme.PrimaryElementColor,
+                                Position = UDim2.new(0, 0, 0, 0),
+                                Size = UDim2.new(0, 55, 0, 25),
+                                Image = 'rbxassetid://6523286724'
+                            },{
+                               Utility:Create('UIStroke', {
+                                    Name = Name..'ColorpickerToggleStroke',
+                                    ApplyStrokeMode = 'Contextual',
+                                    Color = Theme.UIStrokeColor,
+                                    LineJoinMode = 'Round',
+                                    Thickness = 1
+                                }),
+                                Utility:Create('UICorner', {
+                                    CornerRadius = UDim.new(0, 25),
+                                    Name = Name..'ColorpickerToggleCorner'
+                                }), 
+                            }),
+                            Utility:Create('UIStroke', {
+                                Name = Name..'ColorpickerToggleStroke',
+                                ApplyStrokeMode = 'Contextual',
+                                Color = Theme.UIStrokeColor,
+                                LineJoinMode = 'Round',
+                                Thickness = 1
+                            }),
+                            Utility:Create('UICorner', {
+                                CornerRadius = UDim.new(0, 25),
+                                Name = Name..'ColorpickerToggleCorner'
+                            }),
+                            Utility:Create('ImageLabel', {
+                                Name = Name..'ColorpickerToggleCircle',
+                                BackgroundColor3 = Theme.PrimaryElementColor,
+                                BackgroundTransparency = 1,
+                                Position = UDim2.new(0, 5, 0, 5),
+                                Size = UDim2.new(0, 15, 0, 15),
+                                Image = 'rbxassetid://3570695787',
+                                ScaleType = Enum.ScaleType.Slice,
+                                SliceCenter = Rect.new(100, 100, 100, 100),
+                                SliceScale = 0.120,
+                            }, {
+                                Utility:Create('ImageLabel', {
+                                    Name = Name..'ColorpickerToggleCircleShadow',
+                                    BackgroundColor3 = Theme.PrimaryElementColor,
+                                    BackgroundTransparency = 1,
+                                    Position = UDim2.new(0, 0, 0, 0),
+                                    Size = UDim2.new(1, 2, 1, 2),
+                                    Image = 'rbxassetid://3602733521',
+                                    ScaleType = Enum.ScaleType.Stretch,
+                                    SliceCenter = Rect.new(0, 0, 0, 0),
+                                    SliceScale = 1,
+                            		ImageColor3 = Color3.fromRGB(20,20,20),
+                            		ImageTransparency = 0.6,
+                                },{
+                            		Utility:Create('UICorner', {
+                                        CornerRadius = UDim.new(0, 25),
+                                        Name = Name..'ColorpickerToggleCorner'
+                                    })
+                            	})
+                            }),
+                        }),
+                        Utility:Create('TextButton', {
+                            Name = Name..'ColorpickerToggleButton',
+                            BackgroundColor3 = Theme.PrimaryElementColor,
+                            BackgroundTransparency = 1,
+                            BorderSizePixel = 0,
+                            Position = UDim2.new(0, 348, 0, 85),
+                            Size = UDim2.new(0, 55, 0, 25),
+                            Font = Enum.Font.SourceSans,
+                            Text = '',
+                            TextColor3 = Color3.fromRGB(0, 0, 0),
+                            TextSize = 14
+                        }, {
+                            Utility:Create('UICorner', {
+                                CornerRadius = UDim.new(0, 5),
+                                Name = Name..'ColorpickerToggleButtonCorner'
+                            })
                         })
                     }),
                     Utility:Create('Frame', {
@@ -3617,6 +3709,10 @@ function Library:CreateWindow(HubName, GameName)
                 local DarknessPickerCircle = DarknessPicker[Name..'DarknessPickerCircle']
                 local ColorpickerPreview = ColorpickerHolder[Name..'ColorpickerPreview']
                 local ColorpickerFiller = Section[Name..'ColorpickerFiller']
+                local ColorpickerRainbowmode = ColorpickerDropdown[Name..'ColorpickerToggle']
+                local ColorpickerRainbowmodeButton = ColorpickerDropdown[Name..'ColorpickerToggleButton']
+                local ColorpickerRainbowmodeCircle = ColorpickerRainbowmode[Name..'ColorpickerToggleCircle']
+                local ColorpickerRainbowmodeCircleRainbowImage = ColorpickerRainbowmode[Name..'ColorpickerToggleRGBPicker']
                 
                 UpdateSectionSize()
 
@@ -3707,8 +3803,6 @@ function Library:CreateWindow(HubName, GameName)
                 local RGBPicked = false
                 local DarknessPicked = false
 
-                -- // Based off xHeptc's functions | https://v3rmillion.net/member.php?action=profile&uid=1347047
-                    
                 Mouse.Move:Connect(function()
                     if RGBPicked then
                         local MouseXPosition = Mouse.X - RGBPicker.AbsolutePosition.X
@@ -3742,7 +3836,6 @@ function Library:CreateWindow(HubName, GameName)
                         if not Args[1] == true then
                             Config[Name] = Utility:SplitColor(HSVColor)
                         end
-
                     elseif DarknessPicked then
                         local MouseYPosition = Mouse.Y - DarknessPicker.AbsolutePosition.Y
 
@@ -3791,6 +3884,59 @@ function Library:CreateWindow(HubName, GameName)
                 DarknessPicker.MouseButton1Down:Connect(function()
                     DarknessPicked = true
                 end)
+                
+                ColorpickerRainbowmodeButton.MouseButton1Down:Connect(function()
+                    if not RainbowmodeToggleDebounce then
+                        RainbowmodeToggled = not RainbowmodeToggled
+                        Config[Name.."ColorPickerIsRainbow"] = RainbowmodeToggled
+                        RainbowmodeToggleDebounce = true
+                        if RainbowmodeToggled then
+                            Utility:Tween(ColorpickerRainbowmodeCircleRainbowImage, {ImageTransparency = 1}, 0.25)
+                            wait(0.10)
+                            ColorpickerRainbowmodeCircleRainbowImage.Visible = false
+                            Utility:Tween(ColorpickerRainbowmode, {BackgroundColor3 = Color3.fromRGB(0, 146, 214)}, 0.25)
+                            Utility:Tween(ColorpickerRainbowmodeCircle, {Position = UDim2.new(0, 30, 0, 5)}, 0.25)
+                        else
+                            ColorpickerRainbowmodeCircleRainbowImage.Visible = true
+                            Utility:Tween(ColorpickerRainbowmodeCircleRainbowImage, {ImageTransparency = 0}, 0.25)
+                            Utility:Tween(ColorpickerRainbowmodeCircle, {Position = UDim2.new(0, 5, 0, 5)}, 0.25)
+                            Utility:Tween(ColorpickerRainbowmode, {BackgroundColor3 = Theme.SecondaryElementColor}, 0.25)
+                        end
+                        task.wait(DebounceAmount)
+                        RainbowmodeToggleDebounce = false
+                    end
+                end)
+                
+                spawn(function()
+                    while wait() do
+                        if RainbowmodeToggled then
+                            if not BreakAllLoops then
+                                local CachedColor = Color3.fromHSV(tick() % 5 / 5,1,1)
+                                ColorpickerPreview.BackgroundColor3 = CachedColor
+                                Callback(CachedColor)
+                            else
+                                break
+                            end 
+                        end
+                    end
+                end)
+                
+                function RainbowmodeToggleFunctions:Set(Value)
+                    RainbowmodeToggled = Value
+                    if RainbowmodeToggled then
+                        Utility:Tween(ColorpickerRainbowmodeCircleRainbowImage, {ImageTransparency = 1}, 0.25)
+                        wait(0.10)
+                        ColorpickerRainbowmodeCircleRainbowImage.Visible = false
+                        Utility:Tween(ColorpickerRainbowmode, {BackgroundColor3 = Color3.fromRGB(0, 146, 214)}, 0.25)
+                        Utility:Tween(ColorpickerRainbowmodeCircle, {Position = UDim2.new(0, 30, 0, 5)}, 0.25)
+                    else
+                        ColorpickerRainbowmodeCircleRainbowImage.Visible = true
+                        Utility:Tween(ColorpickerRainbowmodeCircleRainbowImage, {ImageTransparency = 0}, 0.25)
+                        Utility:Tween(ColorpickerRainbowmodeCircle, {Position = UDim2.new(0, 5, 0, 5)}, 0.25)
+                        Utility:Tween(ColorpickerRainbowmode, {BackgroundColor3 = Theme.SecondaryElementColor}, 0.25)
+                    end
+                end
+                ConfigUpdates[Name.."ColorPickerIsRainbow"] = RainbowmodeToggleFunctions
                 
                 function ColorpickerFunctions:Set(Value)
                     Color = Color3.fromRGB(Value.R, Value.G, Value.B)
