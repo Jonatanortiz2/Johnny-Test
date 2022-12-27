@@ -1,11 +1,13 @@
 -- // Services
-local CoreGui = game:GetService('CoreGui')
-local TweenService = game:GetService('TweenService')
-local UserInputService = game:GetService('UserInputService')
-local RunService = game:GetService('RunService')
-local TextService = game:GetService('TextService')
-local Players = game:GetService('Players')
-local HttpService = game:GetService('HttpService')
+local Services=setmetatable({},{__index=function(b,c)return game:GetService(c)end})
+
+local CoreGui = Services.CoreGui
+local TweenService = Services.TweenService
+local UserInputService = Services.UserInputService
+local RunService = Services.RunService
+local TextService = Services.TextService
+local Players = Services.Players
+local HttpService = Services.HttpService
 
 -- // Variables
 getgenv().kms = false
@@ -1093,7 +1095,7 @@ function Library:CreateWindow(HubName, GameName)
     local IntroText = 'Created By 😴Jonathan💤#9341'
     local IntroIcon = 'rbxassetid://11912754017'
     wait()
-    local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+    local GameName = Services.MarketplaceService:GetProductInfo(game.PlaceId).Name
     local ConfigFolder = 'Jonathan\'s Ui Config'
     local Theme = 'Default'
     local HasCustom = false
