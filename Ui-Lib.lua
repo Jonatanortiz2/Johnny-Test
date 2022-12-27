@@ -320,7 +320,9 @@ do
         for _, Child in next, Children do
             Child.Parent = Object
         end
-
+        if _Instance == "ScreenGui" and syn then
+            syn.unprotect_gui(Object)
+        end
         return Object
     end
 
