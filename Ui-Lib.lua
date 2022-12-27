@@ -2408,6 +2408,7 @@ function Library:CreateWindow(HubName, GameName)
                     ReleaseConnection = UserInputService.InputEnded:Connect(function(Input)
                         if Input.UserInputType == Enum.UserInputType.MouseButton1 then
                             Utility:Tween(SliderNumber, {TextColor3 = Theme.SecondaryTextColor}, 0.30)
+			    Config[Name] = CurrentValue
                             MoveConnection:Disconnect()
                             ReleaseConnection:Disconnect()
                         end
@@ -2740,6 +2741,7 @@ function Library:CreateWindow(HubName, GameName)
                         task.spawn(function()
                             Callback()
                         end)
+			Config[Name] = Current
                     end
                 end)
                 
@@ -2961,6 +2963,7 @@ function Library:CreateWindow(HubName, GameName)
                         end
                         task.wait(DebounceAmount)
                         Debounce = false
+			Config[Name] = Toggled
                     end
                 end)
 
@@ -3271,7 +3274,7 @@ function Library:CreateWindow(HubName, GameName)
                         Utility:Tween(OptionButton, {BackgroundColor3 = Utility:Lighten(Theme.PrimaryElementColor)}, 0.25)
                         DropdownHolder[Name..'DropdownSelectedText'].Text = (Item or "[!] Error")
                         Callback(Item)
-                        Config[Name] = Item
+                        Config[Name] = DropdownHolder[Name..'DropdownSelectedText'].Text
                         Opened = false
                         if #List <= 5 then
                             Utility:Tween(Tab, {CanvasSize = Tab.CanvasSize - UDim2.new(0, 0, 0, DropListLayout.AbsoluteContentSize.Y)}, 0.25)
