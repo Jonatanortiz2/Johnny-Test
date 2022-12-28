@@ -1047,7 +1047,7 @@ function Library:SaveConfig(Name)
 			end
 		end
 	else
-		Library:CreateNotification('Config Not Saved', 'Please enter a name for the config.', 5)
+		Library:CreateNotification('[!] Config Not Saved', 'Please enter a name for the config.', 5)
 	end
 end
 
